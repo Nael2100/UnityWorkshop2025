@@ -104,6 +104,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03987d4c607ec5642b05d4e8cfe1e30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.MapPoint
+  type: 0
+  followers: []
+  predecessors: []
+  availableEncounterColor: {r: 0.029804826, g: 1, b: 0, a: 1}
+  availableTowerDefenseColor: {r: 1, g: 0.32126835, b: 0, a: 1}
+  availableEndColor: {r: 1, g: 0.82819295, b: 0, a: 1}
+  towerDefenseColor: {r: 1, g: 0.7343877, b: 0.6084906, a: 1}
+  encounterColor: {r: 0.6481872, g: 1, b: 0.6367924, a: 1}
+  unavailableColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+  startColor: {r: 1, g: 0.58360845, b: 0, a: 1}
+  endColor: {r: 1, g: 0, b: 0.79941416, a: 1}
 --- !u!61 &3385227361293981422
 BoxCollider2D:
   m_ObjectHideFlags: 0
