@@ -1,22 +1,65 @@
 using System;
 using System.Collections;
+using System.Numerics;
+using TBT.Core.Data.EnemyData;
 using UnityEngine;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 {
     public class EnemyClass : MonoBehaviour
     {
-        public bool isActive;
-        public void Act()
+        protected float damage;
+        protected float health;
+        protected float speed;
+        protected float range;
+        public bool enemyIsActive { get; protected set; }
+        protected Carriage carriage;
+        protected bool isDoingAction ;
+        [SerializeField] protected EnemyDataScript data;
+        [SerializeField] protected BoxCollider2D boxCollider;
+
+        private void OnEnable()
         {
-            isActive = true;
-            StartCoroutine(Action());
+            SetUpData();
+            boxCollider.enabled = false;
         }
 
-        IEnumerator Action()
+        public virtual void Act(float timer)
         {
-            yield return new WaitForSeconds(3f);
-            isActive = false;
+            enemyIsActive = true;
+        }
+
+        private void SetUpData()
+        {
+            isDoingAction = false;
+            damage = data.damage;
+            health = data.health;
+            speed = data.speed;
+            range = data.range;
+        }
+
+        public void SetCarriage(Carriage carriage)
+        {
+            this.carriage = carriage;
+        }
+
+        protected virtual void TakeDamage(float damage)
+        {
+            health -= damage;
+            CheckStillAlive();
+        }
+
+        private void CheckStillAlive()
+        {
+            if (health <= 0)
+            {
+                Dying();
+            }
+        }
+
+        protected virtual void Dying()
+        {
+            enemyIsActive = false;
         }
     }
 }

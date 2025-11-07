@@ -7,7 +7,7 @@ namespace TBT.Gameplay.TowerDefenseUI
 {
     public class CharacterUI : MonoBehaviour
     {
-        private List<GameObject> buttons = new List<GameObject>();
+        private List<SkillButton> buttons = new List<SkillButton>();
         private Character currentCharacter;
         [SerializeField] private RectTransform buttonsParent;
         [SerializeField] private GameObject buttonPrefab;
@@ -20,22 +20,41 @@ namespace TBT.Gameplay.TowerDefenseUI
         
         void CreateButtons(TowerDefenseManager manager)
         {
-            for (int i = 0; i < currentCharacter.Skills.Count; i++)
+            Debug.Log(currentCharacter);
+            for (int i = 0; i < currentCharacter.activeSkills.Count; i++)
             {
                 Vector3 newPosition = new Vector3(buttonsParent.position.x+200*i, buttonsParent.position.y);
-                GameObject newButton = Instantiate(buttonPrefab, buttonsParent.transform);
+                GameObject newButton = Instantiate(buttonPrefab, newPosition, Quaternion.identity, buttonsParent);
                 SkillButton skillButtonRef = newButton.GetComponent<SkillButton>();
-                buttons.Add(newButton);
-                skillButtonRef.SetUp(skillButtonRef.GetComponentInChildren<Button>(),manager,currentCharacter.Skills[i]);
+                buttons.Add(skillButtonRef);
+                skillButtonRef.SetUp(skillButtonRef.GetComponentInChildren<Button>(),manager,currentCharacter.activeSkills[i]);
             }
         }
 
         public void Reset()
         {
-            foreach (GameObject buttonObject in buttons)
+            foreach (SkillButton button in buttons)
             {
-                Destroy(buttonObject);
+                if (button != null)
+                {
+                    Destroy(button.gameObject);
+                }
             }
         }
+
+        public void BlockAllButtons()
+        {
+            Debug.Log(buttons);
+            if (buttons.Count > 0)
+            {
+              foreach (SkillButton button in buttons)
+              {
+                     button.Deactivate();
+              }  
+            }
+            
+        }
+
+
     }
 }

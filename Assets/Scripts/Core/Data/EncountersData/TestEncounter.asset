@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2952dbde49812e8408ec4fb7b1987649, type: 3}
+  m_Name: TestEncounter
+  m_EditorClassIdentifier: TBT.Core::TBT.Core.EncounterData
+  title: La rencontre
+  text: Olalala
+  resolvedText: "C'est gagn\xE9 we did it"
+  answers:
+  - Oui
+  - Ok bro
+  - "R\xE9ponseD"
+  effects: 000000000000000000000000
+  icon: {fileID: 21300000, guid: 1f581344cb02a3740ae43c2eee280524, type: 3}
+  background: {fileID: 21300000, guid: 9168d2a65ccfa934b80926a9b5830d57, type: 3}

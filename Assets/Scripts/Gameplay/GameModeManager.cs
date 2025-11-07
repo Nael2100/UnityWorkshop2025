@@ -10,11 +10,14 @@ namespace TBT.Gameplay
         [SerializeField] private GameObject towerDefensePosRef;
         [SerializeField] private GameObject mapPosRef;
         [SerializeField] private GameObject encounterPosRef;
+        [SerializeField] private GameObject cardsPosRef;
+        [SerializeField] private Canvas permanentCanvas;
         [SerializeField] private Canvas towerDefenseCanvas;
         [SerializeField] private Canvas encounterCanvas;
+        
         private Camera mainCamera;
 
-        public event Action EnterTowerDefenseModeEvent; 
+        public event Action EnterTowerDefenseModeEvent, EnterEncounterModeEvent, EnterCardsModeEvent; 
 
         private void Start()
         {
@@ -31,6 +34,7 @@ namespace TBT.Gameplay
         public void EnterEncounterMode()
         {
             EnterModeProcess(encounterPosRef, encounterCanvas);
+            EnterEncounterModeEvent?.Invoke();
         }
 
         public void EnterMapMode()
@@ -38,12 +42,18 @@ namespace TBT.Gameplay
             EnterModeProcess(mapPosRef,null);
         }
 
+        public void EnterCardsMode()
+        {
+            EnterModeProcess(cardsPosRef,null);
+            EnterCardsModeEvent?.Invoke();
+        }
+
         public void EndGameMode()
         {
             SceneManager.LoadScene("SampleScene");
         }
 
-        public void EnterModeProcess(GameObject posRef, Canvas canvasToActivate)
+        private void EnterModeProcess(GameObject posRef, Canvas canvasToActivate)
         {
             mainCamera.transform.position = new Vector3(posRef.transform.position.x, posRef.transform.position.y, -10);
             foreach (Canvas canva in FindObjectsOfType<Canvas>(includeInactive: true))
@@ -57,6 +67,7 @@ namespace TBT.Gameplay
                     canva.enabled = false;
                 }
             }
+            permanentCanvas.enabled = true;
         }
     }
 }

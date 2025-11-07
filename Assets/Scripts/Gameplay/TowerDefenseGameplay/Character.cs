@@ -6,12 +6,16 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 {
     public class Character : MonoBehaviour
     {
-        public List<Skill> Skills { get; private set; } = new List<Skill>();
-        public Skill testSkill;
-
+        [SerializeField] public List<GameObject> skillsPrefabs = new List<GameObject>();
+        public List<Skill> activeSkills { get; private set; }= new List<Skill>();
+    
         private void Start()
         {
-            Skills.Add(testSkill);
+            foreach (GameObject prefab in skillsPrefabs)
+            {
+                GameObject skillObject = Instantiate(prefab, transform);
+                activeSkills.Add(skillObject.GetComponent<Skill>());
+            }
         }
     }
 }

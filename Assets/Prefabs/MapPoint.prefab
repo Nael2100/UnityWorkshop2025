@@ -104,7 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03987d4c607ec5642b05d4e8cfe1e30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.MapPoint
-  type: 0
   followers: []
   predecessors: []
   availableEncounterColor: {r: 0.029804826, g: 1, b: 0, a: 1}
