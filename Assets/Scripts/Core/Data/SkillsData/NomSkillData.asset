@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
-  m_Name: TestSkillData
-  m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.TestSkillData
-  name: Skill
-  damages: 1
-  size: 2
-  range: 15
+  m_Name: NomSkillData
+  m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
+  name: 
+  damages: 0
+  size: 0
+  range: 0
   sprite: {fileID: 0}
-  ressourcesCost: 3
+  ressourcesCost: 0

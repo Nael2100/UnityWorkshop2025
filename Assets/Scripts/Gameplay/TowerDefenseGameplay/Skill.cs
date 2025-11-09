@@ -16,12 +16,13 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         public string name { get; private set; } = "nom";
         [SerializeField] private bool needsClick;
         public event Action SkillPlayed;
-        [SerializeField] private CircleCollider2D rangeCollider2D;
-        [SerializeField] private float range;
+        [SerializeField] private CircleCollider2D rangeCollider2D; 
+        private float range;
         [SerializeField] private GameObject areaCursor;
         private bool canLaunch = false;
         private float damage;
         private float size;
+   
         private Camera cam;
         public int ressourcesCost { get; private set; }
         
@@ -34,6 +35,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             name = data.name;
             damage = data.damages;
             size = data.size;
+            range = data.range;
             ressourcesCost = data.ressourcesCost;
             areaCursor.transform.localScale *= size;
             areaCursor.SetActive(false);
@@ -64,6 +66,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 
         public virtual void LaunchSkill()
         {
+            canLaunch = false;
             areaCursor.SetActive(false);
         }
 
@@ -72,7 +75,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             if (canLaunch)
             { 
                 LaunchSkill();
-                SkillPlayed?.Invoke();
             }
         }
         
@@ -87,6 +89,11 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                         cam.nearClipPlane));
                 areaCursor.transform.position = worldPosition;
             }
+        }
+
+        protected void SkillPlayedEvent()
+        {
+            SkillPlayed?.Invoke();
         }
     }
 
