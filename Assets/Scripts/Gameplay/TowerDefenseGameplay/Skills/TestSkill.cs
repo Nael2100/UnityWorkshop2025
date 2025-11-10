@@ -17,9 +17,9 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills
             SkillPlayedEvent();
         }
 
-        public override void LaunchSkill()
+        public override void LaunchSkill(Vector3 position)
         {
-            base.LaunchSkill();
+            base.LaunchSkill(position);
             SkillPlayedEvent();
         }
     }

@@ -43,7 +43,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             this.carriage = carriage;
         }
 
-        protected virtual void TakeDamage(float damage)
+        public virtual void TakeDamage(float damage)
         {
             health -= damage;
             CheckStillAlive();
