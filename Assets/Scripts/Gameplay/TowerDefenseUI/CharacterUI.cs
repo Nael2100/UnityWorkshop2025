@@ -17,7 +17,7 @@ namespace TBT.Gameplay.TowerDefenseUI
         public void Setup(Character character, TowerDefenseManager manager)
         {
             currentCharacter = character;
-            icon.GetComponent<Image>().sprite = character.data.icone;
+            //icon.GetComponent<Image>().sprite = character.data.icone;
             CreateButtons(manager);
         }
         
