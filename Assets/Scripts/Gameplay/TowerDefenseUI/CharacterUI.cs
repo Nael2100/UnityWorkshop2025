@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TBT.Gameplay.TowerDefenseGameplay;
 using UnityEngine;
@@ -11,14 +12,17 @@ namespace TBT.Gameplay.TowerDefenseUI
         private Character currentCharacter;
         [SerializeField] private RectTransform buttonsParent;
         [SerializeField] private GameObject buttonPrefab;
-        [SerializeField] private GameObject bottomBar;
-        [SerializeField] private GameObject icon;
+        [SerializeField] private RectTransform bottomBar;
+        [SerializeField] private RectTransform icon;
 
         public void Setup(Character character, TowerDefenseManager manager)
         {
             currentCharacter = character;
-            //icon.GetComponent<Image>().sprite = character.data.icone;
+            icon.gameObject.GetComponent<Image>().sprite = character.data.icone;
+            bottomBar.anchoredPosition = new Vector2(0, -200);
+            icon.anchoredPosition = new Vector2(400, 0);
             CreateButtons(manager);
+            StartCoroutine(EnteringAnimation());
         }
         
         void CreateButtons(TowerDefenseManager manager)
@@ -42,6 +46,8 @@ namespace TBT.Gameplay.TowerDefenseUI
                     Destroy(button.gameObject);
                 }
             }
+
+            StartCoroutine(ExitAnimation());
         }
 
         public void BlockAllButtons()
@@ -54,9 +60,39 @@ namespace TBT.Gameplay.TowerDefenseUI
                      button.Deactivate();
               }  
             }
-            
         }
 
+        IEnumerator EnteringAnimation()
+        {
+            float speed= 300f;
+            while (bottomBar.anchoredPosition.y < 0)
+            {
+                bottomBar.position += Vector3.up * (speed * Time.deltaTime);
+                yield return null;
+            }
+            speed = 500f;
+            while (icon.anchoredPosition.x > 0)
+            {
+                icon.position += Vector3.left * (speed * Time.deltaTime);
+                yield return null;
+            }
+        }
+        IEnumerator ExitAnimation()
+        {
+            float speed = 500f;
+            while (icon.anchoredPosition.x <400f)
+            {
+                icon.position += Vector3.right * (speed * Time.deltaTime);
+                yield return null;
+            }
+            speed= 300f;
+            while (bottomBar.anchoredPosition.y > -200f)
+            {
+                bottomBar.position += Vector3.down * (speed * Time.deltaTime);
+                yield return null;
+            }
+
+        }
 
     }
 }

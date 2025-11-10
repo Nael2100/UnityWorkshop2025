@@ -35,7 +35,7 @@ namespace TBT.Gameplay.TowerDefenseUI
         private void UpdateHealth(float currentHealth, float maxHealth)
         {
             healthImage.fillAmount = currentHealth / maxHealth;
-            healthText.text = currentHealth.ToString();
+            healthText.text = Mathf.Round(currentHealth).ToString();
         }
 
         private void UpdateRessources(int currentRessources)
