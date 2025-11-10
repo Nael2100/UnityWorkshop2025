@@ -18,7 +18,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         [SerializeField] private GameObject spawningPoint;
         [SerializeField] private Carriage carriage;
         public List<EnemyClass> enemies;
-        private float timer = 0.5f;
+        private float timer = 2f;
         public event Action EnemiesTurnEnded;
         
         public void SetEnemiesMoving()

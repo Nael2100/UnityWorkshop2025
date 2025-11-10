@@ -50,6 +50,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             {
                 currentHealth = 0;
             }
+
             OnHealthChanged?.Invoke(currentHealth, maxHealth);
             StartCoroutine(TakeDamageAnimation());
             CheckStillAlive();

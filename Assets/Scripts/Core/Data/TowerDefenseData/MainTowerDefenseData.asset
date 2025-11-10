@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.TowerDefenseData.TowerDefenseData
   minWaves: 3
   maxWaves: 4
-  minEnnemies: 3
-  maxEnnemies: 6
+  minEnnemies: 1
+  maxEnnemies: 3
   addedEnnemiesByWaves: 2
   addedEnnemiesByRounds: 2
