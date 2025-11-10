@@ -6,5 +6,7 @@ namespace TBT.Core.Data.CharacterData
     public class CharacterDataScript : ScriptableObject
     {
         public string characterName;
+        public string[] lines;
+        public Sprite icone;
     }
 }

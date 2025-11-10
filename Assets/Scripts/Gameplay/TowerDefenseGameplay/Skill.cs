@@ -19,7 +19,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         [SerializeField] private CircleCollider2D rangeCollider2D; 
         private float range;
         [SerializeField] private GameObject areaCursor;
-        private bool canLaunch = false;
+        private bool canLaunch;
         private float damage;
         private float size;
    
@@ -55,26 +55,31 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             else
             {
                 ApplyEffects();
-                SkillPlayed?.Invoke();
             }
         }
 
         public virtual void ApplyEffects()
         {
-            
+
         }
 
-        public virtual void LaunchSkill()
+        public virtual void LaunchSkill(Vector3 position)
         {
             canLaunch = false;
             areaCursor.SetActive(false);
+            rangeCollider2D.enabled = false;
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
             if (canLaunch)
             { 
-                LaunchSkill();
+                Debug.Log("Launcg");
+                Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+                Vector3 worldPosition =
+                    cam.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y,
+                        cam.nearClipPlane));
+                LaunchSkill(worldPosition);
             }
         }
         
@@ -83,7 +88,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             if (canLaunch && areaCursor.activeInHierarchy)
             {
                 Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
-
                 Vector3 worldPosition =
                     cam.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y,
                         cam.nearClipPlane));

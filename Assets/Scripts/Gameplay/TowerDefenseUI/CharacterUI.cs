@@ -11,16 +11,18 @@ namespace TBT.Gameplay.TowerDefenseUI
         private Character currentCharacter;
         [SerializeField] private RectTransform buttonsParent;
         [SerializeField] private GameObject buttonPrefab;
+        [SerializeField] private GameObject bottomBar;
+        [SerializeField] private GameObject icon;
 
         public void Setup(Character character, TowerDefenseManager manager)
         {
             currentCharacter = character;
+            icon.GetComponent<Image>().sprite = character.data.icone;
             CreateButtons(manager);
         }
         
         void CreateButtons(TowerDefenseManager manager)
         {
-            Debug.Log(currentCharacter);
             for (int i = 0; i < currentCharacter.activeSkills.Count; i++)
             {
                 Vector3 newPosition = new Vector3(buttonsParent.position.x+200*i, buttonsParent.position.y);

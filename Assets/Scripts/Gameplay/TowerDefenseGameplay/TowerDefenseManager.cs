@@ -109,6 +109,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         }
         public void EndPlayerTurn()
         {
+            Debug.Log("EndPlayerTurn");
             if (currentlyPlayingSkill != null)
             {
                 currentlyPlayingSkill.SkillPlayed -= EndPlayerTurn;

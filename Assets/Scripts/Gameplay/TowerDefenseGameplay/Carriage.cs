@@ -9,14 +9,14 @@ namespace TBT.Gameplay.TowerDefenseGameplay
     public class Carriage : MonoBehaviour
     {
         [SerializeField] private CarriageData carriageData;
-        [SerializeField] private List<GameObject> charactersPrefabs;
+        private List<GameObject> charactersPrefabs = new List<GameObject>();
         [SerializeField] private AnimationCurve takeDamageAnimationCurve;
         private float takeDamageAnimationDuration =1f;
         public float maxHealth {get; private set;}
         public float currentHealth {get; private set;}
         public int maxRessources {get; private set;}
         public int currentRessources {get; private set;}
-        private int currentCharacterPlayingIndex = 0;
+        private int currentCharacterPlayingIndex = -1;
         private List<Character> characters = new List<Character>();
         
         public event Action Dying;
@@ -31,15 +31,15 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             currentRessources = maxRessources;
             OnHealthChanged?.Invoke(currentHealth, maxHealth);
             OnRessourcesChanged?.Invoke(currentRessources);
-            foreach (GameObject characterObj in charactersPrefabs)
-            {
-                GameObject newCharacter = Instantiate(characterObj, transform);
-                characters.Add(newCharacter.GetComponent<Character>());
-            }
         }
 
         public Character ReturnCharacterToPlay()
         {
+            currentCharacterPlayingIndex ++;
+            if (currentCharacterPlayingIndex >= characters.Count)
+            {
+                currentCharacterPlayingIndex = 0;
+            }
             return characters[currentCharacterPlayingIndex];
         }
 
@@ -95,6 +95,20 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         public void TriedToLaunchWithUnsufficientRessources()
         {
             NotEnoughRessources?.Invoke();
+        }
+
+        public void AddCharacterPrefab(GameObject prefab)
+        {
+            charactersPrefabs.Add(prefab);
+        }
+
+        public void SetUpCharacters()
+        {
+            foreach (GameObject characterObj in charactersPrefabs)
+            {
+                GameObject newCharacter = Instantiate(characterObj, transform);
+                characters.Add(newCharacter.GetComponent<Character>());
+            }
         }
     }
 }

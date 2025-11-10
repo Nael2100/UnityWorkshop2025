@@ -14,6 +14,7 @@ namespace TBT.Gameplay
         [SerializeField] private Canvas permanentCanvas;
         [SerializeField] private Canvas towerDefenseCanvas;
         [SerializeField] private Canvas encounterCanvas;
+        [SerializeField] private Canvas characterSelectionCanvas;
         
         private Camera mainCamera;
 
@@ -22,7 +23,8 @@ namespace TBT.Gameplay
         private void Start()
         {
             mainCamera = Camera.main;
-            EnterMapMode();
+            EnterModeProcess(mapPosRef, characterSelectionCanvas);
+            permanentCanvas.enabled = false;
         }
 
         public void EnterTowerDefenseMode()
