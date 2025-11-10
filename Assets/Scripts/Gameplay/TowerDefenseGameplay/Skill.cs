@@ -11,7 +11,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
     public class Skill : MonoBehaviour, IPointerClickHandler
 
     {
-        [SerializeField] private SkillDataScript data;
+        [SerializeField] protected SkillDataScript data;
         public Sprite sprite { get; private set; }
         public string name { get; private set; } = "nom";
         [SerializeField] private bool needsClick;
@@ -25,6 +25,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
    
         private Camera cam;
         public int ressourcesCost { get; private set; }
+        public event Action<bool> EnemiesNeedToCollide;
         
         
 
@@ -51,6 +52,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                 areaCursor.SetActive(true);
                 canLaunch = true;
                 rangeCollider2D.enabled = true;
+                EnemiesNeedToBeDamagedEvent(false);
             }
             else
             {
@@ -60,11 +62,12 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 
         public virtual void ApplyEffects()
         {
-
+            EnemiesNeedToBeDamagedEvent(true);
         }
 
         public virtual void LaunchSkill(Vector3 position)
         {
+            EnemiesNeedToBeDamagedEvent(true);
             canLaunch = false;
             areaCursor.SetActive(false);
             rangeCollider2D.enabled = false;
@@ -74,7 +77,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         {
             if (canLaunch)
             { 
-                Debug.Log("Launcg");
                 Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
                 Vector3 worldPosition =
                     cam.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y,
@@ -98,6 +100,11 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         protected void SkillPlayedEvent()
         {
             SkillPlayed?.Invoke();
+        }
+
+        protected void EnemiesNeedToBeDamagedEvent(bool isDamaged)
+        {
+            EnemiesNeedToCollide?.Invoke(isDamaged);
         }
     }
 

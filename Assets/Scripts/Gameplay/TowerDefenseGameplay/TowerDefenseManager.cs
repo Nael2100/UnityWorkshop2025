@@ -98,6 +98,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                          currentlyPlayingSkill.Play();
                          characterUI.BlockAllButtons();
                          currentlyPlayingSkill.SkillPlayed += EndPlayerTurn;
+                         currentlyPlayingSkill.EnemiesNeedToCollide += EnemiesNeedToCollide;
                          break;
                      }
                 }  
@@ -109,7 +110,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         }
         public void EndPlayerTurn()
         {
-            Debug.Log("EndPlayerTurn");
             if (currentlyPlayingSkill != null)
             {
                 currentlyPlayingSkill.SkillPlayed -= EndPlayerTurn;
@@ -123,11 +123,13 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 
         public void PlayEnemiesTurn()
         {
+            EnemiesNeedToCollide(true);
             enemiesManager.SetEnemiesMoving();
         }
 
         public void EndEnemiesTurn()
         {
+            EnemiesNeedToCollide(false);
             PlayPlayerTurn();
         }
 
@@ -135,10 +137,21 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         {
             if (playerTurn && currentlyPlayingSkill == null)
             {
-                Debug.Log("reloaded");
                 characterUI.BlockAllButtons();
                 playerCarriage.AddRessources(playerCarriage.maxRessources);
                 EndPlayerTurn();
+            }
+        }
+
+        private void EnemiesNeedToCollide(bool collidersEnabled)
+        {
+            if (collidersEnabled)
+            {
+                enemiesManager.AllEnemiesActivateCollider();
+            }
+            else
+            {
+                enemiesManager.AllEnemiesDeactivateCollider();
             }
         }
     }

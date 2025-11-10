@@ -18,6 +18,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills
         {
             if (other.gameObject.GetComponent<EnemyInterface>()!= null)
             {
+                Debug.Log("enemyDamaged");
                 EnemyClass enemy = other.gameObject.GetComponent<EnemyInterface>().enemyComponent;
                 enemy.TakeDamage(damage);
             }
