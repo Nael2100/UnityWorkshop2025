@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 1ce7bdfa710b80b41a876e9ae1898250
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1955032910884879037
+    second: UI_Asset_HealthIconFull_0
+  - first:
+      213: 8242765932163701051
+    second: UI_Asset_HealthIconFull_1
+  - first:
+      213: 8661724906413109892
+    second: UI_Asset_HealthIconFull_2
+  - first:
+      213: -8718410364079206813
+    second: UI_Asset_HealthIconFull_3
+  - first:
+      213: -3968050788715960644
+    second: UI_Asset_HealthIconFull_4
+  - first:
+      213: 3133715777927460907
+    second: UI_Asset_HealthIconFull_5
+  - first:
+      213: -7375766886099637986
+    second: UI_Asset_HealthIconFull_6
+  - first:
+      213: 7780316162077766091
+    second: UI_Asset_HealthIconFull_7
+  - first:
+      213: 6706983033897502441
+    second: UI_Asset_HealthIconFull_8
+  - first:
+      213: 4055764358772696885
+    second: UI_Asset_HealthIconFull_9
+  - first:
+      213: 9115905028154538224
+    second: UI_Asset_HealthIconFull_10
+  - first:
+      213: -5064358690371779203
+    second: UI_Asset_HealthIconFull_11
+  - first:
+      213: -5557192725998252110
+    second: UI_Asset_HealthIconFull_12
+  - first:
+      213: -3889919394289634238
+    second: UI_Asset_HealthIconFull_13
+  - first:
+      213: -1618957330754920300
+    second: UI_Asset_HealthIconFull_14
+  - first:
+      213: 8579438439469335343
+    second: UI_Asset_HealthIconFull_15
+  - first:
+      213: -288539756023743106
+    second: UI_Asset_HealthIconFull_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 151
+        width: 70
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbabd71031ca12b10800000000000000
+      internalID: 1955032910884879037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 196
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b391f4971ff246270800000000000000
+      internalID: 8242765932163701051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 188
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48238ec19e0a43870800000000000000
+      internalID: 8661724906413109892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 76
+        width: 102
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e89fa47fbf10780800000000000000
+      internalID: -8718410364079206813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_4
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 175
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb660efc4d6aee8c0800000000000000
+      internalID: -3968050788715960644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_5
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 157
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28376a95e13d7b20800000000000000
+      internalID: 3133715777927460907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 130
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1921f7781304a990800000000000000
+      internalID: -7375766886099637986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_7
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 136
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc130e8d35c39fb60800000000000000
+      internalID: 7780316162077766091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_8
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 114
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e64802c88df31d50800000000000000
+      internalID: 6706983033897502441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_9
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 108
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53726592238f84830800000000000000
+      internalID: 4055764358772696885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_10
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 88
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f839513353328e70800000000000000
+      internalID: 9115905028154538224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_11
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 94
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d754a3d6a98c7b9b0800000000000000
+      internalID: -5064358690371779203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 58
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf4d72b8a2e0e2b0800000000000000
+      internalID: -5557192725998252110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_13
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 52
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244b67aabea340ac0800000000000000
+      internalID: -3889919394289634238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_14
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 53
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 490a6d1a2ee4889e0800000000000000
+      internalID: -1618957330754920300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_15
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 61
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f23c6ec0ec9401770800000000000000
+      internalID: 8579438439469335343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Asset_HealthIconFull_16
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 52
+        width: 23
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d70a2ee96eefbf0800000000000000
+      internalID: -288539756023743106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      UI_Asset_HealthIconFull_0: 1955032910884879037
+      UI_Asset_HealthIconFull_1: 8242765932163701051
+      UI_Asset_HealthIconFull_10: 9115905028154538224
+      UI_Asset_HealthIconFull_11: -5064358690371779203
+      UI_Asset_HealthIconFull_12: -5557192725998252110
+      UI_Asset_HealthIconFull_13: -3889919394289634238
+      UI_Asset_HealthIconFull_14: -1618957330754920300
+      UI_Asset_HealthIconFull_15: 8579438439469335343
+      UI_Asset_HealthIconFull_16: -288539756023743106
+      UI_Asset_HealthIconFull_2: 8661724906413109892
+      UI_Asset_HealthIconFull_3: -8718410364079206813
+      UI_Asset_HealthIconFull_4: -3968050788715960644
+      UI_Asset_HealthIconFull_5: 3133715777927460907
+      UI_Asset_HealthIconFull_6: -7375766886099637986
+      UI_Asset_HealthIconFull_7: 7780316162077766091
+      UI_Asset_HealthIconFull_8: 6706983033897502441
+      UI_Asset_HealthIconFull_9: 4055764358772696885
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
