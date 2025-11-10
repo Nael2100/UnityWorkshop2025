@@ -14,7 +14,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         protected float health;
         protected float speed;
         protected float range;
-        public bool enemyIsActive { get; protected set; }
+        public bool enemyIsActive; //{ get; protected set; }
         protected Carriage carriage;
         protected bool isDoingAction ;
         [SerializeField] protected EnemyDataScript data;
@@ -85,12 +85,12 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             enemyIsActive = false;
         }
 
-        public void EnableCollider()
+        public virtual void EnableCollider()
         {
             damageCollider.enabled = true;
         }
 
-        public void DisableCollider()
+        public virtual void DisableCollider()
         {
             damageCollider.enabled = false;
         }

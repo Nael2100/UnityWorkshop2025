@@ -117,7 +117,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             currentlyPlayingSkill = null;
             playerTurn = false;
             characterUI.Reset();
-            playerTurnPanel.SetActive(false);
             PlayEnemiesTurn();
         }
 

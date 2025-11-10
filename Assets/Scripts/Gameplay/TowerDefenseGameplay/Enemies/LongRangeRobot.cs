@@ -4,10 +4,13 @@ using UnityEngine;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 {
-    public class ShortRangeRobot : EnemyClass
+    public class LongRangeRobot : EnemyClass
     {
         [SerializeField] private AnimationCurve attackAnimationCurve;
-        private float attackAnimationDuration = 1f;
+        [SerializeField] private LongRangeRobotProjectile projectile;
+        private float attackAnimationDuration = 0.3f;
+        private bool projectileLaunched;
+        private bool isExploding;
         public override void Act(float timer)
         {
             base.Act(timer);
@@ -23,7 +26,10 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
                 {
                     if (Vector2.Distance(gameObject.transform.position, carriage.gameObject.transform.position) < range)
                     {
-                        Attack();
+                        if (!projectileLaunched)
+                        {
+                            Attack();
+                        }
                     }
                     else
                     {
@@ -48,6 +54,19 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             StartCoroutine(AttackAnimation());
         }
 
+        protected override void Dying()
+        {
+            base.Dying();
+            StartCoroutine(DyingExplosion());
+        }
+
+        IEnumerator DyingExplosion()
+        {
+            damageCollider.size *= 3;
+            isExploding = true;
+            yield return null;
+            isExploding = false;
+        }
         IEnumerator AttackAnimation()
         {
             float elapsedTime = 0;
@@ -59,22 +78,55 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-
+            LaunchProjectile();
             transform.position = basePos;
             isDoingAction = false;
             damageCollider.enabled = false;
         }
 
+        private void LaunchProjectile()
+        {
+            projectileLaunched = true;
+            GameObject projectile = gameObject.transform.GetChild(0).gameObject;
+            projectile.SetActive(true);
+            projectile.transform.position = gameObject.transform.position;
+        }
         private void Move()
         {
             transform.position = Vector3.MoveTowards(transform.position, carriage.transform.position, Time.deltaTime * speed);
         }
+        public Carriage ReturnCarriage()
+        {
+            return carriage;
+        }
+
+        public void ProjectileHit()
+        {
+            carriage.TakeDamage(damage);
+        }
+
+        public void ProjectileExploded()
+        {
+            projectileLaunched = false;
+        }
+
+        public override void EnableCollider()
+        {
+            base.EnableCollider();
+            projectile.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        public override void DisableCollider()
+        {
+            base.DisableCollider();
+            projectile.GetComponent<BoxCollider2D>().enabled = false;
+        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.GetComponent<Carriage>() != null && enemyIsActive)
+            if (isExploding && other.gameObject.GetComponent<EnemyInterface>() != null)
             {
-                carriage.TakeDamage(damage);
+                other.gameObject.GetComponent<EnemyInterface>().enemyComponent.TakeDamage(damage);
             }
         }
     }

@@ -24,6 +24,7 @@ namespace TBT.Gameplay.CharacterSelection
                 characterButtons[i] = characterObjects[i].GetComponentInChildren<Button>();
             }
             startButton.onClick.AddListener(() => StartGame());
+            startButton.gameObject.GetComponent<Image>().color = Color.grey;
         }
 
         public void ClickOnCharacter(int index)
@@ -37,7 +38,8 @@ namespace TBT.Gameplay.CharacterSelection
             {
                 characterSelected[index] = true;
                 characterObjects[index].GetComponent<Image>().enabled = true;
-            } 
+            }
+            TurnGreyCheck();
         }
 
         private void StartGame()
@@ -47,7 +49,7 @@ namespace TBT.Gameplay.CharacterSelection
                 for (int i = 0; i < 5; i++)
                 {
                     if (characterSelected[i])
-                    {
+                    { 
                         carriage.AddCharacterPrefab(characterPrefabs[i]);
                     }
                 }
@@ -67,6 +69,29 @@ namespace TBT.Gameplay.CharacterSelection
                 }
             }
             return currentlySelectedCount == 3;
+        }
+
+        private void TurnGreyCheck()
+        {
+            if (CheckListCompleted())
+            {
+                for (int i = 0; i < characterButtons.Length; i++)
+                {
+                    if (!characterSelected[i])
+                    {
+                        characterButtons[i].gameObject.GetComponent<Image>().color = Color.grey;
+                    }
+                }
+                startButton.gameObject.GetComponent<Image>().color = Color.white;
+            }
+            else
+            {
+                for (int i = 0; i < characterButtons.Length; i++)
+                {
+                        characterButtons[i].gameObject.GetComponent<Image>().color = Color.white;
+                }
+                startButton.gameObject.GetComponent<Image>().color = Color.grey;
+            }
         }
     }
 }

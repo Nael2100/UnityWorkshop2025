@@ -1,13 +1,12 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 {
-    public class ShortRangeRobot : EnemyClass
+    public class FlyingRobot : EnemyClass
     {
         [SerializeField] private AnimationCurve attackAnimationCurve;
-        private float attackAnimationDuration = 1f;
+        private float attackAnimationDuration = 0.3f;
         public override void Act(float timer)
         {
             base.Act(timer);
@@ -78,6 +77,4 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             }
         }
     }
-    
-    
 }
