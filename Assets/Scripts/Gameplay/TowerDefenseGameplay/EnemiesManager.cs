@@ -81,5 +81,21 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         {
             data = newData;
         }
+
+        public void AllEnemiesActivateCollider()
+        {
+            foreach (EnemyClass enemy in enemies)
+            {
+                enemy.EnableCollider();
+            }
+        }
+
+        public void AllEnemiesDeactivateCollider()
+        {
+            foreach (EnemyClass enemy in enemies)
+            {
+                enemy.DisableCollider();
+            }
+        }
     }
 }
