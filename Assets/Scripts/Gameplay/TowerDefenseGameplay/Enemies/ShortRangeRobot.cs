@@ -44,7 +44,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         private void Attack()
         {
             isDoingAction = true;
-            boxCollider.enabled = true;
+            damageCollider.enabled = true;
             StartCoroutine(AttackAnimation());
         }
 
@@ -62,7 +62,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 
             transform.position = basePos;
             isDoingAction = false;
-            boxCollider.enabled = false;
+            damageCollider.enabled = false;
         }
 
         private void Move()

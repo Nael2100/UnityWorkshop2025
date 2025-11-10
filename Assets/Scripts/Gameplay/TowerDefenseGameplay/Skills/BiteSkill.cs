@@ -6,7 +6,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills
 {
     public class BiteSkill : Skill
     {
-        [SerializeField] private SkillDataScript data;
         [SerializeField] private GameObject damageZonePrefab;
         [SerializeField] private Sprite biteSprite;
 
@@ -16,10 +15,11 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills
             GameObject damageZoneObject = Instantiate(damageZonePrefab, transform);
             DamageZone damageZone = damageZoneObject.GetComponent<DamageZone>();
             damageZoneObject.GetComponent<SpriteRenderer>().sprite = biteSprite;
-            damageZoneObject.GetComponent<CircleCollider2D>().radius = data.size;
+            damageZoneObject.transform.localScale = new Vector3(data.size, data.size, 1);
             damageZoneObject.transform.position = position;
             damageZone.SetDamage(data.damages);
             StartCoroutine(DamageLifeTime(damageZoneObject));
+            SkillPlayedEvent();
         }
 
         private IEnumerator DamageLifeTime(GameObject objectToDestroy)

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Numerics;
 using TBT.Core.Data.EnemyData;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Vector3 = UnityEngine.Vector3;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 {
@@ -16,12 +18,15 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         protected Carriage carriage;
         protected bool isDoingAction ;
         [SerializeField] protected EnemyDataScript data;
-        [SerializeField] protected BoxCollider2D boxCollider;
+        [SerializeField] protected BoxCollider2D damageCollider;
+        [SerializeField] private SpriteRenderer damageRenderer;
+        [SerializeField] private AnimationCurve damageAnimationCurve;
+        private float damageAnimationCurveDuration = 0.5f;
 
         private void OnEnable()
         {
             SetUpData();
-            boxCollider.enabled = false;
+            damageCollider.enabled = false;
         }
 
         public virtual void Act(float timer)
@@ -46,7 +51,25 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         public virtual void TakeDamage(float damage)
         {
             health -= damage;
+            StartCoroutine(TakeDamageAnimation());
             CheckStillAlive();
+        }
+        
+        IEnumerator TakeDamageAnimation()
+        {
+            damageRenderer.color = Color.red;
+            float elapsedTime = 0;
+            Vector3 basePos = gameObject.transform.position;
+            while (elapsedTime < damageAnimationCurveDuration)
+            {
+                float addedPos = damageAnimationCurve.Evaluate(elapsedTime);
+                transform.position = basePos+ Vector3.left * addedPos;
+                damageCollider.offset = Vector3.right * addedPos;
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            transform.position = basePos;
+            damageRenderer.color = Color.white;
         }
 
         private void CheckStillAlive()
@@ -60,6 +83,16 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         protected virtual void Dying()
         {
             enemyIsActive = false;
+        }
+
+        public void EnableCollider()
+        {
+            damageCollider.enabled = true;
+        }
+
+        public void DisableCollider()
+        {
+            damageCollider.enabled = false;
         }
     }
 }
