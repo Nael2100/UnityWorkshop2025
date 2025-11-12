@@ -1,8 +1,7 @@
 using System.Collections;
-using TBT.Core.Data.SkillsData;
 using UnityEngine;
 
-namespace TBT.Gameplay.TowerDefenseGameplay.Skills
+namespace TBT.Gameplay.TowerDefenseGameplay.Skills.IzheSkills
 {
     public class BiteSkill : Skill
     {
