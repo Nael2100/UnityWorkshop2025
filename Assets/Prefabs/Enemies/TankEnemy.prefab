@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1988969186561969564}
   - component: {fileID: 578670353375684571}
   - component: {fileID: 8964494570251541757}
+  - component: {fileID: 4397757624387784671}
   m_Layer: 0
   m_Name: TankEnemy
   m_TagString: Untagged
@@ -84,6 +85,63 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  attackAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.79794973
+      value: 0.9984077
+      inSlope: 1.499973
+      outSlope: 1.499973
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.000002
+      value: 0.0000009080395
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  pullingAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.004303
+      value: 0.4968109
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!212 &-1988969186561969564
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -131,7 +189,7 @@ SpriteRenderer:
   m_SortingLayerID: -815706945
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 421780fb74d48e0429c4d1f6ca91b2c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f78f4e7b4ebbaf848b862709e6700867, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -176,7 +234,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -186,7 +244,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 4.6, y: 3.4}
   m_EdgeRadius: 0
 --- !u!50 &8964494570251541757
 Rigidbody2D:
@@ -215,3 +273,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4397757624387784671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5074396843630766843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff0aef474814d3380c960eab9674353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Enemies.EnemyInterface
+  enemyComponent: {fileID: 858824289533282329}

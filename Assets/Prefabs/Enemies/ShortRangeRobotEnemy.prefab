@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98828980ca8049538a22acbf1e61cfdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Enemies.ShortRangeRobot
+  enemyIsActive: 0
   data: {fileID: 11400000, guid: c8930656c907bc04e8a59ef0eff8e988, type: 2}
   damageCollider: {fileID: 3001404413876650395}
   damageRenderer: {fileID: 774748855906075188}
@@ -177,7 +178,7 @@ SpriteRenderer:
   m_SortingLayerID: -815706945
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 55f4742c28b53854e9a0236165520cc1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca32bb062e883ee44bfa0e84e9217fc2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -222,7 +223,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -232,7 +233,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.89, y: 3.33}
+  m_Size: {x: 3.5, y: 2.8}
   m_EdgeRadius: 0
 --- !u!50 &5591229161170183992
 Rigidbody2D:
