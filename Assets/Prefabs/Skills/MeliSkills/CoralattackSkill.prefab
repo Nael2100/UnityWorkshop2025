@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4625136245719338731}
   - component: {fileID: -952868315852355939}
-  - component: {fileID: 4409776190576331482}
-  - component: {fileID: 7847052875232587083}
+  - component: {fileID: 4227547956351704546}
+  - component: {fileID: 927239927455758167}
   m_Layer: 3
-  m_Name: TestSkill 1
+  m_Name: CoralattackSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &4409776190576331482
+--- !u!114 &4227547956351704546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,8 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ddfb265e1341438b4fb29623a1aede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.SkillInterface
-  skillComponent: {fileID: 7847052875232587083}
---- !u!114 &7847052875232587083
+  skillComponent: {fileID: 927239927455758167}
+--- !u!114 &927239927455758167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,13 +93,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 970472354525572517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eccaf97976a56340a229a1546433798, type: 3}
+  m_Script: {fileID: 11500000, guid: bf84aeac97dd72e40b47dd158a5d56f2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Skills.TestSkill
-  data: {fileID: 0}
-  needsClick: 0
+  m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Skills.MeliSkills.CoralattackSkill
+  data: {fileID: 11400000, guid: b84453da1fd105f4f8b6cbe0ab18eda7, type: 2}
+  needsClick: 1
   rangeCollider2D: {fileID: -952868315852355939}
   areaCursor: {fileID: 5837734822509230676}
+  damageZonePrefab: {fileID: 7650741622790034829, guid: 2ad36051d9419ca4d96d6e2c37208e77, type: 3}
+  coralattackSprite: {fileID: 21300000, guid: 40fbecfbecb7c6346854cde26297bf6e, type: 3}
 --- !u!1 &5837734822509230676
 GameObject:
   m_ObjectHideFlags: 0

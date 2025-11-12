@@ -12,5 +12,6 @@ namespace TBT.Core.Data.SkillsData
         public Sprite sprite;
         public int ressourcesCost;
         public float duration;
+        public float heal;
     }
 }

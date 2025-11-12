@@ -16,6 +16,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         public float currentHealth {get; private set;}
         public int maxRessources {get; private set;}
         public int currentRessources {get; private set;}
+        
         private int currentCharacterPlayingIndex = -1;
         private List<Character> characters = new List<Character>();
         
@@ -54,6 +55,21 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             OnHealthChanged?.Invoke(currentHealth, maxHealth);
             StartCoroutine(TakeDamageAnimation());
             CheckStillAlive();
+        }
+
+        public void Heal(float heal)
+        {
+            if (currentHealth + heal > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            else
+            {
+                currentHealth += heal;
+            }
+            
+            OnHealthChanged?.Invoke(currentHealth, maxHealth);
+            Debug.Log("vive la vie ");
         }
 
         private void CheckStillAlive()
