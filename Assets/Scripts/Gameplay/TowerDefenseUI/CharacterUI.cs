@@ -64,6 +64,8 @@ namespace TBT.Gameplay.TowerDefenseUI
 
         IEnumerator EnteringAnimation()
         {
+            bottomBar.anchoredPosition = new Vector2(0, -200);
+            icon.anchoredPosition = new Vector2(400, 0);
             float speed= 300f;
             while (bottomBar.anchoredPosition.y < 0)
             {
@@ -79,6 +81,8 @@ namespace TBT.Gameplay.TowerDefenseUI
         }
         IEnumerator ExitAnimation()
         {
+            bottomBar.anchoredPosition = new Vector2(0, 0);
+            icon.anchoredPosition = new Vector2(0, 0);
             float speed = 500f;
             while (icon.anchoredPosition.x <400f)
             {
