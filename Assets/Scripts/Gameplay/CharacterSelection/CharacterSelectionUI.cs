@@ -50,7 +50,7 @@ namespace TBT.Gameplay.CharacterSelection
                 {
                     if (characterSelected[i])
                     { 
-                        carriage.AddCharacterPrefab(characterPrefabs[i]);
+                        carriage.AddCharacterPrefab(characterPrefabs[i],i);
                     }
                 }
                 carriage.SetUpCharacters();

@@ -24,7 +24,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private int currentRound = 0;
         private int currentWave = 0;
         private int maxWaves;
-
+        private bool finalFight;
         private void Awake()
         {
             if (Instance == null)
@@ -41,6 +41,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private void OnEnable()
         {
             gameModeManager.EnterTowerDefenseModeEvent += StartFight;
+            gameModeManager.EnterTowerDefenseModeFinalEvent += StartFinalFight;
             enemiesManager.EnemiesTurnEnded += EndEnemiesTurn;
             playerCarriage.Dying += EndFightByDeath;
             playerTurnPanel.SetActive(playerTurn);
@@ -71,14 +72,21 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             gameModeManager.EndGameMode();
         }
 
-        public void StartFight()
+        private void StartFight()
         {
             currentRound += 1;
             currentWave =1;
             maxWaves = Random.Range(towerDefenseData.minWaves,towerDefenseData.maxWaves);
-            enemiesManager.SpawnEnemies(currentRound,currentWave);
+            enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
             PlayEnemiesTurn();
         }
+
+        private void StartFinalFight()
+        {
+            finalFight = true;
+            StartFight();
+        }
+
         public void PlayPlayerTurn()
         {
             if (enemiesManager.AllEnemiesDead())
@@ -90,7 +98,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                 else
                 {
                     currentWave += 1;
-                    enemiesManager.SpawnEnemies(currentRound,currentWave);
+                    enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
                 }
             }
             playerTurn = true;
@@ -166,6 +174,11 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             {
                 enemiesManager.AllEnemiesDeactivateCollider();
             }
+        }
+
+        public void SpawnAdditionalEnnemies(int numberOfEnemies)
+        {
+            enemiesManager.SpawnAdditionalEnemies(numberOfEnemies);
         }
     }
 }

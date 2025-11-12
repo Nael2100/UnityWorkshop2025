@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.58285, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,14 +106,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.MapPoint
   followers: []
   predecessors: []
-  availableEncounterColor: {r: 0.029804826, g: 1, b: 0, a: 1}
-  availableTowerDefenseColor: {r: 1, g: 0.32126835, b: 0, a: 1}
-  availableEndColor: {r: 1, g: 0.82819295, b: 0, a: 1}
-  towerDefenseColor: {r: 1, g: 0.7343877, b: 0.6084906, a: 1}
-  encounterColor: {r: 0.6481872, g: 1, b: 0.6367924, a: 1}
-  unavailableColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
-  startColor: {r: 1, g: 0.58360845, b: 0, a: 1}
-  endColor: {r: 1, g: 0, b: 0.79941416, a: 1}
+  availableEncounterSprite: {fileID: 21300000, guid: f8af6869ffc60c34eac058f369e4739d, type: 3}
+  availableTowerDefenseSprite: {fileID: 21300000, guid: ff0ad79052431f146994619eb7af388d, type: 3}
+  availableEndSprite: {fileID: 21300000, guid: 7cdcc0b08e8cd6945a0f451b38ba3fdf, type: 3}
+  towerDefenseSprite: {fileID: 21300000, guid: 161699fb1b08a9045ba3ec4abaa2e7b7, type: 3}
+  encounterSprite: {fileID: 21300000, guid: 57b0d4d0aecbd944ea8ce351a55c69d3, type: 3}
+  unavailableEncounterSprite: {fileID: 21300000, guid: 4d7679a5b40599e438b734870a03a6fb, type: 3}
+  unavailableTowerDefenseSprite: {fileID: 21300000, guid: dfb38ed27f2ecd440b151f3b9d31be8a, type: 3}
+  startSprite: {fileID: 21300000, guid: 7034b86e29dd5fd43ad89e8dbffa13ea, type: 3}
+  endSprite: {fileID: 21300000, guid: 7cdcc0b08e8cd6945a0f451b38ba3fdf, type: 3}
 --- !u!61 &3385227361293981422
 BoxCollider2D:
   m_ObjectHideFlags: 0

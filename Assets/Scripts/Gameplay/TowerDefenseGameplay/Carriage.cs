@@ -19,6 +19,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         
         private int currentCharacterPlayingIndex = -1;
         private List<Character> characters = new List<Character>();
+        public bool[] charactersOnCarriage {get; private set;} = new bool[5];
         
         public event Action Dying;
         public event Action<float, float> OnHealthChanged;
@@ -114,9 +115,10 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             NotEnoughRessources?.Invoke();
         }
 
-        public void AddCharacterPrefab(GameObject prefab)
+        public void AddCharacterPrefab(GameObject prefab, int index)
         {
             charactersPrefabs.Add(prefab);
+            charactersOnCarriage[index] = true;
         }
 
         public void SetUpCharacters()

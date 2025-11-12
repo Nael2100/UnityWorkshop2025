@@ -76,5 +76,11 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
                 carriage.TakeDamage(damage);
             }
         }
+
+        protected override void Dying()
+        {
+            base.Dying();
+            Destroy(gameObject);
+        }
     }
 }
