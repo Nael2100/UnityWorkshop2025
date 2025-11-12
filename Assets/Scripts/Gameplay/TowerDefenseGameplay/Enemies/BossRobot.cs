@@ -1,13 +1,13 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 {
-    public class ShortRangeRobot : EnemyClass
+    public class BossRobot : EnemyClass
     {
         [SerializeField] private AnimationCurve attackAnimationCurve;
         private float attackAnimationDuration = 1f;
+        [SerializeField] private int ennemiesToSpawn;
         public override void Act(float timer)
         {
             base.Act(timer);
@@ -23,7 +23,16 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
                 {
                     if (Vector2.Distance(gameObject.transform.position, carriage.gameObject.transform.position) < range)
                     {
-                        Attack();
+                        int choice = Random.Range(0, 3);
+                        if (choice == 0)
+                        {
+                            SpawnEnemies();
+                        }
+                        else
+                        {
+                            Attack();
+                        }
+                        
                     }
                     else
                     {
@@ -50,6 +59,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 
         IEnumerator AttackAnimation()
         {
+            
             float elapsedTime = 0;
             Vector3 basePos = gameObject.transform.position;
             while (elapsedTime < attackAnimationDuration)
@@ -60,6 +70,30 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
                 yield return null;
             }
 
+            transform.position = basePos;
+            isDoingAction = false;
+            damageCollider.enabled = false;
+        }
+
+        private void SpawnEnemies()
+        {
+            isDoingAction = true;
+            StartCoroutine(SpawningAnimation());
+        }
+        
+        IEnumerator SpawningAnimation()
+        {
+            damageCollider.enabled = false;
+            float elapsedTime = 0;
+            Vector3 basePos = gameObject.transform.position;
+            while (elapsedTime < attackAnimationDuration)
+            {
+                float addedPos = attackAnimationCurve.Evaluate(elapsedTime);
+                transform.position = basePos+ Vector3.up * addedPos;
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            TowerDefenseManager.Instance.SpawnAdditionalEnnemies(ennemiesToSpawn);
             transform.position = basePos;
             isDoingAction = false;
             damageCollider.enabled = false;
@@ -84,6 +118,4 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             Destroy(gameObject);
         }
     }
-    
-    
 }

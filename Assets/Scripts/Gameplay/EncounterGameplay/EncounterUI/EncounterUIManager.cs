@@ -1,6 +1,7 @@
 using System;
 using TBT.Core;
 using TBT.Core.Data.EncountersData;
+using TBT.Gameplay.TowerDefenseGameplay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,7 +16,7 @@ namespace TBT.Gameplay.EncounterGameplay.EncounterUI
         [SerializeField] private Button[] buttonChoices = new Button[3];
         [SerializeField] private Button closeButton;
         [SerializeField] private Image iconImage;
-        [SerializeField] private Image backgroundImage;
+        [SerializeField] private Image[] charactersInBackground;
         public event Action<EncounterEffects> answerSelected;
         public event Action encounterCompleted;
         private EncounterEffects[] currentEffects;
@@ -37,7 +38,6 @@ namespace TBT.Gameplay.EncounterGameplay.EncounterUI
             titleText.text = data.title;
             descriptionText.text = data.text;
             iconImage.sprite = data.icon;
-            backgroundImage.sprite = data.background;
             currentCompletionText = data.resolvedText;
             for (int i = 0; i < data.answers.Length; i++)
             {
@@ -45,7 +45,7 @@ namespace TBT.Gameplay.EncounterGameplay.EncounterUI
                 currentEffects[i] = data.effects[i];
             }
         }
-
+        
         public void Button1Clicked()
         {
             OnButtonClicked(currentEffects[0]);
@@ -76,6 +76,13 @@ namespace TBT.Gameplay.EncounterGameplay.EncounterUI
         {
             encounterCompleted?.Invoke();
         }
-        
+
+        public void SetUpBackground(Carriage carriage)
+        {
+            for (int i = 0; i < carriage.charactersOnCarriage.Length; i++)
+            {
+                charactersInBackground[i].enabled = carriage.charactersOnCarriage[i];
+            }
+        }
     }
 }

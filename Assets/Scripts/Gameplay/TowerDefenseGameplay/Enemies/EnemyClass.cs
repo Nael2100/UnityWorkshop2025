@@ -4,6 +4,7 @@ using System.Numerics;
 using TBT.Core.Data.EnemyData;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
@@ -23,6 +24,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         [SerializeField] private AnimationCurve damageAnimationCurve;
         private float damageAnimationCurveDuration = 0.5f;
 
+        public event Action<EnemyClass> OnDying; 
+
         private void OnEnable()
         {
             SetUpData();
@@ -31,6 +34,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 
         public virtual void Act(float timer)
         {
+            RotateTowardsCarriage();
             enemyIsActive = true;
         }
 
@@ -46,6 +50,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         public void SetCarriage(Carriage carriage)
         {
             this.carriage = carriage;
+            RotateTowardsCarriage();
         }
 
         public virtual void TakeDamage(float damage)
@@ -83,6 +88,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         protected virtual void Dying()
         {
             enemyIsActive = false;
+            OnDying?.Invoke(this);
         }
 
         public virtual void EnableCollider()
@@ -93,6 +99,14 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         public virtual void DisableCollider()
         {
             damageCollider.enabled = false;
+        }
+
+        private void RotateTowardsCarriage()
+        {
+            Vector3 direction = carriage.gameObject.transform.position - transform.position;
+            direction.z = 0f;
+            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
+            transform.rotation = rotation;
         }
     }
 }

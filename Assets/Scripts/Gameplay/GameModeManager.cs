@@ -18,7 +18,7 @@ namespace TBT.Gameplay
         
         private Camera mainCamera;
 
-        public event Action EnterTowerDefenseModeEvent, EnterEncounterModeEvent, EnterCardsModeEvent; 
+        public event Action EnterTowerDefenseModeEvent, EnterTowerDefenseModeFinalEvent, EnterEncounterModeEvent, EnterCardsModeEvent; 
 
         private void Start()
         {
@@ -31,6 +31,12 @@ namespace TBT.Gameplay
         {
             EnterModeProcess(towerDefensePosRef,towerDefenseCanvas);
             EnterTowerDefenseModeEvent?.Invoke();
+        }
+
+        public void EnterTowerDefenseModeFinal()
+        {
+            EnterModeProcess(towerDefensePosRef,towerDefenseCanvas);
+            EnterTowerDefenseModeFinalEvent?.Invoke();
         }
 
         public void EnterEncounterMode()

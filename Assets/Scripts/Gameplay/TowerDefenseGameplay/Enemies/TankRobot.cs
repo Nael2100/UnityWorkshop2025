@@ -69,5 +69,11 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         {
             transform.position = Vector3.MoveTowards(transform.position, carriage.transform.position, Time.deltaTime * speed);
         }
+
+        protected override void Dying()
+        {
+            base.Dying();
+            Destroy(gameObject);
+        }
     }
 }
