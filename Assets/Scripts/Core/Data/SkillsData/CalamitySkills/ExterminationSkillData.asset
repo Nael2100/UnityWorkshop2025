@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: ExterminationSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: Strong Blow
+  name: Extermination
   damages: 3
   size: 2
   range: 2
   sprite: {fileID: 0}
-  ressourcesCost: 1
+  ressourcesCost: 3
   duration: 2
   heal: 0
