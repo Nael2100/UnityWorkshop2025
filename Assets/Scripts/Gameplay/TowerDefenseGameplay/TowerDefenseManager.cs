@@ -10,10 +10,12 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 {
     public class TowerDefenseManager : MonoBehaviour
     {
+        public static TowerDefenseManager Instance;
+        
         private bool playerTurn = false;
         [SerializeField] private TowerDefenseData towerDefenseData;
         [SerializeField] private GameObject playerTurnPanel;
-        [SerializeField] private Carriage playerCarriage;
+        [SerializeField] public Carriage playerCarriage;
         [SerializeField] private CharacterUI characterUI;
         [SerializeField] private GameModeManager gameModeManager;
         [SerializeField] private EnemiesManager enemiesManager;
@@ -22,7 +24,19 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private int currentRound = 0;
         private int currentWave = 0;
         private int maxWaves;
-        
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else if (Instance != this)
+            {
+                Destroy(this);
+            }
+        }
+
 
         private void OnEnable()
         {
