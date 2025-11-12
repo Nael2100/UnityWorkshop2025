@@ -46,4 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Character
   data: {fileID: 11400000, guid: ee9cad0af7a5ff046bebd16a0e7102a9, type: 2}
   skillsPrefabs:
-  - {fileID: 970472354525572517, guid: 4ba2088028a515f4b91a6f259b24738f, type: 3}
+  - {fileID: 3741149922998784040, guid: 69d98a4663e568b4d8a43664d67d26a1, type: 3}
+  - {fileID: 7651742747921372158, guid: 04a083c1039634b428e5547a7fbb7a23, type: 3}
+  - {fileID: 990087203115225894, guid: a5fbaa9c88475b147a92e9626b3c8747, type: 3}

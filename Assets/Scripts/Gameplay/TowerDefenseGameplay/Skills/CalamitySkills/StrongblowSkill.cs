@@ -1,19 +1,30 @@
+using System.Collections;
 using UnityEngine;
 
-namespace TBT.Gameplay
+namespace TBT.Gameplay.TowerDefenseGameplay.Skills.CalamitySkills
 {
-    public class StrongblowSkill : MonoBehaviour
+    public class StrongblowSkill : Skill
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        [SerializeField] private GameObject damageZonePrefab;
+        [SerializeField] private Sprite strongblowSprite;
+
+        public override void LaunchSkill(Vector3 position)
         {
-        
+            base.LaunchSkill(position);
+            GameObject damageZoneObject = Instantiate(damageZonePrefab, transform);
+            DamageZone damageZone = damageZoneObject.GetComponent<DamageZone>();
+            damageZoneObject.GetComponent<SpriteRenderer>().sprite = strongblowSprite;
+            damageZoneObject.transform.localScale = new Vector3(data.size, data.size, 1);
+            damageZoneObject.transform.position = position;
+            damageZone.SetDamage(data.damages);
+            StartCoroutine(DamageLifeTime(damageZoneObject));
+            SkillPlayedEvent();
         }
 
-        // Update is called once per frame
-        void Update()
+        private IEnumerator DamageLifeTime(GameObject objectToDestroy)
         {
-        
+            yield return new WaitForSeconds(data.duration);
+            Destroy(objectToDestroy);
         }
     }
 }

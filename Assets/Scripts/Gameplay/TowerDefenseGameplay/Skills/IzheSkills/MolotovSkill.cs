@@ -14,7 +14,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.IzheSkills
             GameObject damageZoneObject = Instantiate(damageZonePrefab, transform);
             DamageZone damageZone = damageZoneObject.GetComponent<DamageZone>();
             damageZoneObject.GetComponent<SpriteRenderer>().sprite = molotovSprite;
-            damageZone.transform.localScale = new Vector3(data.size, data.size, 1);
+            damageZoneObject.transform.localScale = new Vector3(data.size, data.size, 1);
             damageZoneObject.transform.position = position;
             damageZone.SetDamage(data.damages);
             StartCoroutine(DamageLifeTime(damageZoneObject));

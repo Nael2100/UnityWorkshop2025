@@ -1,19 +1,33 @@
+using System.Collections;
 using UnityEngine;
 
-namespace TBT.Gameplay
+namespace TBT.Gameplay.TowerDefenseGameplay.Skills.LarkSkills
 {
-    public class PunkrecitalSkill : MonoBehaviour
+    public class PunkrecitalSkill : Skill
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
+        [SerializeField] private GameObject healZonePrefab;
+        [SerializeField] private Sprite healSprite;
         
+        public override void ApplyEffects()
+        {
+            base.ApplyEffects();
+            TowerDefenseManager.Instance.playerCarriage.Heal(data.heal);
+            StartCoroutine(ApplyEffectsDelay());
         }
-
-        // Update is called once per frame
-        void Update()
+        IEnumerator ApplyEffectsDelay()
         {
-        
+            yield return null;
+            GameObject healZoneObject = Instantiate(healZonePrefab, transform);
+            healZoneObject.GetComponent<SpriteRenderer>().sprite = healSprite;
+            healZoneObject.transform.localScale = new Vector3(data.size, data.size, 1);
+            healZoneObject.transform.position = transform.position;
+            StartCoroutine(HealLifeTime(healZoneObject));
+        }
+        private IEnumerator HealLifeTime(GameObject objectToDestroy)
+        {
+            yield return new WaitForSeconds(data.duration);
+            Destroy(objectToDestroy);
+            SkillPlayedEvent();
         }
     }
 }
