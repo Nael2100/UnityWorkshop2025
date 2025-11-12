@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 4f11d2e3e58deec4a832c914ceb3b2e2
+guid: d330bb0331a0bea4a82c60604a202437
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9139441849965216262
-    second: Character_Selection_Izhe_Asset_0
+      213: -486892343197008727
+    second: Character_Selection_Calamity_Asset 1_0
+  - first:
+      213: 1734301326656809775
+    second: Character_Selection_Calamity_Asset 1_1
+  - first:
+      213: -8052908054320070849
+    second: Character_Selection_Calamity_Asset 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_Selection_Izhe_Asset_0
+      name: Character_Selection_Calamity_Asset 1_0
       rect:
         serializedVersion: 2
-        x: 118
-        y: 175
-        width: 275
-        height: 631
+        x: 51
+        y: 426
+        width: 6
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 602048090f1d5de70800000000000000
-      internalID: 9139441849965216262
+      spriteID: 9ac72e75ef53e39f0800000000000000
+      internalID: -486892343197008727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Selection_Calamity_Asset 1_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 159
+        width: 396
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b2edc2ed9711810800000000000000
+      internalID: 1734301326656809775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Selection_Calamity_Asset 1_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 198
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3fbe5d6ac25e3090800000000000000
+      internalID: -8052908054320070849
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Character_Selection_Izhe_Asset_0: 9139441849965216262
+      Character_Selection_Calamity_Asset 1_0: -486892343197008727
+      Character_Selection_Calamity_Asset 1_1: 1734301326656809775
+      Character_Selection_Calamity_Asset 1_2: -8052908054320070849
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
