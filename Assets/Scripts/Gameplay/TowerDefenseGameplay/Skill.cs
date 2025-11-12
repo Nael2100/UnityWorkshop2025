@@ -14,21 +14,20 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         [SerializeField] protected SkillDataScript data;
         public Sprite sprite { get; private set; }
         public string name { get; private set; } = "nom";
-        [SerializeField] private bool needsClick;
+        [SerializeField] private int needsClick;
         public event Action SkillPlayed;
         [SerializeField] private CircleCollider2D rangeCollider2D; 
         private float range;
         [SerializeField] private GameObject areaCursor;
-        private bool canLaunch;
+        protected bool canLaunch;
         private float damage;
         private float size;
-   
+
+        private int clicksLefts;
         private Camera cam;
         public int ressourcesCost { get; private set; }
         public event Action<bool> EnemiesNeedToCollide;
         
-        
-
         private void OnEnable()
         {
             cam = Camera.main;
@@ -43,12 +42,15 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             rangeCollider2D.radius = range;
             rangeCollider2D.enabled = false;
         }
-
-        public void Play()
+        public void Play(bool firstShot = true)
         {
-
-            if (needsClick)
+            if (firstShot)
             {
+               clicksLefts = needsClick; 
+            }
+            if (clicksLefts>0)
+            {
+                clicksLefts--;
                 areaCursor.SetActive(true);
                 canLaunch = true;
                 rangeCollider2D.enabled = true;
@@ -99,7 +101,17 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 
         protected void SkillPlayedEvent()
         {
-            SkillPlayed?.Invoke();
+            Debug.Log(clicksLefts);
+            if (clicksLefts == 0)
+            {
+                SkillPlayed?.Invoke();
+            }
+            else
+            {
+                Play(false);
+            }
+            
+            
         }
 
         protected void EnemiesNeedToBeDamagedEvent(bool isDamaged)

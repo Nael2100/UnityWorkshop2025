@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Skills.TestSkill
   data: {fileID: 11400000, guid: c928c36877e930340bde86cf108d84ba, type: 2}
-  needsClick: 0
+  needsClick: 2
   rangeCollider2D: {fileID: -952868315852355939}
   areaCursor: {fileID: 5837734822509230676}
 --- !u!114 &4409776190576331482

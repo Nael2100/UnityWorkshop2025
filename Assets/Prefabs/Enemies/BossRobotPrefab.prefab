@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3384205909356806268
+--- !u!1 &5074396843630766843
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6852252044869146590}
-  - component: {fileID: 240192577010588566}
+  - component: {fileID: 1015434538207788508}
+  - component: {fileID: 6713718995066652200}
   m_Layer: 0
-  m_Name: MeliCharacterPrefab
+  m_Name: BossRobotPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6852252044869146590
+--- !u!4 &1015434538207788508
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3384205909356806268}
+  m_GameObject: {fileID: 5074396843630766843}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,20 +32,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &240192577010588566
+--- !u!114 &6713718995066652200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3384205909356806268}
+  m_GameObject: {fileID: 5074396843630766843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46428cc36cd948bbb41797c812fffff3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bb5d0ec174e4a0e902e7c4007bb64bf, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Character
-  data: {fileID: 11400000, guid: ee9cad0af7a5ff046bebd16a0e7102a9, type: 2}
-  skillsPrefabs:
-  - {fileID: 970472354525572517, guid: 1ee75cd88377d6b45b30356b194842d4, type: 3}
-  - {fileID: 970472354525572517, guid: 4a19899da69fd794aac2c8a2896549e0, type: 3}
-  - {fileID: 970472354525572517, guid: 6a0214854cf5a284fb9bafd9ea86e5d5, type: 3}
+  m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Enemies.TestEnemy
+  enemyIsActive: 0
+  data: {fileID: 0}
+  damageCollider: {fileID: 0}
+  damageRenderer: {fileID: 0}
+  damageAnimationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
