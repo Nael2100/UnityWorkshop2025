@@ -30,7 +30,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                 currentActingEnemy.Act(timer);
                 StartCoroutine(WaitForTurn(currentActingEnemy));
             }
-
         }
 
         void Start()

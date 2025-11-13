@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TBT.Core;
 using TBT.Core.Data.TowerDefenseData;
 using TBT.Gameplay.TowerDefenseUI;
@@ -76,6 +77,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         {
             currentRound += 1;
             currentWave =1;
+            playerCarriage.ResetPosition();
             maxWaves = Random.Range(towerDefenseData.minWaves,towerDefenseData.maxWaves);
             enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
             PlayEnemiesTurn();

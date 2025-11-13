@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using TBT.Gameplay.MapGameplay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +9,9 @@ namespace TBT.Gameplay
 {
     public class GameModeManager : MonoBehaviour
     {
+        [SerializeField] private GameObject clicksBlock;
+        [SerializeField] private RectTransform rightPanel;
+        [SerializeField] private RectTransform leftPanel;
         [SerializeField] private GameObject towerDefensePosRef;
         [SerializeField] private GameObject mapPosRef;
         [SerializeField] private GameObject encounterPosRef;
@@ -15,6 +20,8 @@ namespace TBT.Gameplay
         [SerializeField] private Canvas towerDefenseCanvas;
         [SerializeField] private Canvas encounterCanvas;
         [SerializeField] private Canvas characterSelectionCanvas;
+        [SerializeField] private Canvas transitionCanvas;
+        private List<Canvas> notPermaCanvas = new List<Canvas>();
         
         private Camera mainCamera;
 
@@ -22,38 +29,41 @@ namespace TBT.Gameplay
 
         private void Start()
         {
+            notPermaCanvas.Add(towerDefenseCanvas);
+            notPermaCanvas.Add(encounterCanvas);
+            notPermaCanvas.Add(characterSelectionCanvas);
             mainCamera = Camera.main;
+            clicksBlock.SetActive(false);
+            leftPanel.anchoredPosition = new Vector2(-960,0);
+            rightPanel.anchoredPosition = new Vector2(960,0);
             EnterModeProcess(mapPosRef, characterSelectionCanvas);
             permanentCanvas.enabled = false;
         }
 
         public void EnterTowerDefenseMode()
         {
-            EnterModeProcess(towerDefensePosRef,towerDefenseCanvas);
-            EnterTowerDefenseModeEvent?.Invoke();
+            StartCoroutine(EnterModeProcess(towerDefensePosRef,towerDefenseCanvas, EnterTowerDefenseModeEvent));
         }
 
         public void EnterTowerDefenseModeFinal()
         {
-            EnterModeProcess(towerDefensePosRef,towerDefenseCanvas);
-            EnterTowerDefenseModeFinalEvent?.Invoke();
+            StartCoroutine(EnterModeProcess(towerDefensePosRef,towerDefenseCanvas, EnterTowerDefenseModeFinalEvent));
         }
 
         public void EnterEncounterMode()
         {
-            EnterModeProcess(encounterPosRef, encounterCanvas);
-            EnterEncounterModeEvent?.Invoke();
+            StartCoroutine(EnterModeProcess(encounterPosRef, encounterCanvas, EnterEncounterModeEvent)); 
         }
 
         public void EnterMapMode()
         {
-            EnterModeProcess(mapPosRef,null);
+
+            StartCoroutine(EnterModeProcess(mapPosRef, null));
         }
 
         public void EnterCardsMode()
         {
-            EnterModeProcess(cardsPosRef,null);
-            EnterCardsModeEvent?.Invoke();
+            StartCoroutine(EnterModeProcess(cardsPosRef, null, EnterCardsModeEvent));
         }
 
         public void EndGameMode()
@@ -66,10 +76,20 @@ namespace TBT.Gameplay
             SceneManager.LoadScene(3);
         }
 
-        private void EnterModeProcess(GameObject posRef, Canvas canvasToActivate)
+        private IEnumerator EnterModeProcess(GameObject posRef, Canvas canvasToActivate, Action action = null)
         {
+            clicksBlock.SetActive(true);
+            float speed = 1000f;
+            leftPanel.anchoredPosition = new Vector2(-960,0);
+            rightPanel.anchoredPosition = new Vector2(960,0);
+            while (leftPanel.anchoredPosition.x < 0 && rightPanel.anchoredPosition.x > 0)
+            {
+                leftPanel.anchoredPosition += new Vector2(speed * Time.deltaTime, 0);
+                rightPanel.anchoredPosition -= new Vector2(speed * Time.deltaTime, 0);
+                yield return null;
+            }
             mainCamera.transform.position = new Vector3(posRef.transform.position.x, posRef.transform.position.y, -10);
-            foreach (Canvas canva in FindObjectsOfType<Canvas>(includeInactive: true))
+            foreach (Canvas canva in notPermaCanvas)
             {
                 if (canva == canvasToActivate)
                 {
@@ -81,6 +101,20 @@ namespace TBT.Gameplay
                 }
             }
             permanentCanvas.enabled = true;
+            transitionCanvas.enabled = true;
+            while (leftPanel.anchoredPosition.x > -960 && rightPanel.anchoredPosition.x < 960)
+            {
+                leftPanel.anchoredPosition -= new Vector2(speed * Time.deltaTime, 0);
+                rightPanel.anchoredPosition += new Vector2(speed * Time.deltaTime, 0);
+                yield return null;
+            }
+            leftPanel.anchoredPosition = new Vector2(-960,0);
+            rightPanel.anchoredPosition = new Vector2(960,0);
+            clicksBlock.SetActive(false);
+            if (action != null)
+            {
+                action?.Invoke();
+            }
         }
     }
 }

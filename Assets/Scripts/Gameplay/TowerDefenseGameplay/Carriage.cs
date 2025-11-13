@@ -20,6 +20,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private List<Character> characters = new List<Character>();
         public bool[] charactersOnCarriage {get; private set;} = new bool[5];
         [SerializeField] private Sprite brokenSprite;
+        private Vector3 originalPosition;
         
         public float bonusDamage {get; private set;}
         
@@ -33,6 +34,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             currentHealth = maxHealth;
             maxRessources = carriageData.ressources;
             currentRessources = maxRessources;
+            originalPosition = transform.position;
             OnHealthChanged?.Invoke(currentHealth, maxHealth);
             OnRessourcesChanged?.Invoke(currentRessources);
         }
@@ -149,6 +151,11 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                     skill.AddBonusDamage(bonusDamage);
                 }
             }
+        }
+
+        public void ResetPosition()
+        {
+            transform.position = originalPosition;
         }
     }
 }
