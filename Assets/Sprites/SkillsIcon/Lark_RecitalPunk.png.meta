@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 274d185adee577c4ab0b8ad72760a3ab
+guid: 04d6cbb73010a8040a55e0c7c21ecc02
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4944421882273082470
-    second: SlashGuitare_0
+      213: 558430765706527698
+    second: Lark_RecitalPunk_0
+  - first:
+      213: 7413987313798205652
+    second: Lark_RecitalPunk_1
+  - first:
+      213: -5309201670102856128
+    second: Lark_RecitalPunk_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +78,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlashGuitare_0
+      name: Lark_RecitalPunk_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 8
-        width: 44
-        height: 49
+        x: 0
+        y: 43
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a93d177ae72e16bb0800000000000000
-      internalID: -4944421882273082470
+      spriteID: 2d3469d92d1ffb700800000000000000
+      internalID: 558430765706527698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lark_RecitalPunk_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 48
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0d1305e26c3e660800000000000000
+      internalID: 7413987313798205652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lark_RecitalPunk_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 57
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04ecb9cd53de156b0800000000000000
+      internalID: -5309201670102856128
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SlashGuitare_0: -4944421882273082470
+      Lark_RecitalPunk_0: 558430765706527698
+      Lark_RecitalPunk_1: 7413987313798205652
+      Lark_RecitalPunk_2: -5309201670102856128
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: a38f48b51b0a6c149be2d5a52884cfc3
+guid: f89cacb308824f742bf3433c50d1e1e2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6378715273444734067
-    second: Ecrasement_0
+      213: 5504566567303120164
+    second: Meli_CoralPower_Skill_0
+  - first:
+      213: -5097450999682527229
+    second: Meli_CoralPower_Skill_1
+  - first:
+      213: 2483294816513352685
+    second: Meli_CoralPower_Skill_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +78,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ecrasement_0
+      name: Meli_CoralPower_Skill_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4
-        width: 59
-        height: 57
+        x: 2
+        y: 8
+        width: 29
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d8bc7f231404a77a0800000000000000
-      internalID: -6378715273444734067
+      spriteID: 4250896e026246c40800000000000000
+      internalID: 5504566567303120164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meli_CoralPower_Skill_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 32
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30096ffb2573249b0800000000000000
+      internalID: -5097450999682527229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meli_CoralPower_Skill_2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 8
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3e8d28a7f667220800000000000000
+      internalID: 2483294816513352685
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ecrasement_0: -6378715273444734067
+      Meli_CoralPower_Skill_0: 5504566567303120164
+      Meli_CoralPower_Skill_1: -5097450999682527229
+      Meli_CoralPower_Skill_2: 2483294816513352685
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
