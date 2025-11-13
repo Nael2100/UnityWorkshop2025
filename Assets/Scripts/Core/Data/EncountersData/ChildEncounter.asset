@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2952dbde49812e8408ec4fb7b1987649, type: 3}
+  m_Name: ChildEncounter
+  m_EditorClassIdentifier: TBT.Core::TBT.Core.EncounterData
+  title: "I don\u201Dt know what to do. Help me, pretty please\u2026"
+  text: "Why won't all adults let go on my own\u2026 and the army, it makes me scared.
+    I don\u2019t want to\u2026 see those soldiers, they\u2019ll yell at me again\u2026
+    Mother, father, I miss you. Please, help me."
+  resolvedText: 'Here your reward : '
+  answers:
+  - Loneliness is a source of knowledge. Become strong on your own.
+  - Go back to your family, become strong enough to rise against the government.
+  - "Come with us, sisters don\u2019t abandon each other."
+  effects: 000000000000000000000000
+  icon: {fileID: 21300000, guid: b78d87985c005a1429fbeeb12f11fdf8, type: 3}
+  background: {fileID: 0}

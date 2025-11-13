@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2952dbde49812e8408ec4fb7b1987649, type: 3}
+  m_Name: MercenaryEncounter
+  m_EditorClassIdentifier: TBT.Core::TBT.Core.EncounterData
+  title: So, are yer helping me, or what ?
+  text: "Eh ye here ! Need quite s\u2019me help over there ! ye\u2019re mercenaries,
+    right ? My friend ca\u2019t fight anymore, and th\u2019se damn\u2019d governmental
+    robots won\u2019t let us. Don\u2019t think I\u2019ll be able to keep up\u2026"
+  resolvedText: 'Here your reward : '
+  answers:
+  - Today wounded people are tomorrow allies.
+  - We just needed some training.
+  - Mercenaries are doomed to die on battlefields, no matter the issues.
+  effects: 000000000000000000000000
+  icon: {fileID: 21300000, guid: 084b28a13a5974a488be9b03ebff4dad, type: 3}
+  background: {fileID: 0}
