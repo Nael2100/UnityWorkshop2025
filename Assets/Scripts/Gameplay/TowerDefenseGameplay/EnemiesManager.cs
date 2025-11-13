@@ -24,9 +24,13 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private float bonusSpeed;
         public void SetEnemiesMoving()
         {
-            EnemyClass currentActingEnemy = enemies[0];
-            currentActingEnemy.Act(timer);
-            StartCoroutine(WaitForTurn(currentActingEnemy));
+            if (enemies.Count > 0)
+            {            
+                EnemyClass currentActingEnemy = enemies[0];
+                currentActingEnemy.Act(timer);
+                StartCoroutine(WaitForTurn(currentActingEnemy));
+            }
+
         }
 
         void Start()

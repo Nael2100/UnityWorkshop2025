@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-namespace TBT.Gameplay.TowerDefenseGameplay.Skills.LarkSkills
+namespace TBT.Gameplay.TowerDefenseGameplay.Skills.SkillsFamilies
 {
-    public class PunkrecitalSkill : Skill
+    public class HealingSkill : Skill
     {
         [SerializeField] private GameObject healZonePrefab;
         [SerializeField] private Sprite healSprite;
@@ -26,8 +26,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.LarkSkills
         private IEnumerator HealLifeTime(GameObject objectToDestroy)
         {
             yield return new WaitForSeconds(data.duration);
-            SkillPlayedEvent();
             Destroy(objectToDestroy);
+            SkillPlayedEvent();
         }
     }
 }

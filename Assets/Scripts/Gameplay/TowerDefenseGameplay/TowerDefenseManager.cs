@@ -89,6 +89,15 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 
         public void PlayPlayerTurn()
         {
+            WaveEndCheck();
+            playerTurn = true;
+            playerTurnPanel.SetActive(true);
+            activeCharacter = playerCarriage.ReturnCharacterToPlay();
+            characterUI.Setup(activeCharacter,this);
+        }
+
+        private void WaveEndCheck()
+        {
             if (enemiesManager.AllEnemiesDead())
             {
                 if (currentWave >= maxWaves)
@@ -108,10 +117,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                     enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
                 }
             }
-            playerTurn = true;
-            playerTurnPanel.SetActive(true);
-            activeCharacter = playerCarriage.ReturnCharacterToPlay();
-            characterUI.Setup(activeCharacter,this);
         }
 
         public void PlaySkill(Skill skill)
@@ -151,6 +156,25 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 
         public void PlayEnemiesTurn()
         {
+            if (enemiesManager.AllEnemiesDead())
+            {
+                if (currentWave >= maxWaves)
+                {
+                    if (finalFight)
+                    {
+                        gameModeManager.WinGameMode();
+                    }
+                    else
+                    {
+                        EndFight();
+                    }
+                }
+                else
+                {
+                    currentWave += 1;
+                    enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
+                }
+            }
             EnemiesNeedToCollide(true);
             enemiesManager.SetEnemiesMoving();
         }

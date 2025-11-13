@@ -1,30 +1,11 @@
 using System.Collections;
+using TBT.Gameplay.TowerDefenseGameplay.Skills.SkillsFamilies;
 using UnityEngine;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Skills.LarkSkills
 {
-    public class CrushingSkill : Skill
+    public class CrushingSkill : LaunchingSkill
     {
-        [SerializeField] private GameObject damageZonePrefab;
-        [SerializeField] private Sprite crushingSprite;
 
-        public override void LaunchSkill(Vector3 position)
-        {
-            base.LaunchSkill(position);
-            GameObject damageZoneObject = Instantiate(damageZonePrefab, transform);
-            DamageZone damageZone = damageZoneObject.GetComponent<DamageZone>();
-            damageZoneObject.GetComponent<SpriteRenderer>().sprite = crushingSprite;
-            damageZoneObject.transform.localScale = new Vector3(data.size, data.size, 1);
-            damageZoneObject.transform.position = position;
-            damageZone.SetDamage(data.damages);
-            StartCoroutine(DamageLifeTime(damageZoneObject));
-        }
-
-        private IEnumerator DamageLifeTime(GameObject objectToDestroy)
-        {
-            yield return new WaitForSeconds(data.duration);
-            SkillPlayedEvent();
-            Destroy(objectToDestroy);
-        }
     }
 }
