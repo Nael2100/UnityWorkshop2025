@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ea40935aa2c244081875407d7906f9, type: 3}
   m_Name: FlyingEnemyData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.EnemyData.EnemyDataScript
-  health: 4
+  health: 6
   range: 2
-  speed: 5
-  damage: 1
+  speed: 4
+  damage: 2

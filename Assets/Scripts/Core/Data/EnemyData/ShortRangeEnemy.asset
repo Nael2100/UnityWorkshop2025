@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ShortRangeEnemy
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.EnemyData.EnemyDataScript
   health: 10
-  range: 1
-  speed: 1.5
+  range: 2
+  speed: 2
   damage: 4

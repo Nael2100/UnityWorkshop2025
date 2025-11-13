@@ -101,7 +101,7 @@ MonoBehaviour:
   rangeCollider2D: {fileID: -4861452921827364640}
   areaCursor: {fileID: 3158501482521584622}
   damageZonePrefab: {fileID: 7650741622790034829, guid: 2ad36051d9419ca4d96d6e2c37208e77, type: 3}
-  crushingSprite: {fileID: 21300000, guid: e2b2ff9a4a3dabe4995288e51233bed5, type: 3}
+  exterminationSprite: {fileID: 21300000, guid: a38f48b51b0a6c149be2d5a52884cfc3, type: 3}
 --- !u!1 &3158501482521584622
 GameObject:
   m_ObjectHideFlags: 0
