@@ -11,6 +11,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.CalamitySkills
         public override void LaunchSkill(Vector3 position)
         {
             base.LaunchSkill(position);
+            Debug.Log("lauchSkill exter done");
             GameObject damageZoneObject = Instantiate(damageZonePrefab, transform);
             DamageZone damageZone = damageZoneObject.GetComponent<DamageZone>();
             damageZoneObject.GetComponent<SpriteRenderer>().sprite = exterminationSprite;
@@ -18,6 +19,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.CalamitySkills
             damageZoneObject.transform.position = position;
             damageZone.SetDamage(data.damages);
             StartCoroutine(DamageLifeTime(damageZoneObject));
+            Debug.Log("Coroutine exter done");
             SkillPlayedEvent();
         }
 
@@ -25,6 +27,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.CalamitySkills
         {
             yield return new WaitForSeconds(data.duration);
             Destroy(objectToDestroy);
+            Debug.Log("exter destroy");
         }
     }
     

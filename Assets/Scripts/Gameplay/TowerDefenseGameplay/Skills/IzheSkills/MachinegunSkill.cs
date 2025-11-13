@@ -18,6 +18,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.IzheSkills
         IEnumerator ApplyEffectsDelay()
         {
             yield return null;
+            Debug.Log("lauchSkill Machine done");
             GameObject damageZoneObject = Instantiate(damageZonePrefab, transform);
             DamageZone damageZone = damageZoneObject.GetComponent<DamageZone>();
             damageZoneObject.GetComponent<SpriteRenderer>().sprite = machinegunSprite;
@@ -25,13 +26,16 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.IzheSkills
             damageZoneObject.transform.position = transform.position;
             damageZone.SetDamage(data.damages);
             StartCoroutine(DamageLifeTime(damageZoneObject));
+            Debug.Log("Coroutine Machine done");
             SkillPlayedEvent();
+            Debug.Log("Machine finished");
         }
 
         private IEnumerator DamageLifeTime(GameObject objectToDestroy)
         {
             yield return new WaitForSeconds(data.duration);
             Destroy(objectToDestroy);
+            Debug.Log("Machine destroyed");
         }
         
     }

@@ -11,6 +11,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.MeliSkills
         public override void LaunchSkill(Vector3 position)
         {
             base.LaunchSkill(position);
+            Debug.Log("lauchSkill coral done)");
             GameObject damageZoneObject = Instantiate(damageZonePrefab, transform);
             DamageZone damageZone = damageZoneObject.GetComponent<DamageZone>();
             damageZoneObject.GetComponent<SpriteRenderer>().sprite = coralattackSprite;
@@ -18,13 +19,16 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.MeliSkills
             damageZoneObject.transform.position = position;
             damageZone.SetDamage(data.damages);
             StartCoroutine(DamageLifeTime(damageZoneObject));
+            Debug.Log("lauchSkill coral done)");
             SkillPlayedEvent();
+            Debug.Log("lauchSkill coral done)");
         }
 
         private IEnumerator DamageLifeTime(GameObject objectToDestroy)
         {
             yield return new WaitForSeconds(data.duration);
             Destroy(objectToDestroy);
+            Debug.Log("coral finished");
         }
     }
 }

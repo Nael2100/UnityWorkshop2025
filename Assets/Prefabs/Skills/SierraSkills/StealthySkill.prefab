@@ -101,7 +101,7 @@ MonoBehaviour:
   rangeCollider2D: {fileID: -8919594741518610193}
   areaCursor: {fileID: 5917389740392152153}
   damageZonePrefab: {fileID: 7650741622790034829, guid: 2ad36051d9419ca4d96d6e2c37208e77, type: 3}
-  stealthySprite: {fileID: 21300000, guid: 2963c4de28b537c49adb32bd2bdfc63b, type: 3}
+  stealthySprite: {fileID: 0}
 --- !u!1 &5917389740392152153
 GameObject:
   m_ObjectHideFlags: 0

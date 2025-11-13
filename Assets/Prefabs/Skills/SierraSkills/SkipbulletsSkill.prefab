@@ -187,8 +187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Skills.SierraSkills.SkipbulletsSkill
   data: {fileID: 11400000, guid: 86c1b6ded1891e64d81c6e22be3fa893, type: 2}
-  needsClick: 5
+  needsClick: 3
   rangeCollider2D: {fileID: 857225882720480476}
   areaCursor: {fileID: 6131596859465682756}
   damageZonePrefab: {fileID: 7650741622790034829, guid: 2ad36051d9419ca4d96d6e2c37208e77, type: 3}
-  skipbulletsSprite: {fileID: 21300000, guid: f3fa8afa060a22e49822bca91072db4a, type: 3}
+  skipbulletsSprite: {fileID: 0}

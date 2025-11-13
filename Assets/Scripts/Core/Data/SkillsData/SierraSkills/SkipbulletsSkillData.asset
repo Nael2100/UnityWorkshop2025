@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: SkipbulletsSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: 'Skip Bullets : choose 5 enemies to ricochet'
+  name: 'Skip Bullets : 3 damages on 3 enemies'
   damages: 2
-  size: 5
+  size: 1
   range: 30
   sprite: {fileID: 0}
   ressourcesCost: 2
-  duration: 2
+  duration: 0.5
   heal: 0
