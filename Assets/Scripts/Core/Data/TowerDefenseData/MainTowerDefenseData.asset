@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56952b323d090bb4484a8cdf38d450ac, type: 3}
   m_Name: MainTowerDefenseData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.TowerDefenseData.TowerDefenseData
-  minWaves: 3
+  minWaves: 1
   maxWaves: 4
   minEnnemies: 1
   maxEnnemies: 3
-  addedEnnemiesByWaves: 2
-  addedEnnemiesByRounds: 2
+  addedEnnemiesByWaves: 1
+  addedEnnemiesByRounds: 1

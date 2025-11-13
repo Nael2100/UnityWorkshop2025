@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2952dbde49812e8408ec4fb7b1987649, type: 3}
+  m_Name: ElderyEncounter
+  m_EditorClassIdentifier: TBT.Core::TBT.Core.EncounterData
+  title: What should I do ?
+  text: "Warriors, you seem strong and skilful. You should be able to help me. My
+    time is coming, however I dont\u2019 feel ready yet. My life was fluttering,
+    and my children live happily. But, I still have regrets. Would you help an old
+    man to choose his last action in this world ?"
+  resolvedText: 'Here your reward : '
+  answers:
+  - You should rest and stay here.
+  - Die in honor is the purpose of every sheriff. Achieve one more action for the
+    village.
+  - You should watch over you kids one more time.
+  effects: 000000000000000000000000
+  icon: {fileID: 21300000, guid: c74f85714614ccc44841c602b22ae20d, type: 3}
+  background: {fileID: 0}

@@ -44,7 +44,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             {
                 yield return null;
             }
-            enemyIsActive = false;
+            EndTurn();
         }
 
         private void Attack()
@@ -66,6 +66,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             isExploding = true;
             yield return null;
             isExploding = false;
+            Destroy(gameObject);
         }
         IEnumerator AttackAnimation()
         {
@@ -119,7 +120,10 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         public override void DisableCollider()
         {
             base.DisableCollider();
-            projectile.GetComponent<BoxCollider2D>().enabled = false;
+            if (projectile.isActiveAndEnabled)
+            {
+                projectile.GetComponent<BoxCollider2D>().enabled = false;
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -129,6 +133,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
                 other.gameObject.GetComponent<EnemyInterface>().enemyComponent.TakeDamage(damage);
             }
         }
+        
     }
     
     

@@ -5,6 +5,7 @@ using TBT.Gameplay.MapGameplay;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Color = UnityEngine.Color;
 
 namespace TBT.Gameplay
@@ -15,16 +16,19 @@ namespace TBT.Gameplay
         public List<MapPoint> followers; 
         public List<MapPoint> predecessors; //{ get; private set; }
         public event Action<MapPoint, PointTypes> DestinationClicked;
-        [SerializeField] private Color availableEncounterColor = new Color(1f, 1f, 1f, 1f);
-        [SerializeField] private Color availableTowerDefenseColor = new Color(1f, 1f, 1f, 1f);
-        [SerializeField] private Color availableEndColor = new Color(1f, 1f, 1f, 1f);
-        [SerializeField] private Color towerDefenseColor= new Color(1f, 1f, 1f, 1f);
-        [SerializeField] private Color encounterColor= new Color(1f, 1f, 1f, 1f);
-        [SerializeField] private Color unavailableColor= new Color(1f, 1f, 1f, 1f);
-        [SerializeField] private Color startColor= new Color(1f, 1f, 1f, 1f);
-        [SerializeField] private Color endColor= new Color(1f, 1f, 1f, 1f);
-        private Color baseColor;
-        private Color availableColor;
+        [SerializeField] private Sprite availableEncounterSprite;
+        [SerializeField] private Sprite availableTowerDefenseSprite;
+        [SerializeField] private Sprite availableEndSprite;
+        [SerializeField] private Sprite towerDefenseSprite;
+        [SerializeField] private Sprite encounterSprite;
+        [SerializeField] private Sprite unavailableEncounterSprite;
+        [SerializeField] private Sprite unavailableTowerDefenseSprite;
+        [SerializeField] private Sprite startSprite;
+        [SerializeField] private Sprite endSprite;
+        private Sprite baseSprite;
+        private Sprite availableSprite;
+        private Sprite unavailableSprite;
+
         public bool highlighted { get; private set; } = false;
         public void SetFollower(MapPoint neighbor)
         {
@@ -38,13 +42,13 @@ namespace TBT.Gameplay
 
         public void GetHighlighted()
         {
-            gameObject.GetComponent<SpriteRenderer>().color = availableColor;
+            gameObject.GetComponent<SpriteRenderer>().sprite = availableSprite;
             highlighted = true;
         }
 
         public void GetUnHighlighted()
         {
-            gameObject.GetComponent<SpriteRenderer>().color = unavailableColor;
+            gameObject.GetComponent<SpriteRenderer>().sprite = unavailableSprite;
             highlighted = false;
         }
         
@@ -63,30 +67,32 @@ namespace TBT.Gameplay
             this.type = pointType;
             if (type == PointTypes.towerDefense)
             {
-                gameObject.GetComponent<SpriteRenderer>().color = towerDefenseColor;
-                baseColor = towerDefenseColor;
-                availableColor = availableTowerDefenseColor;
+                gameObject.GetComponent<SpriteRenderer>().sprite = towerDefenseSprite;
+                baseSprite = towerDefenseSprite;
+                availableSprite = availableTowerDefenseSprite;
+                unavailableSprite = unavailableTowerDefenseSprite;
             }
             else if (type == PointTypes.encounter)
             {
-                gameObject.GetComponent<SpriteRenderer>().color = encounterColor;
-                baseColor = encounterColor;
-                availableColor = availableEncounterColor;
-                
+                gameObject.GetComponent<SpriteRenderer>().sprite = encounterSprite;
+                baseSprite = encounterSprite;
+                availableSprite = availableEncounterSprite;
+                unavailableSprite = unavailableEncounterSprite;
             }
             else if (type == PointTypes.start)
             {
-                gameObject.GetComponent<SpriteRenderer>().color = startColor;
-                baseColor = startColor;
-                availableColor = startColor;
+                gameObject.GetComponent<SpriteRenderer>().sprite = startSprite;
+                baseSprite = startSprite;
+                availableSprite = startSprite;
+                unavailableSprite = startSprite;
             }
             else if (type == PointTypes.end)
             {
-                gameObject.GetComponent<SpriteRenderer>().color = endColor;
-                baseColor = endColor;
-                availableColor = availableEndColor;
+                gameObject.GetComponent<SpriteRenderer>().sprite = endSprite;
+                baseSprite = endSprite;
+                availableSprite = availableEndSprite;
             }
-            gameObject.GetComponent<SpriteRenderer>().color = baseColor;
+            gameObject.GetComponent<SpriteRenderer>().sprite = baseSprite;
         }
     }
 }

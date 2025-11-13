@@ -41,7 +41,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             {
                 yield return null;
             }
-            enemyIsActive = false;
+            EndTurn();
         }
 
         private void PullCarriage(GameObject objPulled)
@@ -68,6 +68,12 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         private void Move()
         {
             transform.position = Vector3.MoveTowards(transform.position, carriage.transform.position, Time.deltaTime * speed);
+        }
+
+        protected override void Dying()
+        {
+            base.Dying();
+            Destroy(gameObject);
         }
     }
 }

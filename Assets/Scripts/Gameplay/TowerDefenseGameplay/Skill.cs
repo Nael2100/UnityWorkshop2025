@@ -33,7 +33,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             cam = Camera.main;
             sprite = data.sprite;
             name = data.name;
-            damage = data.damages;
+            damage = data.damages + TowerDefenseManager.Instance.playerCarriage.bonusDamage;
             size = data.size;
             range = data.range;
             ressourcesCost = data.ressourcesCost;
@@ -96,6 +96,15 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                     cam.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y,
                         cam.nearClipPlane));
                 areaCursor.transform.position = worldPosition;
+                if (Vector2.Distance(areaCursor.transform.position,
+                        TowerDefenseManager.Instance.playerCarriage.gameObject.transform.position) > range)
+                {
+                    areaCursor.GetComponent<SpriteRenderer>().color = Color.red;
+                }
+                else
+                {
+                    areaCursor.GetComponent<SpriteRenderer>().color = Color.white;
+                }
             }
         }
 
@@ -110,13 +119,16 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             {
                 Play(false);
             }
-            
-            
         }
 
         protected void EnemiesNeedToBeDamagedEvent(bool isDamaged)
         {
             EnemiesNeedToCollide?.Invoke(isDamaged);
+        }
+
+        public void AddBonusDamage(float newBonus)
+        {
+            damage = data.damages + newBonus;
         }
     }
 

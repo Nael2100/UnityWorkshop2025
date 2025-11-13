@@ -20,6 +20,7 @@ namespace TBT.Gameplay
             EncounterData selectedData = encounters[UnityEngine.Random.Range(0, encounters.Count)];
             encounters.Remove(selectedData);
             UIManager.SetUp(selectedData);
+            UIManager.SetUpBackground(carriage);
             
         }
 
@@ -47,6 +48,10 @@ namespace TBT.Gameplay
             if (obj == EncounterEffects.refillHealth)
             {
                 carriage.RefillHealth();
+            }
+            else if (obj == EncounterEffects.refillRessources)
+            {
+                TowerDefenseManager.Instance.Reload();
             }
         }
     }

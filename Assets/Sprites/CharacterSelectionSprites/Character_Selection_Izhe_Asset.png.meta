@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4f11d2e3e58deec4a832c914ceb3b2e2
+guid: fc1a770383a759e4482a37307e3e852b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9139441849965216262
-    second: Character_Selection_Izhe_Asset_0
+      213: 3369590879684646718
+    second: Character_Selection_Izhe_Asset 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_Selection_Izhe_Asset_0
+      name: Character_Selection_Izhe_Asset 1_0
       rect:
         serializedVersion: 2
-        x: 118
-        y: 175
-        width: 275
-        height: 631
+        x: 103
+        y: 159
+        width: 305
+        height: 704
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 602048090f1d5de70800000000000000
-      internalID: 9139441849965216262
+      spriteID: e37dffd5d0133ce20800000000000000
+      internalID: 3369590879684646718
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Character_Selection_Izhe_Asset_0: 9139441849965216262
+      Character_Selection_Izhe_Asset 1_0: 3369590879684646718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

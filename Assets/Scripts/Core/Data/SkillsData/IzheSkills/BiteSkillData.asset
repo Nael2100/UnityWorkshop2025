@@ -18,5 +18,5 @@ MonoBehaviour:
   range: 5
   sprite: {fileID: 0}
   ressourcesCost: 1
-  duration: 2
+  duration: 0.5
   heal: 0

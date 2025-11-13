@@ -18,13 +18,13 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         [SerializeField] public Carriage playerCarriage;
         [SerializeField] private CharacterUI characterUI;
         [SerializeField] private GameModeManager gameModeManager;
-        [SerializeField] private EnemiesManager enemiesManager;
+        [SerializeField] public EnemiesManager enemiesManager;
         private Character activeCharacter;
         private Skill currentlyPlayingSkill;
         private int currentRound = 0;
         private int currentWave = 0;
         private int maxWaves;
-
+        private bool finalFight;
         private void Awake()
         {
             if (Instance == null)
@@ -41,6 +41,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private void OnEnable()
         {
             gameModeManager.EnterTowerDefenseModeEvent += StartFight;
+            gameModeManager.EnterTowerDefenseModeFinalEvent += StartFinalFight;
             enemiesManager.EnemiesTurnEnded += EndEnemiesTurn;
             playerCarriage.Dying += EndFightByDeath;
             playerTurnPanel.SetActive(playerTurn);
@@ -71,32 +72,51 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             gameModeManager.EndGameMode();
         }
 
-        public void StartFight()
+        private void StartFight()
         {
             currentRound += 1;
             currentWave =1;
             maxWaves = Random.Range(towerDefenseData.minWaves,towerDefenseData.maxWaves);
-            enemiesManager.SpawnEnemies(currentRound,currentWave);
+            enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
             PlayEnemiesTurn();
         }
+
+        private void StartFinalFight()
+        {
+            finalFight = true;
+            StartFight();
+        }
+
         public void PlayPlayerTurn()
+        {
+            WaveEndCheck();
+            playerTurn = true;
+            playerTurnPanel.SetActive(true);
+            activeCharacter = playerCarriage.ReturnCharacterToPlay();
+            characterUI.Setup(activeCharacter,this);
+        }
+
+        private void WaveEndCheck()
         {
             if (enemiesManager.AllEnemiesDead())
             {
                 if (currentWave >= maxWaves)
                 {
-                    EndFight();
+                    if (finalFight)
+                    {
+                        gameModeManager.WinGameMode();
+                    }
+                    else
+                    {
+                        EndFight();
+                    }
                 }
                 else
                 {
                     currentWave += 1;
-                    enemiesManager.SpawnEnemies(currentRound,currentWave);
+                    enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
                 }
             }
-            playerTurn = true;
-            playerTurnPanel.SetActive(true);
-            activeCharacter = playerCarriage.ReturnCharacterToPlay();
-            characterUI.Setup(activeCharacter,this);
         }
 
         public void PlaySkill(Skill skill)
@@ -136,6 +156,25 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 
         public void PlayEnemiesTurn()
         {
+            if (enemiesManager.AllEnemiesDead())
+            {
+                if (currentWave >= maxWaves)
+                {
+                    if (finalFight)
+                    {
+                        gameModeManager.WinGameMode();
+                    }
+                    else
+                    {
+                        EndFight();
+                    }
+                }
+                else
+                {
+                    currentWave += 1;
+                    enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
+                }
+            }
             EnemiesNeedToCollide(true);
             enemiesManager.SetEnemiesMoving();
         }
@@ -166,6 +205,11 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             {
                 enemiesManager.AllEnemiesDeactivateCollider();
             }
+        }
+
+        public void SpawnAdditionalEnnemies(int numberOfEnemies)
+        {
+            enemiesManager.SpawnAdditionalEnemies(numberOfEnemies);
         }
     }
 }

@@ -47,6 +47,7 @@ namespace TBT.Gameplay.CardsSystem
                     newCartToAdd = cardsPossibilities[Random.Range(0, cardsPossibilities.Count)];
                 }
                 GameObject cardObject = Instantiate(newCartToAdd, cardsParent);
+                cardObject.transform.position = new Vector3(cardObject.transform.position.x, cardObject.transform.position.y, cardObject.transform.position.z+i);
                 currentCardsObjects.Add(cardObject);
                 currentCards.Add(currentCardsObjects[i].GetComponent<CardInterface>().cardComponent);
                 cardObject.GetComponent<CardInterface>().cardComponent.cardSelected += CloseChoice;

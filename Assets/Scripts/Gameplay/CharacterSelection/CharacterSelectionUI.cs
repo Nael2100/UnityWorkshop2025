@@ -10,18 +10,18 @@ namespace TBT.Gameplay.CharacterSelection
     {
         [SerializeField] private GameModeManager gameModeManager;
         [SerializeField] private Carriage carriage;
-        [SerializeField] private GameObject[] characterObjects;
+        
         [SerializeField] private GameObject[] characterPrefabs;
         [SerializeField] private Button startButton;
-        private Button[] characterButtons = new Button[5];
+        [SerializeField] private Button[] characterButtons;
+        [SerializeField] private Image[] characterOutlines = new Image[5];
         private bool[] characterSelected = new bool[5];
 
         private void OnEnable()
         {
-            for (int i = 0; i < characterObjects.Length; i++)
+            for (int i = 0; i < characterButtons.Length; i++)
             {
-                characterObjects[i].GetComponent<Image>().enabled = false;
-                characterButtons[i] = characterObjects[i].GetComponentInChildren<Button>();
+                characterOutlines[i].enabled = false;
             }
             startButton.onClick.AddListener(() => StartGame());
             startButton.gameObject.GetComponent<Image>().color = Color.grey;
@@ -32,12 +32,12 @@ namespace TBT.Gameplay.CharacterSelection
             if (characterSelected[index])
             {
                 characterSelected[index] = false;
-                characterObjects[index].GetComponent<Image>().enabled = false;
+                characterOutlines[index].enabled = false;
             }
             else if (!characterSelected[index])
             {
                 characterSelected[index] = true;
-                characterObjects[index].GetComponent<Image>().enabled = true;
+                characterOutlines[index].enabled = true;
             }
             TurnGreyCheck();
         }
@@ -50,7 +50,7 @@ namespace TBT.Gameplay.CharacterSelection
                 {
                     if (characterSelected[i])
                     { 
-                        carriage.AddCharacterPrefab(characterPrefabs[i]);
+                        carriage.AddCharacterPrefab(characterPrefabs[i],i);
                     }
                 }
                 carriage.SetUpCharacters();

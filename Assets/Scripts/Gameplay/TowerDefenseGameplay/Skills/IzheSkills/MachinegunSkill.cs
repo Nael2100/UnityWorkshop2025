@@ -34,6 +34,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.IzheSkills
         private IEnumerator DamageLifeTime(GameObject objectToDestroy)
         {
             yield return new WaitForSeconds(data.duration);
+            SkillPlayedEvent();
             Destroy(objectToDestroy);
             Debug.Log("Machine destroyed");
         }

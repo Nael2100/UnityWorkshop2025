@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 1178cd1e00fe9f94e9317f9dff0f920f
+guid: a7348cf462faee341bf6d70b334455f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2676862615661773364
-    second: Character_Selection_Calamity_Asset_0
-  - first:
-      213: 8224025679064387407
-    second: Character_Selection_Calamity_Asset_1
-  - first:
-      213: -9193287404979460755
-    second: Character_Selection_Calamity_Asset_2
-  - first:
-      213: -7331429832382164801
-    second: Character_Selection_Calamity_Asset_3
+      213: 3988223165701295619
+    second: UI_Asset_NME_HealthBarFull_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -81,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_Selection_Calamity_Asset_0
+      name: UI_Asset_NME_HealthBarFull_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 173
-        width: 379
-        height: 623
+        x: 15
+        y: 17
+        width: 97
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4320b07cd50262520800000000000000
-      internalID: 2676862615661773364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_Selection_Calamity_Asset_1
-      rect:
-        serializedVersion: 2
-        x: 297
-        y: 793
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f4fc25848cb912270800000000000000
-      internalID: 8224025679064387407
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_Selection_Calamity_Asset_2
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 426
-        width: 6
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d65602430d1ea6080800000000000000
-      internalID: -9193287404979460755
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character_Selection_Calamity_Asset_3
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 198
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb0d8293967814a90800000000000000
-      internalID: -7331429832382164801
+      spriteID: 30e0c94b6d3095730800000000000000
+      internalID: 3988223165701295619
       vertices: []
       indices: 
       edges: []
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Character_Selection_Calamity_Asset_0: 2676862615661773364
-      Character_Selection_Calamity_Asset_1: 8224025679064387407
-      Character_Selection_Calamity_Asset_2: -9193287404979460755
-      Character_Selection_Calamity_Asset_3: -7331429832382164801
+      UI_Asset_NME_HealthBarFull_0: 3988223165701295619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

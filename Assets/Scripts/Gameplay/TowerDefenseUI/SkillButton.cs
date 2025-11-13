@@ -9,7 +9,7 @@ namespace TBT.Gameplay.TowerDefenseUI
     {
         [SerializeField] private Button button;
         [SerializeField] private Image image;
-        [SerializeField]  private TextMeshProUGUI nameText;
+        [SerializeField]  public TextMeshProUGUI nameText;
         [SerializeField]  private Image[] costImages;
         private Skill associatedSkill;
         

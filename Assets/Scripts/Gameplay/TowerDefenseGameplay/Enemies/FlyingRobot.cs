@@ -37,7 +37,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             {
                 yield return null;
             }
-            enemyIsActive = false;
+            EndTurn();
         }
 
         private void Attack()
@@ -75,6 +75,12 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             {
                 carriage.TakeDamage(damage);
             }
+        }
+
+        protected override void Dying()
+        {
+            base.Dying();
+            Destroy(gameObject);
         }
     }
 }

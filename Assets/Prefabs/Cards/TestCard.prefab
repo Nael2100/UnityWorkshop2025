@@ -116,10 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0eb08dc56564f418b2094a7865c837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.CardsSystem.CardsVariants.TestCard
-  cardName: Squeezie
-  cardDescription: Salut moi c'est squeezie
+  data: {fileID: 11400000, guid: 7cc5ecf14b710d94f8c91d62cfd2dcf4, type: 2}
   cardNameTextMesh: {fileID: 2529384800543853043}
-  cardDescriptionTextMesh: {fileID: 1021986772656851887}
+  cardUpDescriptionTextMesh: {fileID: 0}
+  cardDownDescriptionTextMesh: {fileID: 0}
 --- !u!61 &8710609910445709660
 BoxCollider2D:
   m_ObjectHideFlags: 0
