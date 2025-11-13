@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2a84144f5a5c0d047ab2dabe8075e945
+guid: 326322a767bdaf645b3df10d69dc74fb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3686266780667940438
-    second: UI_Asset_RessourceIcon_0
+      213: -1598398047405615297
+    second: UI_Asset_MapIconBattleFinalOutOfReach_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Asset_RessourceIcon_0
+      name: UI_Asset_MapIconBattleFinalOutOfReach_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 31
-        width: 66
-        height: 66
+        x: 7
+        y: 1
+        width: 114
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa1f6f6c4efb7dcc0800000000000000
-      internalID: -3686266780667940438
+      spriteID: f37d5bec17951d9e0800000000000000
+      internalID: -1598398047405615297
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Asset_RessourceIcon_0: -3686266780667940438
+      UI_Asset_MapIconBattleFinalOutOfReach_0: -1598398047405615297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,12 +12,13 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.MeliSkills
         public override void ApplyEffects()
         {
             base.ApplyEffects();
-            TowerDefenseManager.Instance.playerCarriage.Heal(data.heal);
+            Debug.Log("ApplyEffect coral done)");
             StartCoroutine(ApplyEffectsDelay());
         }
         IEnumerator ApplyEffectsDelay()
         {
             yield return null;
+            TowerDefenseManager.Instance.playerCarriage.Heal(data.heal);
             GameObject healZoneObject = Instantiate(healZonePrefab, transform);
             healZoneObject.GetComponent<SpriteRenderer>().sprite = healSprite;
             healZoneObject.transform.localScale = new Vector3(data.size, data.size, 1);
@@ -28,7 +29,9 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.MeliSkills
         {
             yield return new WaitForSeconds(data.duration);
             Destroy(objectToDestroy);
+            Debug.Log("coral destroy)");
             SkillPlayedEvent();
+            Debug.Log("coral finished");
         }
     }
 }

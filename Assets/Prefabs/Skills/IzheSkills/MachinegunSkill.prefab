@@ -11,9 +11,15 @@ GameObject:
   - component: {fileID: 4625136245719338731}
   - component: {fileID: -952868315852355939}
   - component: {fileID: 4227547956351704546}
+<<<<<<<< HEAD:Assets/Prefabs/Skills/MeliSkills/ModerateSkill.prefab
+  - component: {fileID: -6655596973002298876}
+  m_Layer: 3
+  m_Name: ModerateSkill
+========
   - component: {fileID: 5326109636455433279}
   m_Layer: 3
   m_Name: MachinegunSkill
+>>>>>>>> origin/GA:Assets/Prefabs/Skills/IzheSkills/MachinegunSkill.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,8 +89,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ddfb265e1341438b4fb29623a1aede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.SkillInterface
+<<<<<<<< HEAD:Assets/Prefabs/Skills/MeliSkills/ModerateSkill.prefab
+  skillComponent: {fileID: -6655596973002298876}
+--- !u!114 &-6655596973002298876
+========
   skillComponent: {fileID: 5326109636455433279}
 --- !u!114 &5326109636455433279
+>>>>>>>> origin/GA:Assets/Prefabs/Skills/IzheSkills/MachinegunSkill.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,6 +104,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 970472354525572517}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<<< HEAD:Assets/Prefabs/Skills/MeliSkills/ModerateSkill.prefab
+  m_Script: {fileID: 11500000, guid: 85477c8f77213264592eec19b48fb846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Skills.MeliSkills.ModeratehealSkill
+  data: {fileID: 11400000, guid: f7b30dd956a83024db3d24b871a8140a, type: 2}
+  needsClick: 0
+  rangeCollider2D: {fileID: -952868315852355939}
+  areaCursor: {fileID: 5837734822509230676}
+  healZonePrefab: {fileID: 970472354525572517}
+  healSprite: {fileID: 21300000, guid: 3c8bd26d8da69c748b2bedc9f35106aa, type: 3}
+========
   m_Script: {fileID: 11500000, guid: 64e55094d52756f46b422834b8ab51c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Skills.IzheSkills.MachinegunSkill
@@ -101,7 +123,8 @@ MonoBehaviour:
   rangeCollider2D: {fileID: -952868315852355939}
   areaCursor: {fileID: 5837734822509230676}
   damageZonePrefab: {fileID: 7650741622790034829, guid: 2ad36051d9419ca4d96d6e2c37208e77, type: 3}
-  machinegunSprite: {fileID: 21300000, guid: e68d4e360da5def4e894edb0e4e4205a, type: 3}
+  machinegunSprite: {fileID: 0}
+>>>>>>>> origin/GA:Assets/Prefabs/Skills/IzheSkills/MachinegunSkill.prefab
 --- !u!1 &5837734822509230676
 GameObject:
   m_ObjectHideFlags: 0

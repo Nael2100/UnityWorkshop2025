@@ -11,6 +11,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.SierraSkills
         public override void LaunchSkill(Vector3 position)
         {
             base.LaunchSkill(position);
+            Debug.Log("lauchSkill bullets done");
             GameObject damageZoneObject = Instantiate(damageZonePrefab, transform);
             DamageZone damageZone = damageZoneObject.GetComponent<DamageZone>();
             damageZoneObject.GetComponent<SpriteRenderer>().sprite = skipbulletsSprite;
@@ -18,6 +19,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.SierraSkills
             damageZoneObject.transform.position = position;
             damageZone.SetDamage(data.damages);
             StartCoroutine(DamageLifeTime(damageZoneObject));
+            Debug.Log("coroutine bullets done");
             SkillPlayedEvent();
         }
 
@@ -25,6 +27,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.SierraSkills
         {
             yield return new WaitForSeconds(data.duration);
             Destroy(objectToDestroy);
+            Debug.Log("bullets finished");
         }
     }
 }

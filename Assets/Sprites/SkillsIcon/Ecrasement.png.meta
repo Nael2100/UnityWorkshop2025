@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2a84144f5a5c0d047ab2dabe8075e945
+guid: a38f48b51b0a6c149be2d5a52884cfc3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3686266780667940438
-    second: UI_Asset_RessourceIcon_0
+      213: -6378715273444734067
+    second: Ecrasement_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Asset_RessourceIcon_0
+      name: Ecrasement_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 31
-        width: 66
-        height: 66
+        x: 1
+        y: 4
+        width: 59
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa1f6f6c4efb7dcc0800000000000000
-      internalID: -3686266780667940438
+      spriteID: d8bc7f231404a77a0800000000000000
+      internalID: -6378715273444734067
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Asset_RessourceIcon_0: -3686266780667940438
+      Ecrasement_0: -6378715273444734067
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
