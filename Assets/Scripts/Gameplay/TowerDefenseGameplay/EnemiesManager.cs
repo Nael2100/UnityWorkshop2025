@@ -97,7 +97,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private void EnemyIsDead(EnemyClass deadEnemy)
         {
             deadEnemy.OnDying -= EnemyIsDead;
-            int indexToRemove = 0;
+            int indexToRemove = -1;
             for (int i = 0; i < enemies.Count; i++)
             {
                 if (enemies[i] == deadEnemy)
@@ -105,7 +105,11 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                     indexToRemove = i;
                 }
             }
-            enemies.RemoveAt(indexToRemove);
+
+            if (indexToRemove >= 0)
+            {
+                enemies.RemoveAt(indexToRemove);
+            }
         }
         public void SetUp(TowerDefenseData newData)
         {

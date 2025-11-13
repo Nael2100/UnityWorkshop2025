@@ -41,7 +41,7 @@ namespace TBT.Gameplay
 
         private void CompleteEncounter()
         {
-            gameModeManager.EnterCardsMode();
+            gameModeManager.EnterMapMode();
         }
         private void ApplyEffects(EncounterEffects obj)
         {

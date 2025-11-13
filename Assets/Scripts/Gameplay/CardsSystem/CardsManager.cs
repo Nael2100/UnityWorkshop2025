@@ -8,7 +8,7 @@ namespace TBT.Gameplay.CardsSystem
 {
     public class CardsManager : MonoBehaviour
     {
-        [SerializeField] private GameModeManager gameModeManager;
+        /*[SerializeField] private GameModeManager gameModeManager;
         [SerializeField] private List<GameObject> cardsPossibilities;
         [SerializeField] private Transform cardsParent;
         [SerializeField] private AnimationCurve callCardAnimation;
@@ -99,6 +99,6 @@ namespace TBT.Gameplay.CardsSystem
                 }
             }
             
-        }
+        }*/
     }
 }

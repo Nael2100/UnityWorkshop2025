@@ -21,10 +21,9 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.IzheSkills
             Debug.Log("lauchSkill Machine done");
             GameObject damageZoneObject = Instantiate(damageZonePrefab, transform);
             DamageZone damageZone = damageZoneObject.GetComponent<DamageZone>();
-            damageZoneObject.GetComponent<SpriteRenderer>().sprite = machinegunSprite;
-            damageZoneObject.transform.localScale = new Vector3(data.size, data.size, 1);
-            damageZoneObject.transform.position = transform.position;
-            damageZone.SetDamage(data.damages);
+            damageZone.SetSprites(size, areaSprite, iconSprite);
+            damageZoneObject.transform.position = new Vector3(0,0,0);
+            damageZone.SetDamage(damage);
             StartCoroutine(DamageLifeTime(damageZoneObject));
             Debug.Log("Coroutine Machine done");
             SkillPlayedEvent();

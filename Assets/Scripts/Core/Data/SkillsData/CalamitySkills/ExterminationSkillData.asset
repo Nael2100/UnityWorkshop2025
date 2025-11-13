@@ -15,8 +15,9 @@ MonoBehaviour:
   name: 'Final extermination : high damages on close enemies'
   damages: 5
   size: 1
-  range: 15
-  sprite: {fileID: 0}
+  range: 2
+  areaSprite: {fileID: 21300000, guid: 57b754cf28d4b9342ad9b69f858e6762, type: 3}
+  iconSprite: {fileID: 21300000, guid: ab090d092ab5fab4c8e32d5501c23f56, type: 3}
   ressourcesCost: 3
   duration: 0.5
   heal: 0

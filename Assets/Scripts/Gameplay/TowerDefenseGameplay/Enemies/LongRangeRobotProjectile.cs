@@ -11,7 +11,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         private void Start()
         {
             Explode();
-
         }
 
         private void OnEnable()
@@ -23,8 +22,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         {
             if (robotParent.enemyIsActive)
             {
-                Debug.Log(speed);
-                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, carriage.transform.position, Time.deltaTime * speed);
+                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, carriage.transform.position, Time.deltaTime * data.speed);
             }
         }
 
@@ -43,16 +41,10 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             }
         }
 
-        protected override void Dying()
-        {
-            base.Dying();
-            Explode();
-        }
-
         public override void TakeDamage(float damage)
         {
             base.TakeDamage(damage);
-            Dying();
+            Explode();
         }
     }
 }

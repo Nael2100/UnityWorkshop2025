@@ -18,6 +18,7 @@ namespace TBT.Gameplay.TowerDefenseUI
             button = newButton;
             associatedSkill = skill;
             nameText.text = skill.name;
+            image.sprite = skill.iconSprite;
             newButton.onClick.AddListener(() => manager.PlaySkill(associatedSkill));
             foreach (Image costImage in costImages)
             {

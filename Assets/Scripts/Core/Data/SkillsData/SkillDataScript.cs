@@ -9,7 +9,8 @@ namespace TBT.Core.Data.SkillsData
         public float damages;
         public float size;
         public float range;
-        public Sprite sprite;
+        public Sprite areaSprite;
+        public Sprite iconSprite;
         public int ressourcesCost;
         public float duration;
         public float heal;

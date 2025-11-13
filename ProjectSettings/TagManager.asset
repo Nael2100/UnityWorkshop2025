@@ -47,11 +47,11 @@ TagManager:
   - name: Enemies
     uniqueID: 3479260351
     locked: 0
-  - name: Skill
-    uniqueID: 4242686827
-    locked: 0
   - name: Carriage
     uniqueID: 1657127915
+    locked: 0
+  - name: Skill
+    uniqueID: 4242686827
     locked: 0
   m_RenderingLayers:
   - Default

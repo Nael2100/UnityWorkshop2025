@@ -16,7 +16,8 @@ MonoBehaviour:
   damages: 5
   size: 25
   range: 25
-  sprite: {fileID: 0}
+  areaSprite: {fileID: 21300000, guid: 274e1f0be31e25e48a07af80538303c6, type: 3}
+  iconSprite: {fileID: 21300000, guid: 15467132c74f3be4ba65a438678d4280, type: 3}
   ressourcesCost: 3
   duration: 0.5
   heal: 0

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46428cc36cd948bbb41797c812fffff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.TowerDefenseGameplay.Character
-  data: {fileID: 11400000, guid: ee9cad0af7a5ff046bebd16a0e7102a9, type: 2}
+  data: {fileID: 11400000, guid: 70d43f790a8694041bd99e4e9c45b7be, type: 2}
   skillsPrefabs:
   - {fileID: 1606600361824322549, guid: 1b3bc449abfa4da4c8ba6f6d46cf7203, type: 3}
   - {fileID: 578786298404819595, guid: dd6325dbe505f9c4d87c2e9d6dfaee37, type: 3}

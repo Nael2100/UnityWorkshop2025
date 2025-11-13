@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec3568cd2e0484242a6593cc54e54e8e, type: 3}
-  m_Name: CharacterIzeh
+  m_Name: CharacterCalamity
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.CharacterData.CharacterDataScript
-  characterName: Izeh
+  characterName: Calamity
   lines: []
-  icone: {fileID: 21300000, guid: 97458e4664198b4448f737321e16763e, type: 3}
+  icone: {fileID: 21300000, guid: 0038efa351e943d439706ca8794737c8, type: 3}

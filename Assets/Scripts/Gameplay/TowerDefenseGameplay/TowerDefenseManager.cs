@@ -14,6 +14,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         public static TowerDefenseManager Instance;
         
         private bool playerTurn = false;
+        [SerializeField] private GameObject[] mapsPrefabs;
+        
         [SerializeField] private TowerDefenseData towerDefenseData;
         [SerializeField] private GameObject playerTurnPanel;
         [SerializeField] public Carriage playerCarriage;
@@ -26,6 +28,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private int currentWave = 0;
         private int maxWaves;
         private bool finalFight;
+        private GameObject currentMapObject;
         private void Awake()
         {
             if (Instance == null)
@@ -75,6 +78,11 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 
         private void StartFight()
         {
+            if (currentMapObject != null)
+            {
+                Destroy(currentMapObject);
+            }
+            currentMapObject = Instantiate(mapsPrefabs[Random.Range(0, mapsPrefabs.Length)], playerTurnPanel.transform);
             currentRound += 1;
             currentWave =1;
             playerCarriage.ResetPosition();

@@ -39,14 +39,6 @@ namespace TBT.Gameplay.TowerDefenseUI
 
         public void Reset()
         {
-            foreach (SkillButton button in buttons)
-            {
-                if (button != null)
-                {
-                    Destroy(button.gameObject);
-                }
-            }
-
             StartCoroutine(ExitAnimation());
         }
 
@@ -84,7 +76,7 @@ namespace TBT.Gameplay.TowerDefenseUI
                 yield return null;
             }
             bottomBar.anchoredPosition = new Vector2(0, 0);
-            icon.anchoredPosition = new Vector2(63, 0);
+            icon.anchoredPosition = new Vector2(-63, 0);
             isMovingPlayerPanel = false;
         }
         IEnumerator ExitAnimation()
@@ -108,9 +100,17 @@ namespace TBT.Gameplay.TowerDefenseUI
                 bottomBar.position += Vector3.down * (speed * Time.deltaTime);
                 yield return null;
             }
+            foreach (SkillButton button in buttons)
+            {
+                if (button != null)
+                {
+                    Destroy(button.gameObject);
+                }
+            }
             bottomBar.anchoredPosition = new Vector2(0, -200);
             icon.anchoredPosition = new Vector2(463, 0);
             isMovingPlayerPanel = false;
+            
         }
 
     }

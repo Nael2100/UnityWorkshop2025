@@ -1,34 +1,18 @@
-using System;
-using TBT.Gameplay.TowerDefenseGameplay.Enemies;
 using UnityEngine;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Skills
 {
-    public class DamageZone : MonoBehaviour
+    public class HealingZone : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer skillIconRenderer;
-        private float damage;
-
-        public void SetDamage(float newDamage)
-        {
-            this.damage = newDamage;
-        }
-
+        
         public void SetSprites(float scale, Sprite areaSprite, Sprite skillIcon)
         {
             gameObject.transform.localScale = new Vector3(scale, scale, 1);
             gameObject.GetComponent<SpriteRenderer>().sprite = areaSprite;
             skillIconRenderer.sprite = skillIcon;
         }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.GetComponent<EnemyInterface>()!= null)
-            {
-                EnemyClass enemy = other.gameObject.GetComponent<EnemyInterface>().enemyComponent;
-                enemy.TakeDamage(damage);
-            }
-        }
+        
 
         private void Update()
         {

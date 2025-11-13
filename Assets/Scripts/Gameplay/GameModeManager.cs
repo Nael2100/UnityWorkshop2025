@@ -15,7 +15,6 @@ namespace TBT.Gameplay
         [SerializeField] private GameObject towerDefensePosRef;
         [SerializeField] private GameObject mapPosRef;
         [SerializeField] private GameObject encounterPosRef;
-        [SerializeField] private GameObject cardsPosRef;
         [SerializeField] private Canvas permanentCanvas;
         [SerializeField] private Canvas towerDefenseCanvas;
         [SerializeField] private Canvas encounterCanvas;
@@ -25,7 +24,7 @@ namespace TBT.Gameplay
         
         private Camera mainCamera;
 
-        public event Action EnterTowerDefenseModeEvent, EnterTowerDefenseModeFinalEvent, EnterEncounterModeEvent, EnterCardsModeEvent; 
+        public event Action EnterTowerDefenseModeEvent, EnterTowerDefenseModeFinalEvent, EnterEncounterModeEvent; 
 
         private void Start()
         {
@@ -60,12 +59,7 @@ namespace TBT.Gameplay
 
             StartCoroutine(EnterModeProcess(mapPosRef, null));
         }
-
-        public void EnterCardsMode()
-        {
-            StartCoroutine(EnterModeProcess(cardsPosRef, null, EnterCardsModeEvent));
-        }
-
+        
         public void EndGameMode()
         {
             SceneManager.LoadScene(2);
@@ -88,6 +82,8 @@ namespace TBT.Gameplay
                 rightPanel.anchoredPosition -= new Vector2(speed * Time.deltaTime, 0);
                 yield return null;
             }
+            leftPanel.anchoredPosition = new Vector2(0,0);
+            rightPanel.anchoredPosition = new Vector2(0,0);
             mainCamera.transform.position = new Vector3(posRef.transform.position.x, posRef.transform.position.y, -10);
             foreach (Canvas canva in notPermaCanvas)
             {
@@ -102,6 +98,11 @@ namespace TBT.Gameplay
             }
             permanentCanvas.enabled = true;
             transitionCanvas.enabled = true;
+            yield return new WaitForSeconds(1f);
+            if (action != null)
+            {
+                action?.Invoke();
+            }
             while (leftPanel.anchoredPosition.x > -960 && rightPanel.anchoredPosition.x < 960)
             {
                 leftPanel.anchoredPosition -= new Vector2(speed * Time.deltaTime, 0);
@@ -111,10 +112,7 @@ namespace TBT.Gameplay
             leftPanel.anchoredPosition = new Vector2(-960,0);
             rightPanel.anchoredPosition = new Vector2(960,0);
             clicksBlock.SetActive(false);
-            if (action != null)
-            {
-                action?.Invoke();
-            }
+            
         }
     }
 }

@@ -6,7 +6,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.SkillsFamilies
     public class HealingSkill : Skill
     {
         [SerializeField] private GameObject healZonePrefab;
-        [SerializeField] private Sprite healSprite;
         
         public override void ApplyEffects()
         {
@@ -18,14 +17,14 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.SkillsFamilies
         {
             yield return null;
             GameObject healZoneObject = Instantiate(healZonePrefab, transform);
-            healZoneObject.GetComponent<SpriteRenderer>().sprite = healSprite;
-            healZoneObject.transform.localScale = new Vector3(data.size, data.size, 1);
+            HealingZone healZone = healZoneObject.GetComponent<HealingZone>();
+            healZone.SetSprites(size, areaSprite, iconSprite);
             healZoneObject.transform.position = transform.position;
             StartCoroutine(HealLifeTime(healZoneObject));
         }
         private IEnumerator HealLifeTime(GameObject objectToDestroy)
         {
-            yield return new WaitForSeconds(data.duration);
+            yield return new WaitForSeconds(duration);
             Destroy(objectToDestroy);
             SkillPlayedEvent();
         }

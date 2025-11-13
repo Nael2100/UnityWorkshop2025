@@ -88,8 +88,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         private void LaunchProjectile()
         {
             projectileLaunched = true;
-            GameObject projectile = gameObject.transform.GetChild(0).gameObject;
-            projectile.SetActive(true);
+            projectile.gameObject.SetActive(true);
             projectile.transform.position = gameObject.transform.position;
         }
         private void Move()

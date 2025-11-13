@@ -12,7 +12,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 
     {
         [SerializeField] protected SkillDataScript data;
-        public Sprite sprite { get; private set; }
+        public Sprite iconSprite { get; private set; }
+        public Sprite areaSprite { get; private set; }
         public string name { get; private set; } = "nom";
         [SerializeField] private int needsClick;
         public event Action SkillPlayed;
@@ -20,8 +21,9 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private float range;
         [SerializeField] private GameObject areaCursor;
         protected bool canLaunch;
-        private float damage;
-        private float size;
+        protected float damage;
+        protected float size;
+        protected float duration;
 
         private int clicksLefts;
         private Camera cam;
@@ -31,11 +33,13 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private void OnEnable()
         {
             cam = Camera.main;
-            sprite = data.sprite;
+            iconSprite = data.iconSprite;
+            areaSprite = data.areaSprite;
             name = data.name;
             damage = data.damages + TowerDefenseManager.Instance.playerCarriage.bonusDamage;
             size = data.size;
             range = data.range;
+            duration = data.duration;
             ressourcesCost = data.ressourcesCost;
             areaCursor.transform.localScale *= size;
             areaCursor.SetActive(false);
