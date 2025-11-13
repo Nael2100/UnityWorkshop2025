@@ -58,7 +58,12 @@ namespace TBT.Gameplay
 
         public void EndGameMode()
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene(2);
+        }
+
+        public void WinGameMode()
+        {
+            SceneManager.LoadScene(3);
         }
 
         private void EnterModeProcess(GameObject posRef, Canvas canvasToActivate)

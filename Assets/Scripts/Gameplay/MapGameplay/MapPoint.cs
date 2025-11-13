@@ -84,6 +84,7 @@ namespace TBT.Gameplay
                 gameObject.GetComponent<SpriteRenderer>().sprite = startSprite;
                 baseSprite = startSprite;
                 availableSprite = startSprite;
+                unavailableSprite = startSprite;
             }
             else if (type == PointTypes.end)
             {

@@ -93,7 +93,14 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             {
                 if (currentWave >= maxWaves)
                 {
-                    EndFight();
+                    if (finalFight)
+                    {
+                        gameModeManager.WinGameMode();
+                    }
+                    else
+                    {
+                        EndFight();
+                    }
                 }
                 else
                 {

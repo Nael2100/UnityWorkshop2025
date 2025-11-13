@@ -48,4 +48,3 @@ MonoBehaviour:
   skillsPrefabs:
   - {fileID: 970472354525572517, guid: fc5fcd67da6d44742849c3e60b0dd881, type: 3}
   - {fileID: 970472354525572517, guid: 6579ad2d5e0228c47941a4fc33bf51fb, type: 3}
-  - {fileID: 970472354525572517, guid: e645cf86bde4db24a8f5a2d5f4a83769, type: 3}

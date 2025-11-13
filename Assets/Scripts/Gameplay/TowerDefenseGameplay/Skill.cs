@@ -101,6 +101,10 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                 {
                     areaCursor.GetComponent<SpriteRenderer>().color = Color.red;
                 }
+                else
+                {
+                    areaCursor.GetComponent<SpriteRenderer>().color = Color.white;
+                }
             }
         }
 

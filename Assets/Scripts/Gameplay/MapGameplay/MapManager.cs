@@ -176,10 +176,10 @@ namespace TBT.Gameplay.MapGameplay
             }
             else if (pointType == PointTypes.end)
             {
-                gameModeManager.EndGameMode();
+                gameModeManager.EnterTowerDefenseMode();
             }
         }
-
+        
         void SetPointsTypes()
         {
             foreach (MapPoint mapPoint in mapPoints)

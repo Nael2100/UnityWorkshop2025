@@ -14,13 +14,13 @@ namespace TBT.Gameplay.TowerDefenseUI
         [SerializeField] private GameObject buttonPrefab;
         [SerializeField] private RectTransform bottomBar;
         [SerializeField] private RectTransform icon;
-
+        private bool isMovingPlayerPanel;
         public void Setup(Character character, TowerDefenseManager manager)
         {
             currentCharacter = character;
             icon.gameObject.GetComponent<Image>().sprite = character.data.icone;
             bottomBar.anchoredPosition = new Vector2(0, -200);
-            icon.anchoredPosition = new Vector2(400, 0);
+            icon.anchoredPosition = new Vector2(463, 0);
             CreateButtons(manager);
             StartCoroutine(EnteringAnimation());
         }
@@ -64,10 +64,15 @@ namespace TBT.Gameplay.TowerDefenseUI
 
         IEnumerator EnteringAnimation()
         {
+            while (isMovingPlayerPanel)
+            {
+                yield return null;
+            }
+            isMovingPlayerPanel = true;
             bottomBar.anchoredPosition = new Vector2(0, -200);
-            icon.anchoredPosition = new Vector2(400, 0);
+            icon.anchoredPosition = new Vector2(463, 0);
             float speed= 300f;
-            while (bottomBar.anchoredPosition.y < 0)
+            while (bottomBar.anchoredPosition.y < -63)
             {
                 bottomBar.position += Vector3.up * (speed * Time.deltaTime);
                 yield return null;
@@ -78,11 +83,19 @@ namespace TBT.Gameplay.TowerDefenseUI
                 icon.position += Vector3.left * (speed * Time.deltaTime);
                 yield return null;
             }
+            bottomBar.anchoredPosition = new Vector2(0, 0);
+            icon.anchoredPosition = new Vector2(63, 0);
+            isMovingPlayerPanel = false;
         }
         IEnumerator ExitAnimation()
         {
+            while (isMovingPlayerPanel)
+            {
+                yield return null;
+            }
+            isMovingPlayerPanel = true;
             bottomBar.anchoredPosition = new Vector2(0, 0);
-            icon.anchoredPosition = new Vector2(0, 0);
+            icon.anchoredPosition = new Vector2(63, 0);
             float speed = 500f;
             while (icon.anchoredPosition.x <463f)
             {
@@ -95,7 +108,9 @@ namespace TBT.Gameplay.TowerDefenseUI
                 bottomBar.position += Vector3.down * (speed * Time.deltaTime);
                 yield return null;
             }
-
+            bottomBar.anchoredPosition = new Vector2(0, -200);
+            icon.anchoredPosition = new Vector2(463, 0);
+            isMovingPlayerPanel = false;
         }
 
     }
