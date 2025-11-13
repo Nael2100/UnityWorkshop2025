@@ -21,7 +21,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         public List<EnemyClass> enemies;
         private float timer = 2f;
         public event Action EnemiesTurnEnded;
-        
+        private float bonusSpeed;
         public void SetEnemiesMoving()
         {
             EnemyClass currentActingEnemy = enemies[0];
@@ -48,8 +48,12 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             {
                 yield return null;
             }
-            enemies.Add(enemies[0]);
-            enemies.RemoveAt(0);
+
+            if (enemies.Count > 0)
+            {
+                enemies.Add(enemies[0]);
+                enemies.RemoveAt(0);
+            }
             EnemiesTurnEnded?.Invoke();
         }
 
@@ -132,6 +136,15 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                 enemies.Add(enemyComponent);
                 enemyComponent.SetCarriage(carriage);
                 enemyComponent.OnDying += EnemyIsDead;
+            }
+        }
+
+        public void AddBonusSpeed(float addedSpeed)
+        {
+            bonusSpeed += addedSpeed;
+            foreach (EnemyClass enemy in enemies)
+            {
+                enemy.AddSpeed(bonusSpeed);
             }
         }
     }

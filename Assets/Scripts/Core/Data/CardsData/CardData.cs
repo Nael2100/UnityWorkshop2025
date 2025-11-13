@@ -9,5 +9,7 @@ namespace TBT.Core.Data.CardsData
         public string cardUpEffect;
         public string cardDownEffect;
         public Sprite cardSprite;
+        public float bonusDamage;
+        public float enemiesAddedSpeed;
     }
 }

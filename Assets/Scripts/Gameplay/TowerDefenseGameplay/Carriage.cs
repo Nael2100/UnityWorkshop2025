@@ -16,10 +16,12 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         public float currentHealth {get; private set;}
         public int maxRessources {get; private set;}
         public int currentRessources {get; private set;}
-        
         private int currentCharacterPlayingIndex = -1;
         private List<Character> characters = new List<Character>();
         public bool[] charactersOnCarriage {get; private set;} = new bool[5];
+        [SerializeField] private Sprite brokenSprite;
+        
+        public float bonusDamage {get; private set;}
         
         public event Action Dying;
         public event Action<float, float> OnHealthChanged;
@@ -70,15 +72,21 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             }
             
             OnHealthChanged?.Invoke(currentHealth, maxHealth);
-            Debug.Log("vive la vie ");
         }
 
         private void CheckStillAlive()
         {
             if (currentHealth <= 0)
             {
-                Dying?.Invoke();
+                StartCoroutine(DyingEffect());
             }
+        }
+
+        IEnumerator DyingEffect()
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = brokenSprite;
+            yield return new WaitForSeconds(1f);
+            Dying?.Invoke();
         }
 
         public void AddRessources(int amount)
@@ -127,6 +135,19 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             {
                 GameObject newCharacter = Instantiate(characterObj, transform);
                 characters.Add(newCharacter.GetComponent<Character>());
+            }
+        }
+
+        public void AddBonusDamage(float damage)
+        {
+            bonusDamage += damage;
+            Debug.Log(bonusDamage);
+            foreach (Character character in characters)
+            {
+                foreach (Skill skill in character.activeSkills)
+                {
+                    skill.AddBonusDamage(bonusDamage);
+                }
             }
         }
     }

@@ -18,7 +18,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         [SerializeField] public Carriage playerCarriage;
         [SerializeField] private CharacterUI characterUI;
         [SerializeField] private GameModeManager gameModeManager;
-        [SerializeField] private EnemiesManager enemiesManager;
+        [SerializeField] public EnemiesManager enemiesManager;
         private Character activeCharacter;
         private Skill currentlyPlayingSkill;
         private int currentRound = 0;

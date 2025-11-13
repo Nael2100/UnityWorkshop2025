@@ -38,7 +38,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             {
                 yield return null;
             }
-            enemyIsActive = false;
+            EndTurn();
         }
 
         private void Attack()

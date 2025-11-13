@@ -29,7 +29,7 @@ namespace TBT.Gameplay.TowerDefenseUI
         {
             for (int i = 0; i < currentCharacter.activeSkills.Count; i++)
             {
-                Vector3 newPosition = new Vector3(buttonsParent.position.x+200*i, buttonsParent.position.y);
+                Vector3 newPosition = new Vector3(buttonsParent.position.x+240*i, buttonsParent.position.y);
                 GameObject newButton = Instantiate(buttonPrefab, newPosition, Quaternion.identity, buttonsParent);
                 SkillButton skillButtonRef = newButton.GetComponent<SkillButton>();
                 buttons.Add(skillButtonRef);
@@ -73,7 +73,7 @@ namespace TBT.Gameplay.TowerDefenseUI
                 yield return null;
             }
             speed = 500f;
-            while (icon.anchoredPosition.x > 0)
+            while (icon.anchoredPosition.x > -63)
             {
                 icon.position += Vector3.left * (speed * Time.deltaTime);
                 yield return null;
@@ -84,7 +84,7 @@ namespace TBT.Gameplay.TowerDefenseUI
             bottomBar.anchoredPosition = new Vector2(0, 0);
             icon.anchoredPosition = new Vector2(0, 0);
             float speed = 500f;
-            while (icon.anchoredPosition.x <400f)
+            while (icon.anchoredPosition.x <463f)
             {
                 icon.position += Vector3.right * (speed * Time.deltaTime);
                 yield return null;

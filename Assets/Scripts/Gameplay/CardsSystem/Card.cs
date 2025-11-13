@@ -1,4 +1,5 @@
 using System;
+using TBT.Core.Data.CardsData;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -6,17 +7,24 @@ namespace TBT.Gameplay.CardsSystem
 {
     public class Card : MonoBehaviour, IPointerClickHandler
     {
-        [SerializeField] protected string cardName;
-        [SerializeField] protected string cardDescription;
+        [SerializeField] protected CardData data;
+        private string cardName;
+        private string cardUpText;
+        private string cardDownText;
         [SerializeField] protected TextMesh cardNameTextMesh;
-        [SerializeField] protected TextMesh cardDescriptionTextMesh;
+        [SerializeField] protected TextMesh cardUpDescriptionTextMesh;
+        [SerializeField] protected TextMesh cardDownDescriptionTextMesh;
         
         public event Action<GameObject> cardSelected;
 
         private void OnEnable()
         {
+            cardName = data.name;
             cardNameTextMesh.text = cardName;
-            cardDescriptionTextMesh.text = cardDescription;
+            cardUpText = data.cardUpEffect;
+            cardDownText = data.cardDownEffect;
+            cardUpDescriptionTextMesh.text = cardUpText;
+            cardDownDescriptionTextMesh.text = cardDownText;
         }
 
         public void OnPointerClick(PointerEventData eventData)

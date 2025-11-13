@@ -12,7 +12,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
     public class EnemyClass : MonoBehaviour
     {
         protected float damage;
-        protected float health;
+        protected float maxHealth;
+        protected float currentHealth;
         protected float speed;
         protected float range;
         public bool enemyIsActive; //{ get; protected set; }
@@ -25,6 +26,9 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         private float damageAnimationCurveDuration = 0.5f;
 
         public event Action<EnemyClass> OnDying; 
+        public event Action<float, float> OnHealthChanged;
+        public event Action OnTurnStarted;
+        public event Action OnTurnEnded;
 
         private void OnEnable()
         {
@@ -36,13 +40,15 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         {
             RotateTowardsCarriage();
             enemyIsActive = true;
+            OnTurnStarted?.Invoke();
         }
 
         private void SetUpData()
         {
             isDoingAction = false;
             damage = data.damage;
-            health = data.health;
+            maxHealth = data.health;
+            currentHealth = maxHealth;
             speed = data.speed;
             range = data.range;
         }
@@ -55,7 +61,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 
         public virtual void TakeDamage(float damage)
         {
-            health -= damage;
+            currentHealth -= damage;
+            OnHealthChanged?.Invoke(currentHealth, maxHealth);
             StartCoroutine(TakeDamageAnimation());
             CheckStillAlive();
         }
@@ -79,7 +86,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 
         private void CheckStillAlive()
         {
-            if (health <= 0)
+            if (currentHealth <= 0)
             {
                 Dying();
             }
@@ -107,6 +114,17 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
             direction.z = 0f;
             Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
             transform.rotation = rotation;
+        }
+
+        public void AddSpeed(float addedSpeed)
+        {
+            speed = data.speed + addedSpeed;
+        }
+
+        protected void EndTurn()
+        {
+            enemyIsActive = false;
+            OnTurnEnded?.Invoke();
         }
     }
 }

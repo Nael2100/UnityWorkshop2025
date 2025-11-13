@@ -11,10 +11,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         private void Start()
         {
             Explode();
-            damage = data.damage;
-            health = data.health;
-            speed = data.speed;
-            range = data.range;
+
         }
 
         private void OnEnable()
