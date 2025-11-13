@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fc1a770383a759e4482a37307e3e852b
+guid: aa1262269d48f3b41917442ef02a7f32
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3369590879684646718
-    second: Character_Selection_Izhe_Asset 1_0
+      213: -7276616057049132031
+    second: TBTPortrait_Sierra_Asset_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_Selection_Izhe_Asset 1_0
+      name: TBTPortrait_Sierra_Asset_0
       rect:
         serializedVersion: 2
-        x: 103
-        y: 159
-        width: 305
-        height: 704
+        x: 0
+        y: 0
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e37dffd5d0133ce20800000000000000
-      internalID: 3369590879684646718
+      spriteID: 104dea0df34440b90800000000000000
+      internalID: -7276616057049132031
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Character_Selection_Izhe_Asset 1_0: 3369590879684646718
+      TBTPortrait_Sierra_Asset_0: -7276616057049132031
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
