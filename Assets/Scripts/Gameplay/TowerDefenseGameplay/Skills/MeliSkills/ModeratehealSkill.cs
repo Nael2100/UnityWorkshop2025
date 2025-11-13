@@ -12,7 +12,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.MeliSkills
         public override void ApplyEffects()
         {
             base.ApplyEffects();
-            Debug.Log("ApplyEffect coral done)");
             StartCoroutine(ApplyEffectsDelay());
         }
         IEnumerator ApplyEffectsDelay()
@@ -28,10 +27,9 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.MeliSkills
         private IEnumerator HealLifeTime(GameObject objectToDestroy)
         {
             yield return new WaitForSeconds(data.duration);
-            Destroy(objectToDestroy);
-            Debug.Log("coral destroy)");
             SkillPlayedEvent();
-            Debug.Log("coral finished");
+            Destroy(objectToDestroy);
+            
         }
     }
 }

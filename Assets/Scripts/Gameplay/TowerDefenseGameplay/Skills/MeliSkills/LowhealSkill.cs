@@ -15,10 +15,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.MeliSkills
         public override void ApplyEffects()
         {
             base.ApplyEffects();
-            Debug.Log("ApplyEffect coral done)");
             TowerDefenseManager.Instance.playerCarriage.Heal(data.heal);
             StartCoroutine(ApplyEffectsDelay());
-            Debug.Log("Coroutine coral done)");
         }
         IEnumerator ApplyEffectsDelay()
         {

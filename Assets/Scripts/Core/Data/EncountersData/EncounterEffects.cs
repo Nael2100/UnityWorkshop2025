@@ -4,5 +4,6 @@ namespace TBT.Core.Data.EncountersData
     {
         refillHealth,
         refillRessources,
+        nothing,
     }
 }

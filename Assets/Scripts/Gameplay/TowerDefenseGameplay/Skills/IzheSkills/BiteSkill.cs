@@ -1,34 +1,11 @@
 using System.Collections;
+using TBT.Gameplay.TowerDefenseGameplay.Skills.SkillsFamilies;
 using UnityEngine;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Skills.IzheSkills
 {
-    public class BiteSkill : Skill
+    public class BiteSkill : LaunchingSkill
     {
-        [SerializeField] private GameObject damageZonePrefab;
-        [SerializeField] private Sprite biteSprite;
 
-        public override void LaunchSkill(Vector3 position)
-        {
-            base.LaunchSkill(position);
-            Debug.Log("lauchSkill Bite done)");
-            GameObject damageZoneObject = Instantiate(damageZonePrefab, transform);
-            DamageZone damageZone = damageZoneObject.GetComponent<DamageZone>();
-            damageZoneObject.GetComponent<SpriteRenderer>().sprite = biteSprite;
-            damageZoneObject.transform.localScale = new Vector3(data.size, data.size, 1);
-            damageZoneObject.transform.position = position;
-            damageZone.SetDamage(data.damages);
-            StartCoroutine(DamageLifeTime(damageZoneObject));
-            Debug.Log("Coroutine Bite done)");
-            SkillPlayedEvent();
-            Debug.Log("Bite finished)");
-        }
-
-        private IEnumerator DamageLifeTime(GameObject objectToDestroy)
-        {
-            yield return new WaitForSeconds(data.duration);
-            Destroy(objectToDestroy);
-            Debug.Log("destroy Bite)");
-        }
     }
 }

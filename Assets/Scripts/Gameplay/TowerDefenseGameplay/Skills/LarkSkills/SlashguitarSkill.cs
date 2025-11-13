@@ -24,6 +24,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Skills.LarkSkills
         private IEnumerator DamageLifeTime(GameObject objectToDestroy)
         {
             yield return new WaitForSeconds(data.duration);
+            SkillPlayedEvent();
             Destroy(objectToDestroy);
         }
     }

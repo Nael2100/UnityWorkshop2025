@@ -49,6 +49,10 @@ namespace TBT.Gameplay
             {
                 carriage.RefillHealth();
             }
+            else if (obj == EncounterEffects.refillRessources)
+            {
+                TowerDefenseManager.Instance.Reload();
+            }
         }
     }
 }
