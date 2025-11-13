@@ -100,7 +100,6 @@ MonoBehaviour:
   needsClick: 1
   rangeCollider2D: {fileID: -952868315852355939}
   areaCursor: {fileID: 5837734822509230676}
-  data: {fileID: 11400000, guid: 569cbf31fadb29b4f904da10cc82676e, type: 2}
   damageZonePrefab: {fileID: 7650741622790034829, guid: 2ad36051d9419ca4d96d6e2c37208e77, type: 3}
   biteSprite: {fileID: 21300000, guid: 6dad6b4e9f7304c489e843681db3440d, type: 3}
 --- !u!1 &5837734822509230676

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: MolotovSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: Throw molotov
-  damages: 2
-  size: 5
-  range: 15
+  name: 'Throw a cocktail molotov : 3 damages on enemies'
+  damages: 3
+  size: 1
+  range: 20
   sprite: {fileID: 0}
   ressourcesCost: 2
   duration: 2
+  heal: 0

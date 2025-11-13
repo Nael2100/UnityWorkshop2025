@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: CrushingSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: 'Crushing : attack an enemy / -5 health'
+  name: 'Crushing : 5 damages on enemies'
   damages: 5
-  size: 5
-  range: 5
+  size: 1
+  range: 10
   sprite: {fileID: 0}
   ressourcesCost: 2
   duration: 2
