@@ -15,7 +15,7 @@ MonoBehaviour:
   title: So, are yer helping me, or what ?
   text: "Eh ye here ! Need quite s\u2019me help over there ! ye\u2019re mercenaries,
     right ? My friend ca\u2019t fight anymore, and th\u2019se damn\u2019d governmental
-    robots won\u2019t let us. Don\u2019t think I\u2019ll be able to keep up\u2026"
+    robots won\u2019t let us go. Don\u2019t think I\u2019ll be able to keep up\u2026"
   resolvedText:
   - You heal the wounded mercenary. After the battle, the two mercenaries thank you
     for the help. Your health refill completely !

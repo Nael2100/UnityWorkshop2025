@@ -64,7 +64,7 @@ namespace TBT.Gameplay.EncounterGameplay.EncounterUI
 
         private void OnButtonClicked(EncounterEffects effect, int index)
         {
-            currentCompletionText = data.answers[index];
+            currentCompletionText = data.resolvedText[index];
             descriptionText.text = currentCompletionText;
             foreach (var button in buttonChoices)
             {
