@@ -103,10 +103,10 @@ TextureImporter:
       name: TBTPortrait_Izhe_Asset_002_0
       rect:
         serializedVersion: 2
-        x: 58
-        y: 55
-        width: 399
-        height: 379
+        x: 0
+        y: 0
+        width: 512
+        height: 490
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

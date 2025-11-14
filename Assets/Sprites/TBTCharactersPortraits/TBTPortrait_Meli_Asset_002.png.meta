@@ -103,10 +103,10 @@ TextureImporter:
       name: TBTPortrait_Meli_Asset_002_0
       rect:
         serializedVersion: 2
-        x: 121
-        y: 55
-        width: 269
-        height: 402
+        x: 102
+        y: 0
+        width: 341
+        height: 506
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

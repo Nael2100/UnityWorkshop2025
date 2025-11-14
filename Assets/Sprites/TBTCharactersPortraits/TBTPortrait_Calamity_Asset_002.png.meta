@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: -2791610683266880186
     second: TBTPortrait_Calamity_Asset_002_0
+  - first:
+      213: -6155354563230033309
+    second: TBTPortrait_Calamity_Asset_002_1
+  - first:
+      213: -2876772729892857894
+    second: TBTPortrait_Calamity_Asset_002_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,10 +109,10 @@ TextureImporter:
       name: TBTPortrait_Calamity_Asset_002_0
       rect:
         serializedVersion: 2
-        x: 58
-        y: 55
-        width: 399
-        height: 402
+        x: 0
+        y: 0
+        width: 512
+        height: 503
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,6 +123,50 @@ TextureImporter:
       bones: []
       spriteID: 64d21b8cfd43249d0800000000000000
       internalID: -2791610683266880186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TBTPortrait_Calamity_Asset_002_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 499
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a181023a9c39aa0800000000000000
+      internalID: -6155354563230033309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TBTPortrait_Calamity_Asset_002_2
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 500
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad79437a176a318d0800000000000000
+      internalID: -2876772729892857894
       vertices: []
       indices: 
       edges: []
@@ -136,6 +186,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       TBTPortrait_Calamity_Asset_002_0: -2791610683266880186
+      TBTPortrait_Calamity_Asset_002_1: -6155354563230033309
+      TBTPortrait_Calamity_Asset_002_2: -2876772729892857894
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

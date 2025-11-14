@@ -5,9 +5,6 @@ TextureImporter:
   - first:
       213: -2758072862273520416
     second: TBTPortrait_Sierra_Asset_002_0
-  - first:
-      213: -3661363524715269903
-    second: TBTPortrait_Sierra_Asset_002_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,10 +103,10 @@ TextureImporter:
       name: TBTPortrait_Sierra_Asset_002_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 231
-        width: 12
-        height: 13
+        x: 0
+        y: 0
+        width: 512
+        height: 473
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,28 +117,6 @@ TextureImporter:
       bones: []
       spriteID: 0ecba8b385b59b9d0800000000000000
       internalID: -2758072862273520416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TBTPortrait_Sierra_Asset_002_1
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 55
-        width: 402
-        height: 370
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1f036c3e549303dc0800000000000000
-      internalID: -3661363524715269903
       vertices: []
       indices: 
       edges: []
@@ -161,7 +136,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       TBTPortrait_Sierra_Asset_002_0: -2758072862273520416
-      TBTPortrait_Sierra_Asset_002_1: -3661363524715269903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
