@@ -74,6 +74,7 @@ namespace TBT.Gameplay
             float speed = 1000f;
             leftPanel.anchoredPosition = new Vector2(-960,0);
             rightPanel.anchoredPosition = new Vector2(960,0);
+            AudioManager.Instance.PlaySound(AudioName.doors);
             while (leftPanel.anchoredPosition.x < 0 && rightPanel.anchoredPosition.x > 0)
             {
                 leftPanel.anchoredPosition += new Vector2(speed * Time.deltaTime, 0);
@@ -127,6 +128,7 @@ namespace TBT.Gameplay
                 musicManager.SetAmbiantMusic();
             }
             yield return new WaitForSeconds(1f);
+            AudioManager.Instance.PlaySound(AudioName.doors);
             if (action != null)
             {
                 action?.Invoke();
