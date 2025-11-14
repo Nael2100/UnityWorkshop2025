@@ -50,3 +50,21 @@ MonoBehaviour:
   machineGun: {fileID: 8300000, guid: 7483259a23ca54149815b42aae478951, type: 3}
   robotDeath: {fileID: 8300000, guid: 9fc421e1961621d4da8e06a50fa9ae61, type: 3}
   robotHit: {fileID: 8300000, guid: 69d69295c90d7e14e95ff7f3666da018, type: 3}
+  throwProjectile: {fileID: 8300000, guid: 96abb5bcec7622f4cbc89d1d751eedde, type: 3}
+  moveCarriage: {fileID: 8300000, guid: 37b9a6244ed39f84094f165db0a7da05, type: 3}
+  doors: {fileID: 8300000, guid: ebbfada682d58fb499187351879ac419, type: 3}
+  pulling: {fileID: 8300000, guid: b083fb922bec6c242a7c76f035cfe828, type: 3}
+  startButton: {fileID: 8300000, guid: ef1faf48748f1f74b92dbdd4e8d1f77c, type: 3}
+  biteSkill: {fileID: 8300000, guid: 476e61ae9a1bd0f4c8316d9d3143eded, type: 3}
+  coralSpikesSkill: {fileID: 8300000, guid: 54e80536db382cd48898e3fc62c91812, type: 3}
+  finalExterminationSkill: {fileID: 8300000, guid: 73d972107627ece41868090a6614bd54, type: 3}
+  furtiveShotSkill: {fileID: 8300000, guid: 7030d8882d856834a811a1cc25fb33f9, type: 3}
+  guitarRiff: {fileID: 8300000, guid: b248e47cdb351cd4da1972680bccaddb, type: 3}
+  guitarSlash: {fileID: 8300000, guid: ee1ee62327d980647b62d49ef47c9952, type: 3}
+  heal: {fileID: 8300000, guid: 3c6446fb7ceefbf498e93ebc17d07027, type: 3}
+  hitmanSkill: {fileID: 8300000, guid: 8ba7e14e1ed0874438c829e00e253af9, type: 3}
+  molotovSkill: {fileID: 8300000, guid: 0d428a4601b97c54d938bb0bdf6ef067, type: 3}
+  forceHit: {fileID: 8300000, guid: 760cb79ad4fd16646a87a454270495a6, type: 3}
+  ricochet: {fileID: 8300000, guid: 04628a00ea349c540a16ed39c31def4c, type: 3}
+  strategicChoiceskill: {fileID: 8300000, guid: 38d56ab9ab17ae84ca933b0ece5bcc9f, type: 3}
+  reload: {fileID: 8300000, guid: f40e712f06802d54da49396a1762b7b9, type: 3}

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
   name: 'Hitman : 5 damages on all enemies'
   damages: 5
-  size: 10
+  size: 4
   range: 20
   areaSprite: {fileID: 21300000, guid: a568e5a44dc867742bf06b908e432a01, type: 3}
   iconSprite: {fileID: 21300000, guid: 320e50b2134a70445863621e2346bb3f, type: 3}
   ressourcesCost: 4
   duration: 0.5
   heal: 0
-  audioPlayed: 18
+  audioPlayed: 14

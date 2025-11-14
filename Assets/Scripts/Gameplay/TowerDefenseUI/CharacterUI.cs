@@ -81,12 +81,12 @@ namespace TBT.Gameplay.TowerDefenseUI
             bottomBar.anchoredPosition = new Vector2(0, -200);
             icon.anchoredPosition = new Vector2(463, 0);
             float speed= 300f;
-            while (bottomBar.anchoredPosition.y < -63)
+            while (bottomBar.anchoredPosition.y < 0)
             {
                 bottomBar.position += Vector3.up * (speed * Time.deltaTime);
                 yield return null;
             }
-            speed = 500f;
+            speed = 900f;
             while (icon.anchoredPosition.x > -63)
             {
                 icon.position += Vector3.left * (speed * Time.deltaTime);
@@ -108,7 +108,7 @@ namespace TBT.Gameplay.TowerDefenseUI
             isMovingPlayerPanel = true;
             bottomBar.anchoredPosition = new Vector2(0, 0);
             icon.anchoredPosition = new Vector2(63, 0);
-            float speed = 500f;
+            float speed = 900f;
             while (icon.anchoredPosition.x <463f)
             {
                 icon.position += Vector3.right * (speed * Time.deltaTime);

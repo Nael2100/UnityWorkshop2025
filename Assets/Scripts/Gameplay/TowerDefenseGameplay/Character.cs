@@ -15,6 +15,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         {
             foreach (GameObject prefab in skillsPrefabs)
             {
+                Debug.Log(prefab.name);
                 GameObject skillObject = Instantiate(prefab, transform);
                 activeSkills.Add(skillObject.GetComponent<SkillInterface>().skillComponent);
             }

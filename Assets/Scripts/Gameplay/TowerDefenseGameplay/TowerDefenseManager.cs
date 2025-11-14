@@ -90,7 +90,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             currentWave =1;
             playerCarriage.ResetPosition();
             maxWaves = Random.Range(towerDefenseData.minWaves,towerDefenseData.maxWaves);
-            enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
+            enemiesManager.SpawnEnemies(currentRound,currentWave,maxWaves, finalFight);
             PlayEnemiesTurn();
         }
 
@@ -127,7 +127,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                 else
                 {
                     currentWave += 1;
-                    enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
+                    enemiesManager.SpawnEnemies(currentRound,currentWave,maxWaves, finalFight);
                 }
             }
         }
@@ -185,7 +185,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                 else
                 {
                     currentWave += 1;
-                    enemiesManager.SpawnEnemies(currentRound,currentWave, finalFight);
+                    enemiesManager.SpawnEnemies(currentRound,currentWave, maxWaves, finalFight);
                 }
             }
             EnemiesNeedToCollide(true);

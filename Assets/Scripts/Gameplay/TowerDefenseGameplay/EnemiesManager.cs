@@ -60,7 +60,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             EnemiesTurnEnded?.Invoke();
         }
 
-        public void SpawnEnemies(int round, int wave, bool spawnFinalBoss)
+        public void SpawnEnemies(int round, int wave, int maxWave, bool spawnFinalBoss)
         {
             int min = data.minEnnemies + (data.addedEnnemiesByWaves * wave) + data.addedEnnemiesByRounds;
             int max = data.maxEnnemies + (data.addedEnnemiesByWaves * wave) + data.addedEnnemiesByRounds;
@@ -75,7 +75,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                 enemies.Add(enemyComponent);
                 enemyComponent.OnDying += EnemyIsDead;
             }
-            if (spawnFinalBoss)
+            if (spawnFinalBoss && wave==maxWave-1 )
             {
                 Vector3 spawnPosition = new Vector3(spawningPoint.transform.position.x - Random.Range(0,offset), spawningPoint.transform.position.y+ Random.Range(-offset, offset),0);
                 GameObject newEnemy  = Instantiate(finalBoss, spawnPosition, Quaternion.identity);

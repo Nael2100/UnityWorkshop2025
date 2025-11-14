@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
   name: 'Throw a cocktail molotov : 3 damages on enemies'
   damages: 3
-  size: 1
+  size: 3
   range: 20
   areaSprite: {fileID: 21300000, guid: 274e1f0be31e25e48a07af80538303c6, type: 3}
   iconSprite: {fileID: 21300000, guid: c2f70bac63d7d574f84d78e0b0babf50, type: 3}

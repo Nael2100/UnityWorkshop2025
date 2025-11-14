@@ -3,11 +3,14 @@ using TBT.Core.Data.AudioData;
 using TBT.Core.Data.SkillsData;
 using TBT.Gameplay.Audio;
 using TBT.Gameplay.TowerDefenseUI;
+using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using Cursor = UnityEngine.WSA.Cursor;
+
 namespace TBT.Gameplay.TowerDefenseGameplay
 {
     public class Skill : MonoBehaviour, IPointerClickHandler
@@ -21,7 +24,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         public event Action SkillPlayed;
         [SerializeField] private CircleCollider2D rangeCollider2D; 
         private float range;
-        [SerializeField] private GameObject areaCursor;
+        private GameObject areaCursor;
         protected bool canLaunch;
         protected float damage;
         protected float size;
@@ -36,6 +39,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private void OnEnable()
         {
             cam = Camera.main;
+            areaCursor = GameObject.Find("Cursor");
             iconSprite = data.iconSprite;
             areaSprite = data.areaSprite;
             name = data.name;
@@ -45,11 +49,16 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             duration = data.duration;
             ressourcesCost = data.ressourcesCost;
             audioToPlay = data.audioPlayed;
-            areaCursor.transform.localScale *= size;
-            areaCursor.SetActive(false);
+            PutCursorAway();
             rangeCollider2D.radius = range;
             rangeCollider2D.enabled = false;
         }
+
+        private void OnDisable()
+        {
+            PutCursorAway();
+        }
+
         public void Play(bool firstShot = true)
         {
             if (firstShot)
@@ -59,7 +68,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             if (clicksLefts>0)
             {
                 clicksLefts--;
-                areaCursor.SetActive(true);
                 canLaunch = true;
                 rangeCollider2D.enabled = true;
                 EnemiesNeedToBeDamagedEvent(false);
@@ -80,7 +88,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         {
             EnemiesNeedToBeDamagedEvent(true);
             canLaunch = false;
-            areaCursor.SetActive(false);
+            PutCursorAway();
             rangeCollider2D.enabled = false;
             if (audioToPlay != null)
             {
@@ -104,6 +112,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         {
             if (canLaunch && areaCursor.activeInHierarchy)
             {
+                areaCursor.transform.localScale = new Vector3(size, size, 1);
                 Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
                 Vector3 worldPosition =
                     cam.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y,
@@ -141,6 +150,15 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         public void AddBonusDamage(float newBonus)
         {
             damage = data.damages + newBonus;
+        }
+
+        protected void PutCursorAway()
+        {
+            
+            if (areaCursor != null)
+            {
+                areaCursor.transform.position = new Vector3(1000,1000,1000);
+            }
         }
     }
 
