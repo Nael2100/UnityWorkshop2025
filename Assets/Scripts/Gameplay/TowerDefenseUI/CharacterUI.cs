@@ -29,7 +29,7 @@ namespace TBT.Gameplay.TowerDefenseUI
         {
             for (int i = 0; i < currentCharacter.activeSkills.Count; i++)
             {
-                Vector3 newPosition = new Vector3(buttonsParent.position.x+300*i, buttonsParent.position.y);
+                Vector3 newPosition = new Vector3(buttonsParent.position.x+240*i, buttonsParent.position.y);
                 GameObject newButton = Instantiate(buttonPrefab, newPosition, Quaternion.identity, buttonsParent);
                 SkillButton skillButtonRef = newButton.GetComponent<SkillButton>();
                 buttons.Add(skillButtonRef);
