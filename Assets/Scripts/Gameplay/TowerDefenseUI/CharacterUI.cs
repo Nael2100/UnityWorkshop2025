@@ -33,7 +33,14 @@ namespace TBT.Gameplay.TowerDefenseUI
                 GameObject newButton = Instantiate(buttonPrefab, buttonsParent);
                 newButton.GetComponent<RectTransform>().anchoredPosition = newPosition;
                 SkillButton skillButtonRef = newButton.GetComponent<SkillButton>();
-                buttons.Add(skillButtonRef);
+                if (buttons.Count <= i)
+                {
+                    buttons.Add(skillButtonRef);
+                }
+                else
+                {
+                    buttons[i] = (skillButtonRef);
+                }
                 skillButtonRef.SetUp(skillButtonRef.GetComponentInChildren<Button>(),manager,currentCharacter.activeSkills[i]);
             }
         }
@@ -49,8 +56,7 @@ namespace TBT.Gameplay.TowerDefenseUI
             {
               foreach (SkillButton button in buttons)
               {
-                  var buttonGameObject = button.gameObject;
-                  if (buttonGameObject !=null)
+                  if (button.gameObject.activeInHierarchy)
                   {
                       button.Deactivate();
                   }
@@ -85,13 +91,6 @@ namespace TBT.Gameplay.TowerDefenseUI
         }
         IEnumerator ExitAnimation()
         {
-            foreach (SkillButton button in buttons)
-            {
-                if (button != null)
-                {
-                    Destroy(button.gameObject);
-                }
-            }
             while (isMovingPlayerPanel)
             {
                 yield return null;
@@ -111,7 +110,13 @@ namespace TBT.Gameplay.TowerDefenseUI
                 bottomBar.position += Vector3.down * (speed * Time.deltaTime);
                 yield return null;
             }
-            
+            foreach (SkillButton button in buttons)
+            {
+                if (button != null)
+                {
+                    Destroy(button.gameObject);
+                }
+            }
             bottomBar.anchoredPosition = new Vector2(0, -200);
             icon.anchoredPosition = new Vector2(463, 0);
             isMovingPlayerPanel = false;
