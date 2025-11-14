@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TBT.Gameplay.TowerDefenseGameplay;
@@ -8,6 +9,7 @@ namespace TBT.Gameplay.TowerDefenseUI
 {
     public class CharacterUI : MonoBehaviour
     {
+        [SerializeField] private CanvasGroup canva;
         private List<SkillButton> buttons = new List<SkillButton>();
         private Character currentCharacter;
         [SerializeField] private RectTransform buttonsParent;
@@ -17,17 +19,23 @@ namespace TBT.Gameplay.TowerDefenseUI
         private bool isMovingPlayerPanel;
         public void Setup(Character character, TowerDefenseManager manager)
         {
+            Debug.Log("set up ui");
             currentCharacter = character;
             icon.gameObject.GetComponent<Image>().sprite = character.data.icone;
             bottomBar.anchoredPosition = new Vector2(0, -200);
             icon.anchoredPosition = new Vector2(463, 0);
-            CreateButtons(manager);
+            SetUpButtons();
             StartCoroutine(EnteringAnimation());
         }
-        
+
+        private void Start()
+        {
+            CreateButtons(TowerDefenseManager.Instance);
+        }
+
         void CreateButtons(TowerDefenseManager manager)
         {
-            for (int i = 0; i < currentCharacter.activeSkills.Count; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Vector3 newPosition = new Vector3(buttonsParent.anchoredPosition.x+(450*i), buttonsParent.anchoredPosition.y,0);
                 GameObject newButton = Instantiate(buttonPrefab, buttonsParent);
@@ -41,7 +49,15 @@ namespace TBT.Gameplay.TowerDefenseUI
                 {
                     buttons[i] = (skillButtonRef);
                 }
-                skillButtonRef.SetUp(skillButtonRef.GetComponentInChildren<Button>(),manager,currentCharacter.activeSkills[i]);
+                
+            }
+        }
+
+        void SetUpButtons()
+        {
+            for (int i = 0; i < currentCharacter.activeSkills.Count; i++)
+            {
+                buttons[i].SetUp(currentCharacter.activeSkills[i]);
             }
         }
 
@@ -52,16 +68,7 @@ namespace TBT.Gameplay.TowerDefenseUI
 
         public void BlockAllButtons()
         {
-            if (buttons.Count > 0)
-            {
-              foreach (SkillButton button in buttons)
-              {
-                  if (button.gameObject.activeInHierarchy)
-                  {
-                      button.Deactivate();
-                  }
-              }  
-            }
+            canva.interactable = false;
         }
 
         IEnumerator EnteringAnimation()
@@ -88,13 +95,16 @@ namespace TBT.Gameplay.TowerDefenseUI
             bottomBar.anchoredPosition = new Vector2(0, 0);
             icon.anchoredPosition = new Vector2(-63, 0);
             isMovingPlayerPanel = false;
+            canva.interactable = true;
         }
         IEnumerator ExitAnimation()
         {
-            /*while (isMovingPlayerPanel)
+
+            while (isMovingPlayerPanel)
             {
                 yield return null;
-            }*/
+            }           
+            canva.interactable = false;
             isMovingPlayerPanel = true;
             bottomBar.anchoredPosition = new Vector2(0, 0);
             icon.anchoredPosition = new Vector2(63, 0);
@@ -109,15 +119,6 @@ namespace TBT.Gameplay.TowerDefenseUI
             {
                 bottomBar.position += Vector3.down * (speed * Time.deltaTime);
                 yield return null;
-            }
-
-            SkillButton[] skillButtons = FindObjectsByType<SkillButton>(0);
-            foreach (SkillButton button in skillButtons)
-            {
-                if (button != null)
-                {
-                    Destroy(button.gameObject);
-                }
             }
             bottomBar.anchoredPosition = new Vector2(0, -200);
             icon.anchoredPosition = new Vector2(463, 0);

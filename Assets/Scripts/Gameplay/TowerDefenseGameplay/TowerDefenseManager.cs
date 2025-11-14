@@ -142,8 +142,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay
                      if (skillToActivate == skill)
                      {
                          currentlyPlayingSkill = skill;
-                         currentlyPlayingSkill.Play();
                          characterUI.BlockAllButtons();
+                         currentlyPlayingSkill.Play();
                          currentlyPlayingSkill.SkillPlayed += EndPlayerTurn;
                          currentlyPlayingSkill.EnemiesNeedToCollide += EnemiesNeedToCollide;
                          break;
@@ -203,14 +203,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             if (playerTurn && currentlyPlayingSkill == null)
             {
                 AudioManager.Instance.PlaySound(AudioName.reload);
-                SkillButton[] skillButtons = FindObjectsByType<SkillButton>(0);
-                foreach (SkillButton button in skillButtons)
-                {
-                    if (button != null)
-                    {
-                        button.Deactivate();
-                    }
-                }
+                characterUI.BlockAllButtons();
                 EndPlayerTurn();
                 playerCarriage.AddRessources(playerCarriage.maxRessources);
                 

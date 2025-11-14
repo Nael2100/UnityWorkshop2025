@@ -1,3 +1,4 @@
+using System;
 using TBT.Gameplay.TowerDefenseGameplay;
 using TMPro;
 using UnityEngine;
@@ -12,14 +13,19 @@ namespace TBT.Gameplay.TowerDefenseUI
         [SerializeField]  public TextMeshProUGUI nameText;
         [SerializeField]  private Image[] costImages;
         private Skill associatedSkill;
-        
-        public void SetUp(Button newButton, TowerDefenseManager manager, Skill skill)
+
+        private void OnEnable()
         {
-            button = newButton;
+            button = GetComponentInChildren<Button>();
+        }
+
+        public void SetUp(Skill skill)
+        {
             associatedSkill = skill;
             nameText.text = skill.name;
             image.sprite = skill.iconSprite;
-            newButton.onClick.AddListener(() => manager.PlaySkill(associatedSkill));
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() => TowerDefenseManager.Instance.PlaySkill(associatedSkill));
             foreach (Image costImage in costImages)
             {
                 costImage.gameObject.SetActive(false);
