@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.CharacterData.CharacterDataScript
   characterName: Calamity
   lines: []
-  icone: {fileID: 21300000, guid: 0038efa351e943d439706ca8794737c8, type: 3}
+  icone: {fileID: 21300000, guid: caedd21a6edd6b647889ff137efdf94a, type: 3}

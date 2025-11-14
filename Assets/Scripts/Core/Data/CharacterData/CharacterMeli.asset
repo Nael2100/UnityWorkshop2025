@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.CharacterData.CharacterDataScript
   characterName: Meli
   lines: []
-  icone: {fileID: 21300000, guid: 87f4cc7603e66d948a1fc315ee5a950b, type: 3}
+  icone: {fileID: 21300000, guid: 0db02b8a33366cb4f8b470b63bef3759, type: 3}

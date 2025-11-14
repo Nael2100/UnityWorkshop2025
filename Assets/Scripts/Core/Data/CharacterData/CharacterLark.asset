@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.CharacterData.CharacterDataScript
   characterName: Lark
   lines: []
-  icone: {fileID: 21300000, guid: 8cc30f2022c925846a0a03b80f10aa3c, type: 3}
+  icone: {fileID: 21300000, guid: 9c8c58307025f574ea22764d5deb2cb4, type: 3}

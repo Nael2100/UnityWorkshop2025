@@ -82,7 +82,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             {
                 Destroy(currentMapObject);
             }
-            currentMapObject = Instantiate(mapsPrefabs[Random.Range(0, mapsPrefabs.Length)], playerTurnPanel.transform);
+            currentMapObject = Instantiate(mapsPrefabs[Random.Range(0, mapsPrefabs.Length)]);
+            currentMapObject.transform.position = new Vector3(0,0,0);
             currentRound += 1;
             currentWave =1;
             playerCarriage.ResetPosition();

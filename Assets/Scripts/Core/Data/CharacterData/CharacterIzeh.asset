@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.CharacterData.CharacterDataScript
   characterName: Izeh
   lines: []
-  icone: {fileID: 21300000, guid: 97458e4664198b4448f737321e16763e, type: 3}
+  icone: {fileID: 21300000, guid: 361401b05bd16d746a4596dc206f30fa, type: 3}

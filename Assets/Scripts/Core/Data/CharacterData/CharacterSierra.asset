@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.CharacterData.CharacterDataScript
   characterName: Sierra
   lines: []
-  icone: {fileID: 21300000, guid: aa1262269d48f3b41917442ef02a7f32, type: 3}
+  icone: {fileID: 21300000, guid: 93073aeca0f37e1439765c03a604c633, type: 3}
