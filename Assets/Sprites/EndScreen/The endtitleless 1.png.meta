@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6fc8d8e6cf76bd94ab33a2af0471a5ae
+guid: 8ad93245e4f913943adad43db2d15eb3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7793457621085528842
-    second: BG_quarry_3_0
+      213: -8909108228246438075
+    second: The endtitleless 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG_quarry_3_0
+      name: The endtitleless 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2048
-        height: 2048
+        x: 63
+        y: 483
+        width: 1922
+        height: 1082
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a032dd43a6ce72c60800000000000000
-      internalID: 7793457621085528842
+      spriteID: 54f7cd5d44d7c5480800000000000000
+      internalID: -8909108228246438075
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BG_quarry_3_0: 7793457621085528842
+      The endtitleless 1_0: -8909108228246438075
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

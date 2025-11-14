@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6fc8d8e6cf76bd94ab33a2af0471a5ae
+guid: 01365e11a05f9d44c944f09755c6b6b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7793457621085528842
-    second: BG_quarry_3_0
+      213: -8945138221118249673
+    second: Badending 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG_quarry_3_0
+      name: Badending 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 175
         width: 2048
-        height: 2048
+        height: 1226
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a032dd43a6ce72c60800000000000000
-      internalID: 7793457621085528842
+      spriteID: 7352a776e2c7cd380800000000000000
+      internalID: -8945138221118249673
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BG_quarry_3_0: 7793457621085528842
+      Badending 1_0: -8945138221118249673
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
