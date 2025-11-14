@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -52280469
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.23921569}
@@ -191,4 +191,5 @@ MonoBehaviour:
   rangeCollider2D: {fileID: -1615345588003885386}
   areaCursor: {fileID: 7126604024095045766}
   damageZonePrefab: {fileID: 7650741622790034829, guid: 2ad36051d9419ca4d96d6e2c37208e77, type: 3}
-  strategicchoiceSprite: {fileID: 21300000, guid: a0d759bab0a01e642a506f46341742ca, type: 3}
+  skillSprite: {fileID: 0}
+  skillArea: {fileID: 0}
