@@ -17,7 +17,12 @@ MonoBehaviour:
     time is coming, however I dont\u2019 feel ready yet. My life was fluttering,
     and my children live happily. But, I still have regrets. Would you help an old
     man to choose his last action in this world ?"
-  resolvedText: 'Here your reward : '
+  resolvedText:
+  - The eldery is disapointed. You receive nothing from him...
+  - The elderly goes to the village. He tells you to take what you need in his house.
+    Your ressources refill completly !
+  - The elderly is going to see his family. He gives you the possibility to repear
+    your carriage. Your health refill completely !
   answers:
   - You should rest and stay here.
   - Die in honor is the purpose of every sheriff. Achieve one more action for the

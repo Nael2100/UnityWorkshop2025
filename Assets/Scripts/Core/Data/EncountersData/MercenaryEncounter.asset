@@ -16,7 +16,14 @@ MonoBehaviour:
   text: "Eh ye here ! Need quite s\u2019me help over there ! ye\u2019re mercenaries,
     right ? My friend ca\u2019t fight anymore, and th\u2019se damn\u2019d governmental
     robots won\u2019t let us. Don\u2019t think I\u2019ll be able to keep up\u2026"
-  resolvedText: 'Here your reward : '
+  resolvedText:
+  - You heal the wounded mercenary. After the battle, the two mercenaries thank you
+    for the help. Your health refill completely !
+  - You start fighting the robots. With now 4 of you, the robots are meaningless.
+    After the fight, the mercenary gives you all his ressources. He doesn't need
+    it anymore. Your ressources refill completly !
+  - You continue your road without helping them. Living on this planet is not easy
+    and being selfaware is essential over here. You receive nothing from them...
   answers:
   - Today wounded people are tomorrow allies.
   - We just needed some training.

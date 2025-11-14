@@ -20,6 +20,7 @@ namespace TBT.Gameplay.EncounterGameplay.EncounterUI
         [SerializeField] private Image iconImage;
         [SerializeField] private Image[] charactersInBackground;
         public event Action<EncounterEffects> answerSelected;
+        private EncounterData data;
         public event Action encounterCompleted;
         private EncounterEffects[] currentEffects;
         private string currentCompletionText;
@@ -32,6 +33,7 @@ namespace TBT.Gameplay.EncounterGameplay.EncounterUI
 
         public void SetUp(EncounterData data)
         {
+            this.data = data;
             canva.enabled = true;
             foreach (var button in buttonChoices)
             {
@@ -40,7 +42,6 @@ namespace TBT.Gameplay.EncounterGameplay.EncounterUI
             titleText.text = data.title;
             descriptionText.text = data.text;
             iconImage.sprite = data.icon;
-            currentCompletionText = data.resolvedText;
             for (int i = 0; i < data.answers.Length; i++)
             {
                 buttonChoices[i].GetComponentInChildren<TextMeshProUGUI>().text = data.answers[i];
@@ -50,22 +51,20 @@ namespace TBT.Gameplay.EncounterGameplay.EncounterUI
         
         public void Button1Clicked()
         {
-            AudioManager.Instance.PlaySound(AudioName.clicSound);
-            OnButtonClicked(currentEffects[0]);
+            OnButtonClicked(currentEffects[0],0);
         }
         public void Button2Clicked()
         {
-            AudioManager.Instance.PlaySound(AudioName.clicSound);
-            OnButtonClicked(currentEffects[1]);
+            OnButtonClicked(currentEffects[1], 1);
         }
         public void Button3Clicked()
         {
-            AudioManager.Instance.PlaySound(AudioName.clicSound);
-            OnButtonClicked(currentEffects[2]);
+            OnButtonClicked(currentEffects[2],2);
         }
 
-        private void OnButtonClicked(EncounterEffects effect)
+        private void OnButtonClicked(EncounterEffects effect, int index)
         {
+            currentCompletionText = data.answers[index];
             descriptionText.text = currentCompletionText;
             foreach (var button in buttonChoices)
             {

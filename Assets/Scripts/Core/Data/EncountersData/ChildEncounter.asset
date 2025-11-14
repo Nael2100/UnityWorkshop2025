@@ -13,10 +13,17 @@ MonoBehaviour:
   m_Name: ChildEncounter
   m_EditorClassIdentifier: TBT.Core::TBT.Core.EncounterData
   title: "I don\u201Dt know what to do. Help me, pretty please\u2026"
-  text: "Why won't all adults let go on my own\u2026 and the army, it makes me scared.
+  text: "Why won't all adults let me go on my own\u2026 and the army, it scares me.
     I don\u2019t want to\u2026 see those soldiers, they\u2019ll yell at me again\u2026
     Mother, father, I miss you. Please, help me."
-  resolvedText: 'Here your reward : '
+  resolvedText:
+  - You continue your road without her. She is all alone on this deadly planet. You
+    receive nothing from her...
+  - The girl goes back to her family, with the determination to continue. Before
+    leaving, she gives you old rusty pieces. Your ressources refill completly !
+  - The girl climbs on your carriage. She feels safe and protected. The happiness
+    of the girl gives everyone the motivation to repair the carriage. Your health
+    refill completely !
   answers:
   - Loneliness is a source of knowledge. Become strong on your own.
   - Go back to your family, become strong enough to rise against the government.

@@ -11,7 +11,7 @@ namespace TBT.Core.Data.EncountersData
     {
         public string title;
         public string text;
-        public string resolvedText;
+        public string[] resolvedText;
         public string[] answers;
         public EncounterEffects[] effects;
         public Sprite icon;

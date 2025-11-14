@@ -16,7 +16,13 @@ MonoBehaviour:
   text: "Find it.. we should find it fast. Need. Needy. You\u2026 you see them too
     ? Beautiful shiny pieces\u2026 Would you find them ? They require it\u2026 A
     lot ! They want them all ! "
-  resolvedText: 'Here your reward : '
+  resolvedText:
+  - You continue your road without helping him. Behind you, you hear him scream.
+    You receive nothing from him...
+  - You take all ressources from the enginner. It will not be useful for him. Your
+    ressources refill completly !
+  - You help him gather all cogwheels. He is really happy now. He gives you blueprints
+    to repair your carriage. Your health refill completely !
   answers:
   - Mercenaries do not pick up trash.
   - We take what we need, not what the government needs.

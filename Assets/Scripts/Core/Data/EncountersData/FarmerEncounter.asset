@@ -17,7 +17,13 @@ MonoBehaviour:
     mission : a big rodent devastates all plantations, for weeks now. I tried to
     warn authorities, but nothing happened. Would you hunt it for me, and bring me
     its skin ? It\u2019s an excellent insulating material."
-  resolvedText: 'Here your reward : '
+  resolvedText:
+  - You hunt the rodent, it will not be a problem anymore. And its skin will be useful.
+    Your ressources refill completly !
+  - You continue your road without helping him. Maybe the rodent will stop messing
+    the plantations... or not. You receive nothing from him...
+  - You help him hunt down the rodent. It wasn't a challenge at all for you ! The
+    farmer is really happy now. Your health refill completely !
   answers:
   - Hunt above all, but the beast is ours.
   - "We\u2019re hunting humans and robots, no common rodent."
