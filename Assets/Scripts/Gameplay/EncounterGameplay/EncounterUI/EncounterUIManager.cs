@@ -1,6 +1,8 @@
 using System;
 using TBT.Core;
+using TBT.Core.Data.AudioData;
 using TBT.Core.Data.EncountersData;
+using TBT.Gameplay.Audio;
 using TBT.Gameplay.TowerDefenseGameplay;
 using TMPro;
 using UnityEngine;
@@ -48,14 +50,17 @@ namespace TBT.Gameplay.EncounterGameplay.EncounterUI
         
         public void Button1Clicked()
         {
+            AudioManager.Instance.PlaySound(AudioName.clicSound);
             OnButtonClicked(currentEffects[0]);
         }
         public void Button2Clicked()
         {
+            AudioManager.Instance.PlaySound(AudioName.clicSound);
             OnButtonClicked(currentEffects[1]);
         }
         public void Button3Clicked()
         {
+            AudioManager.Instance.PlaySound(AudioName.clicSound);
             OnButtonClicked(currentEffects[2]);
         }
 

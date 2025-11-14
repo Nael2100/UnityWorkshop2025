@@ -20,5 +20,5 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: f89cacb308824f742bf3433c50d1e1e2, type: 3}
   ressourcesCost: 4
   duration: 0.5
-  heal: 5
-  audioPlayed: 0
+  heal: 15
+  audioPlayed: 17

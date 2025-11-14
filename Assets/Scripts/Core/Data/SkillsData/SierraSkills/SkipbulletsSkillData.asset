@@ -21,4 +21,4 @@ MonoBehaviour:
   ressourcesCost: 3
   duration: 0.5
   heal: 0
-  audioPlayed: 0
+  audioPlayed: 21

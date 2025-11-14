@@ -1,4 +1,6 @@
 using System.Collections;
+using TBT.Core.Data.AudioData;
+using TBT.Gameplay.Audio;
 using UnityEngine;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
@@ -46,6 +48,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 
         private void PullCarriage(GameObject objPulled)
         {
+            AudioManager.Instance.PlaySound(AudioName.pulling);
             isDoingAction = true;
             StartCoroutine(PullingAnimation(objPulled));
         }

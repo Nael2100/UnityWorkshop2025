@@ -1,4 +1,6 @@
 using System;
+using TBT.Core.Data.AudioData;
+using TBT.Gameplay.Audio;
 using TBT.Gameplay.TowerDefenseGameplay;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -31,6 +33,7 @@ namespace TBT.Gameplay.CharacterSelection
 
         public void ClickOnCharacter(int index)
         {
+            AudioManager.Instance.PlaySound(AudioName.startButton);
             if (characterSelected[index])
             {
                 characterSelected[index] = false;

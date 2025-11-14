@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TBT.Core.Data.AudioData;
 using TBT.Gameplay.Audio;
 using TBT.Gameplay.MapGameplay;
 using UnityEngine;
@@ -94,6 +95,7 @@ namespace TBT.Gameplay
             float speed = 1000f;
             leftPanel.anchoredPosition = new Vector2(-960,0);
             rightPanel.anchoredPosition = new Vector2(960,0);
+            AudioManager.Instance.PlaySound(AudioName.doors);
             while (leftPanel.anchoredPosition.x < 0 && rightPanel.anchoredPosition.x > 0)
             {
                 leftPanel.anchoredPosition += new Vector2(speed * Time.deltaTime, 0);

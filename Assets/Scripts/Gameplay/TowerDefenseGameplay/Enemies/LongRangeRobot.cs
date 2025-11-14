@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using TBT.Core.Data.AudioData;
+using TBT.Gameplay.Audio;
 using UnityEngine;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
@@ -87,6 +89,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 
         private void LaunchProjectile()
         {
+            AudioManager.Instance.PlaySound(AudioName.throwProjectile);
             projectileLaunched = true;
             projectile.gameObject.SetActive(true);
             projectile.transform.position = gameObject.transform.position;

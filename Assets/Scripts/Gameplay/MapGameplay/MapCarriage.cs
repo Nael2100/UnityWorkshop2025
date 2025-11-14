@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using TBT.Core.Data.AudioData;
+using TBT.Gameplay.Audio;
 using UnityEngine;
 
 namespace TBT.Gameplay.MapGameplay
@@ -22,6 +24,7 @@ namespace TBT.Gameplay.MapGameplay
             if (canMove)
             {
                 canMove = false;
+                AudioManager.Instance.PlaySound(AudioName.moveCarriage);
                 while (Vector3.Distance(transform.position, destinationPoint) > 0.01f)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, destinationPoint, Time.deltaTime * speed);

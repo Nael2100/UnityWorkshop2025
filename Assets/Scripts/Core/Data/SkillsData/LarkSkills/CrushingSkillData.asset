@@ -17,8 +17,8 @@ MonoBehaviour:
   size: 1
   range: 10
   areaSprite: {fileID: 21300000, guid: 7734c6db9c4e5884bb44dbe24d3625d8, type: 3}
-  iconSprite: {fileID: 21300000, guid: 3e837415e4ddfcf4e9c68474855d80b9, type: 3}
+  iconSprite: {fileID: 21300000, guid: a38f48b51b0a6c149be2d5a52884cfc3, type: 3}
   ressourcesCost: 2
   duration: 0.5
   heal: 0
-  audioPlayed: 0
+  audioPlayed: 20
