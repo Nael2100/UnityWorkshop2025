@@ -55,7 +55,7 @@ namespace TBT.Gameplay.Menus
 
         public void EnterGame()
         {
-            SceneManager.LoadSceneAsync(0);
+            SceneManager.LoadScene(1);
         }
 
         IEnumerator ButtonAppear(Image image)

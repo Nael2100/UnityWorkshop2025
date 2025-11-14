@@ -25,5 +25,6 @@ namespace TBT.Core.Data.AudioData
         forceHit,
         ricochet,
         strategicChoiceskill,
+        reload,
     }
 }

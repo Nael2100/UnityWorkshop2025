@@ -29,8 +29,9 @@ namespace TBT.Gameplay.TowerDefenseUI
         {
             for (int i = 0; i < currentCharacter.activeSkills.Count; i++)
             {
-                Vector3 newPosition = new Vector3(buttonsParent.position.x+240*i, buttonsParent.position.y);
-                GameObject newButton = Instantiate(buttonPrefab, newPosition, Quaternion.identity, buttonsParent);
+                Vector3 newPosition = new Vector3(buttonsParent.anchoredPosition.x+(450*i), buttonsParent.anchoredPosition.y,0);
+                GameObject newButton = Instantiate(buttonPrefab, buttonsParent);
+                newButton.GetComponent<RectTransform>().anchoredPosition = newPosition;
                 SkillButton skillButtonRef = newButton.GetComponent<SkillButton>();
                 buttons.Add(skillButtonRef);
                 skillButtonRef.SetUp(skillButtonRef.GetComponentInChildren<Button>(),manager,currentCharacter.activeSkills[i]);
@@ -44,12 +45,15 @@ namespace TBT.Gameplay.TowerDefenseUI
 
         public void BlockAllButtons()
         {
-            Debug.Log(buttons);
             if (buttons.Count > 0)
             {
               foreach (SkillButton button in buttons)
               {
-                     button.Deactivate();
+                  var buttonGameObject = button.gameObject;
+                  if (buttonGameObject !=null)
+                  {
+                      button.Deactivate();
+                  }
               }  
             }
         }
@@ -81,6 +85,13 @@ namespace TBT.Gameplay.TowerDefenseUI
         }
         IEnumerator ExitAnimation()
         {
+            foreach (SkillButton button in buttons)
+            {
+                if (button != null)
+                {
+                    Destroy(button.gameObject);
+                }
+            }
             while (isMovingPlayerPanel)
             {
                 yield return null;
@@ -100,13 +111,7 @@ namespace TBT.Gameplay.TowerDefenseUI
                 bottomBar.position += Vector3.down * (speed * Time.deltaTime);
                 yield return null;
             }
-            foreach (SkillButton button in buttons)
-            {
-                if (button != null)
-                {
-                    Destroy(button.gameObject);
-                }
-            }
+            
             bottomBar.anchoredPosition = new Vector2(0, -200);
             icon.anchoredPosition = new Vector2(463, 0);
             isMovingPlayerPanel = false;

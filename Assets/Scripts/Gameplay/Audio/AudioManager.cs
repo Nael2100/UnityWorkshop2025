@@ -9,7 +9,7 @@ namespace TBT.Gameplay.Audio
         public static AudioManager Instance;
         
         [SerializeField] private AudioClip clickSound, bigRobotStep, explosion, machineGun, robotDeath, robotHit, throwProjectile, moveCarriage, doors, pulling, startButton, biteSkill, coralSpikesSkill,
-        finalExterminationSkill, furtiveShotSkill, guitarRiff, guitarSlash, heal, hitmanSkill, molotovSkill, forceHit, ricochet, strategicChoiceskill;
+        finalExterminationSkill, furtiveShotSkill, guitarRiff, guitarSlash, heal, hitmanSkill, molotovSkill, forceHit, ricochet, strategicChoiceskill, reload;
         private List<AudioSource> sources = new List<AudioSource>();
         private void Awake()
         {
@@ -166,6 +166,11 @@ namespace TBT.Gameplay.Audio
             if (name == AudioName.molotovSkill)
             {
                 return molotovSkill;
+            }
+
+            if (name == AudioName.reload)
+            {
+                return reload;
             }
             return null;
             

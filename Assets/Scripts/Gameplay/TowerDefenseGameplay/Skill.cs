@@ -123,7 +123,6 @@ namespace TBT.Gameplay.TowerDefenseGameplay
 
         protected void SkillPlayedEvent()
         {
-            Debug.Log(clicksLefts);
             if (clicksLefts == 0)
             {
                 SkillPlayed?.Invoke();

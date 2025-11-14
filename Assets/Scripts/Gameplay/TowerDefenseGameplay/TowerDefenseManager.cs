@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using TBT.Core;
+using TBT.Core.Data.AudioData;
 using TBT.Core.Data.TowerDefenseData;
+using TBT.Gameplay.Audio;
 using TBT.Gameplay.TowerDefenseUI;
 using UnityEngine;
 using UnityEngine.Events;
@@ -200,9 +202,10 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         {
             if (playerTurn && currentlyPlayingSkill == null)
             {
-                characterUI.BlockAllButtons();
-                playerCarriage.AddRessources(playerCarriage.maxRessources);
+                AudioManager.Instance.PlaySound(AudioName.reload);
                 EndPlayerTurn();
+                playerCarriage.AddRessources(playerCarriage.maxRessources);
+                
             }
         }
 
