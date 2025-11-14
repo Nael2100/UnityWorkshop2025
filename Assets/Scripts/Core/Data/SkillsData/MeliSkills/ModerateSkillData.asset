@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: ModerateSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: 'Corals power : +15 health'
+  name: 'Corals power : +5 health'
   damages: 0
   size: 1
   range: 1
@@ -20,5 +20,5 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: f89cacb308824f742bf3433c50d1e1e2, type: 3}
   ressourcesCost: 4
   duration: 0.5
-  heal: 15
+  heal: 5
   audioPlayed: 0

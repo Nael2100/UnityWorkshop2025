@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: LowhealSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: 'Corals strength : +5 health'
+  name: 'Corals strength : +2 health'
   damages: 0
   size: 1
   range: 1
@@ -20,5 +20,5 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: 560b4a59c4db88d49bb44f46e23e690d, type: 3}
   ressourcesCost: 2
   duration: 0.5
-  heal: 5
+  heal: 2
   audioPlayed: 0
