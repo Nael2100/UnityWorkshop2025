@@ -91,10 +91,10 @@ namespace TBT.Gameplay.TowerDefenseUI
         }
         IEnumerator ExitAnimation()
         {
-            while (isMovingPlayerPanel)
+            /*while (isMovingPlayerPanel)
             {
                 yield return null;
-            }
+            }*/
             isMovingPlayerPanel = true;
             bottomBar.anchoredPosition = new Vector2(0, 0);
             icon.anchoredPosition = new Vector2(63, 0);
@@ -110,7 +110,9 @@ namespace TBT.Gameplay.TowerDefenseUI
                 bottomBar.position += Vector3.down * (speed * Time.deltaTime);
                 yield return null;
             }
-            foreach (SkillButton button in buttons)
+
+            SkillButton[] skillButtons = FindObjectsByType<SkillButton>(0);
+            foreach (SkillButton button in skillButtons)
             {
                 if (button != null)
                 {

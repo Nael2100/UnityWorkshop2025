@@ -203,6 +203,14 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             if (playerTurn && currentlyPlayingSkill == null)
             {
                 AudioManager.Instance.PlaySound(AudioName.reload);
+                SkillButton[] skillButtons = FindObjectsByType<SkillButton>(0);
+                foreach (SkillButton button in skillButtons)
+                {
+                    if (button != null)
+                    {
+                        button.Deactivate();
+                    }
+                }
                 EndPlayerTurn();
                 playerCarriage.AddRessources(playerCarriage.maxRessources);
                 
