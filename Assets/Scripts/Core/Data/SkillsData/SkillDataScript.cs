@@ -1,3 +1,4 @@
+using TBT.Core.Data.AudioData;
 using UnityEngine;
 
 namespace TBT.Core.Data.SkillsData
@@ -14,5 +15,6 @@ namespace TBT.Core.Data.SkillsData
         public int ressourcesCost;
         public float duration;
         public float heal;
+        public AudioName audioPlayed;
     }
 }

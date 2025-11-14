@@ -156,6 +156,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: e0b440a6cd694bf428e3a38a4014fe8d, type: 2}
   damageCollider: {fileID: 112191453339258628}
   damageRenderer: {fileID: 3643047929775067298}
+  dyingParticles: {fileID: 6461900169140995711, guid: 127cf7be2c9f11f4cbbc9afdf4f8103f, type: 3}
   damageAnimationCurve:
     serializedVersion: 2
     m_Curve:
@@ -276,6 +277,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: dc1c1659467f75d47a305db0387a9964, type: 2}
   damageCollider: {fileID: 6089532062409740351}
   damageRenderer: {fileID: -913623545459171806}
+  dyingParticles: {fileID: 6461900169140995711, guid: 127cf7be2c9f11f4cbbc9afdf4f8103f, type: 3}
   damageAnimationCurve:
     serializedVersion: 2
     m_Curve:

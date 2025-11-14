@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TBT.Core.Data.AudioData;
 using UnityEngine;
 
 namespace TBT.Gameplay.Audio
@@ -7,7 +8,7 @@ namespace TBT.Gameplay.Audio
     {
         public static AudioManager Instance;
         
-        [SerializeField] private AudioClip clickSound;
+        [SerializeField] private AudioClip clickSound, bigRobotStep, explosion, machineGun, robotDeath, robotHit;
         private List<AudioSource> sources = new List<AudioSource>();
         private void Awake()
         {
@@ -62,13 +63,29 @@ namespace TBT.Gameplay.Audio
             {
                 return clickSound;
             }
+            if (name == AudioName.bigRobotStep)
+            {
+                return bigRobotStep;
+            }
+            if (name == AudioName.explosion)
+            {
+                return explosion;
+            }
+
+            if (name == AudioName.robotDeath)
+            {
+                return robotDeath;
+            }
+            if (name == AudioName.robotHit)
+            {
+                return robotHit;
+            }
+
+            if (name == AudioName.machineGun)
+            {
+                return machineGun;
+            }
             return null;
         }
-    }
-
-    public enum AudioName
-    {
-        clicSound,
-        
     }
 }

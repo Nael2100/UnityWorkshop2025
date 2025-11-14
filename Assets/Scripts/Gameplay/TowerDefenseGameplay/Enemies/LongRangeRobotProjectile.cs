@@ -29,6 +29,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         private void Explode()
         {
             robotParent.ProjectileExploded();
+            GameObject particles = Instantiate(dyingParticles, transform.position, Quaternion.identity);
+            particles.GetComponent<ParticleSystem>().Play();
             gameObject.SetActive(false);
         }
         

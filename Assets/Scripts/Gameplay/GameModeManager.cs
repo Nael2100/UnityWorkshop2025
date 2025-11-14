@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TBT.Gameplay.Audio;
 using TBT.Gameplay.MapGameplay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +21,7 @@ namespace TBT.Gameplay
         [SerializeField] private Canvas encounterCanvas;
         [SerializeField] private Canvas characterSelectionCanvas;
         [SerializeField] private Canvas transitionCanvas;
+        [SerializeField] private MusicManager musicManager;
         private List<Canvas> notPermaCanvas = new List<Canvas>();
         
         private Camera mainCamera;
@@ -62,12 +64,28 @@ namespace TBT.Gameplay
         
         public void EndGameMode()
         {
-            SceneManager.LoadScene(2);
+            StartCoroutine(EndModeProcess(2));
         }
 
+        IEnumerator EndModeProcess(int index)
+        {
+            clicksBlock.SetActive(true);
+            float speed = 1000f;
+            leftPanel.anchoredPosition = new Vector2(-960,0);
+            rightPanel.anchoredPosition = new Vector2(960,0);
+            while (leftPanel.anchoredPosition.x < 0 && rightPanel.anchoredPosition.x > 0)
+            {
+                leftPanel.anchoredPosition += new Vector2(speed * Time.deltaTime, 0);
+                rightPanel.anchoredPosition -= new Vector2(speed * Time.deltaTime, 0);
+                yield return null;
+            }
+            leftPanel.anchoredPosition = new Vector2(0,0);
+            rightPanel.anchoredPosition = new Vector2(0,0);
+            SceneManager.LoadScene(index);
+        }
         public void WinGameMode()
         {
-            SceneManager.LoadScene(3);
+            StartCoroutine(EndModeProcess(3));
         }
 
         private IEnumerator EnterModeProcess(GameObject posRef, Canvas canvasToActivate, Action action = null)
@@ -98,6 +116,14 @@ namespace TBT.Gameplay
             }
             permanentCanvas.enabled = true;
             transitionCanvas.enabled = true;
+            if (action == EnterTowerDefenseModeEvent || action == EnterTowerDefenseModeFinalEvent)
+            {
+                musicManager.SetFightMusic();
+            }
+            else
+            {
+                musicManager.SetAmbiantMusic();
+            }
             yield return new WaitForSeconds(1f);
             if (action != null)
             {

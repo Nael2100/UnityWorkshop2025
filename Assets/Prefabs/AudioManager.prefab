@@ -45,3 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: TBT.Gameplay::TBT.Gameplay.Audio.AudioManager
   clickSound: {fileID: 0}
+  bigRobotStep: {fileID: 8300000, guid: fc97dcf1a3d7028448ac75d07fa51bef, type: 3}
+  explosion: {fileID: 8300000, guid: f73df1db4c12263489f1c1e369e7c996, type: 3}
+  machineGun: {fileID: 8300000, guid: 7483259a23ca54149815b42aae478951, type: 3}
+  robotDeath: {fileID: 8300000, guid: 9fc421e1961621d4da8e06a50fa9ae61, type: 3}
+  robotHit: {fileID: 8300000, guid: 69d69295c90d7e14e95ff7f3666da018, type: 3}

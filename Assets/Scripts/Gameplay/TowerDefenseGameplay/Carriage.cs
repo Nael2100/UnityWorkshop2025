@@ -20,6 +20,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         private List<Character> characters = new List<Character>();
         public bool[] charactersOnCarriage {get; private set;} = new bool[5];
         [SerializeField] private Sprite brokenSprite;
+        [SerializeField] protected GameObject dyingParticles;
         private Vector3 originalPosition;
         
         public float bonusDamage {get; private set;}
@@ -87,6 +88,8 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         IEnumerator DyingEffect()
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = brokenSprite;
+            GameObject particles = Instantiate(dyingParticles, transform.position, Quaternion.identity);
+            particles.GetComponent<ParticleSystem>().Play();
             yield return new WaitForSeconds(1f);
             Dying?.Invoke();
         }

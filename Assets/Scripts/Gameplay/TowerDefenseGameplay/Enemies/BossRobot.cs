@@ -1,4 +1,6 @@
 using System.Collections;
+using TBT.Core.Data.AudioData;
+using TBT.Gameplay.Audio;
 using UnityEngine;
 
 namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
@@ -54,6 +56,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         {
             isDoingAction = true;
             damageCollider.enabled = true;
+            AudioManager.Instance.PlaySound(AudioName.robotHit);
             StartCoroutine(AttackAnimation());
         }
 

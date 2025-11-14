@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Numerics;
+using TBT.Core.Data.AudioData;
 using TBT.Core.Data.EnemyData;
+using TBT.Gameplay.Audio;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
@@ -22,6 +24,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
         [SerializeField] protected EnemyDataScript data;
         [SerializeField] protected BoxCollider2D damageCollider;
         [SerializeField] private SpriteRenderer damageRenderer;
+        [SerializeField] protected GameObject dyingParticles;
         [SerializeField] private AnimationCurve damageAnimationCurve;
         private float damageAnimationCurveDuration = 0.5f;
 
@@ -94,6 +97,9 @@ namespace TBT.Gameplay.TowerDefenseGameplay.Enemies
 
         protected virtual void Dying()
         {
+            AudioManager.Instance.PlaySound(AudioName.explosion);
+            GameObject particles = Instantiate(dyingParticles, transform.position, Quaternion.identity);
+            particles.GetComponent<ParticleSystem>().Play();
             enemyIsActive = false;
             OnDying?.Invoke(this);
         }

@@ -158,6 +158,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: c8930656c907bc04e8a59ef0eff8e988, type: 2}
   damageCollider: {fileID: 3001404413876650395}
   damageRenderer: {fileID: 774748855906075188}
+  dyingParticles: {fileID: 6461900169140995711, guid: 127cf7be2c9f11f4cbbc9afdf4f8103f, type: 3}
   damageAnimationCurve:
     serializedVersion: 2
     m_Curve:

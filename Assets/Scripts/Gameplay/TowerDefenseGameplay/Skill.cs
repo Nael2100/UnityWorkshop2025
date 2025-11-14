@@ -1,5 +1,7 @@
 using System;
+using TBT.Core.Data.AudioData;
 using TBT.Core.Data.SkillsData;
+using TBT.Gameplay.Audio;
 using TBT.Gameplay.TowerDefenseUI;
 using UnityEditor;
 using UnityEngine;
@@ -24,6 +26,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         protected float damage;
         protected float size;
         protected float duration;
+        protected AudioName audioToPlay;
 
         private int clicksLefts;
         private Camera cam;
@@ -41,6 +44,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             range = data.range;
             duration = data.duration;
             ressourcesCost = data.ressourcesCost;
+            audioToPlay = data.audioPlayed;
             areaCursor.transform.localScale *= size;
             areaCursor.SetActive(false);
             rangeCollider2D.radius = range;
@@ -69,6 +73,7 @@ namespace TBT.Gameplay.TowerDefenseGameplay
         public virtual void ApplyEffects()
         {
             EnemiesNeedToBeDamagedEvent(true);
+            AudioManager.Instance.PlaySound(audioToPlay);
         }
 
         public virtual void LaunchSkill(Vector3 position)
@@ -77,6 +82,10 @@ namespace TBT.Gameplay.TowerDefenseGameplay
             canLaunch = false;
             areaCursor.SetActive(false);
             rangeCollider2D.enabled = false;
+            if (audioToPlay != null)
+            {
+                AudioManager.Instance.PlaySound(audioToPlay);
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)
