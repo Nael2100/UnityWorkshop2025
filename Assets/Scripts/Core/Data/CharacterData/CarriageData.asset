@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b065238c268e5044892b74b4e26df401, type: 3}
   m_Name: CarriageData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.CharacterData.CarriageData
-  health: 50
+  health: 20
   ressources: 15

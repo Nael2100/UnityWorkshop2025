@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: MachinegunSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: 'Use machine-gun : 5 damages on all enemies'
-  damages: 5
+  name: 'Use machine-gun : 54damages on all enemies'
+  damages: 3
   size: 10
   range: 25
   areaSprite: {fileID: 21300000, guid: 274e1f0be31e25e48a07af80538303c6, type: 3}
   iconSprite: {fileID: 21300000, guid: 15467132c74f3be4ba65a438678d4280, type: 3}
-  ressourcesCost: 3
+  ressourcesCost: 4
   duration: 0.5
   heal: 0
   audioPlayed: 3

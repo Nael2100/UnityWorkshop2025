@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: StrategicchoiceSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: 'Strategic choice : 2 damages on enemies per 2 times '
+  name: 'Strategic choice : 3 damages on enemies per 2 times '
   damages: 3
   size: 1
   range: 5
   areaSprite: {fileID: 21300000, guid: 57b754cf28d4b9342ad9b69f858e6762, type: 3}
   iconSprite: {fileID: 21300000, guid: 1e24659b17e4cfc4a812965e2f651eda, type: 3}
-  ressourcesCost: 2
+  ressourcesCost: 3
   duration: 0.5
   heal: 0
+  audioPlayed: 0

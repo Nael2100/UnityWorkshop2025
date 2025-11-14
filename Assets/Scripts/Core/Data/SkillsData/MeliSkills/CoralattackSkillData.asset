@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: CoralattackSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: 'Coral attack : 3 damages on enemies'
-  damages: 3
+  name: 'Coral attack : 2 damages on enemies'
+  damages: 2
   size: 1
   range: 20
   areaSprite: {fileID: 21300000, guid: 9a285198019aa824ba7a0e0e77cf5cd1, type: 3}
@@ -21,3 +21,4 @@ MonoBehaviour:
   ressourcesCost: 2
   duration: 0.5
   heal: 0
+  audioPlayed: 0

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: CrushingSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: 'Crushing : 5 damages on enemies'
-  damages: 5
+  name: 'Crushing : 4 damages on enemies'
+  damages: 4
   size: 1
   range: 10
   areaSprite: {fileID: 21300000, guid: 7734c6db9c4e5884bb44dbe24d3625d8, type: 3}
@@ -21,3 +21,4 @@ MonoBehaviour:
   ressourcesCost: 2
   duration: 0.5
   heal: 0
+  audioPlayed: 0

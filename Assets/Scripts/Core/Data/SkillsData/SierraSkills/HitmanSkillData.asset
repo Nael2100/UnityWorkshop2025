@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: HitmanSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: 'Hitman : 6 damages on all enemies'
-  damages: 6
+  name: 'Hitman : 5 damages on all enemies'
+  damages: 5
   size: 10
-  range: 30
+  range: 20
   areaSprite: {fileID: 21300000, guid: a568e5a44dc867742bf06b908e432a01, type: 3}
   iconSprite: {fileID: 21300000, guid: 320e50b2134a70445863621e2346bb3f, type: 3}
-  ressourcesCost: 3
+  ressourcesCost: 4
   duration: 0.5
   heal: 0
+  audioPlayed: 0

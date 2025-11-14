@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b3a37a80740989deef9b3d3bbb50e, type: 3}
   m_Name: StrongblowSkillData
   m_EditorClassIdentifier: TBT.Core::TBT.Core.Data.SkillsData.SkillDataScript
-  name: 'Strong Blow : 3 damages on enemies'
-  damages: 3
+  name: 'Strong Blow : 2 damages on enemies'
+  damages: 2
   size: 1
   range: 10
   areaSprite: {fileID: 21300000, guid: 57b754cf28d4b9342ad9b69f858e6762, type: 3}
@@ -21,3 +21,4 @@ MonoBehaviour:
   ressourcesCost: 1
   duration: 0.5
   heal: 0
+  audioPlayed: 0
