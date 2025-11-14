@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 819d338d57f66e245b4d63e1f3ce3aeb
+guid: c1ea4470e1e55bc45925b027bfeb7806
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4744763331477791517
-    second: Background_Story_Asset_0
+      213: 2380720168206137391
+    second: Background_Story_Asset 1_0
   - first:
-      213: 4060698140799911420
-    second: Background_Story_Asset_1
+      213: 9082588502920187499
+    second: Background_Story_Asset 1_1
   - first:
-      213: 5885384036119609949
-    second: Background_Story_Asset_2
+      213: -4770390384852433561
+    second: Background_Story_Asset 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,57 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background_Story_Asset_0
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 1514
-        width: 19
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d1368047c19c8d140800000000000000
-      internalID: 4744763331477791517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Background_Story_Asset_1
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 483
-        width: 1943
-        height: 1082
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf5c77ec17f7a5830800000000000000
-      internalID: 4060698140799911420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Background_Story_Asset_2
+      name: Background_Story_Asset 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1448
-        width: 46
-        height: 65
+        y: 1480
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d520aa749951da150800000000000000
-      internalID: 5885384036119609949
+      spriteID: f28f88f11640a0120800000000000000
+      internalID: 2380720168206137391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_Story_Asset 1_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 473
+        width: 1936
+        height: 1093
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6eca9d2f16db0e70800000000000000
+      internalID: 9082588502920187499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_Story_Asset 1_2
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1448
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7658ee6383b2ccdb0800000000000000
+      internalID: -4770390384852433561
       vertices: []
       indices: 
       edges: []
@@ -185,9 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Background_Story_Asset_0: 4744763331477791517
-      Background_Story_Asset_1: 4060698140799911420
-      Background_Story_Asset_2: 5885384036119609949
+      Background_Story_Asset 1_0: 2380720168206137391
+      Background_Story_Asset 1_1: 9082588502920187499
+      Background_Story_Asset 1_2: -4770390384852433561
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
