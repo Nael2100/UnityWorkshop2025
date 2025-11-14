@@ -21,6 +21,6 @@ MonoBehaviour:
   - Today wounded people are tomorrow allies.
   - We just needed some training.
   - Mercenaries are doomed to die on battlefields, no matter the issues.
-  effects: 000000000000000000000000
+  effects: 000000000100000002000000
   icon: {fileID: 21300000, guid: 084b28a13a5974a488be9b03ebff4dad, type: 3}
   background: {fileID: 0}

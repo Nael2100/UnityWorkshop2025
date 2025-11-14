@@ -21,6 +21,6 @@ MonoBehaviour:
   - Loneliness is a source of knowledge. Become strong on your own.
   - Go back to your family, become strong enough to rise against the government.
   - "Come with us, sisters don\u2019t abandon each other."
-  effects: 000000000000000000000000
+  effects: 020000000000000001000000
   icon: {fileID: 21300000, guid: b78d87985c005a1429fbeeb12f11fdf8, type: 3}
   background: {fileID: 0}

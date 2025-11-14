@@ -21,6 +21,6 @@ MonoBehaviour:
   - Mercenaries do not pick up trash.
   - We take what we need, not what the government needs.
   - What is precious to one is treasure to us.
-  effects: 000000000000000000000000
+  effects: 020000000100000000000000
   icon: {fileID: 21300000, guid: 09a1b5054863ee241af53ea54a607d22, type: 3}
   background: {fileID: 0}

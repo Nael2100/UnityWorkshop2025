@@ -15,6 +15,8 @@ namespace TBT.Gameplay.CharacterSelection
         [SerializeField] private Button startButton;
         [SerializeField] private Button[] characterButtons;
         [SerializeField] private Image[] characterOutlines = new Image[5];
+        [SerializeField] private GameObject[] names = new GameObject[5];
+        [SerializeField] private Image[] namesButtons = new Image[5];
         private bool[] characterSelected = new bool[5];
 
         private void OnEnable()
@@ -80,6 +82,7 @@ namespace TBT.Gameplay.CharacterSelection
                     if (!characterSelected[i])
                     {
                         characterButtons[i].gameObject.GetComponent<Image>().color = Color.grey;
+                        namesButtons[i].color = Color.grey;
                     }
                 }
                 startButton.gameObject.GetComponent<Image>().color = Color.white;
@@ -89,6 +92,7 @@ namespace TBT.Gameplay.CharacterSelection
                 for (int i = 0; i < characterButtons.Length; i++)
                 {
                         characterButtons[i].gameObject.GetComponent<Image>().color = Color.white;
+                        namesButtons[i].color = Color.white;
                 }
                 startButton.gameObject.GetComponent<Image>().color = Color.grey;
             }

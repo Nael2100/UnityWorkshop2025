@@ -23,6 +23,6 @@ MonoBehaviour:
   - Die in honor is the purpose of every sheriff. Achieve one more action for the
     village.
   - You should watch over you kids one more time.
-  effects: 000000000000000000000000
+  effects: 020000000100000000000000
   icon: {fileID: 21300000, guid: c74f85714614ccc44841c602b22ae20d, type: 3}
   background: {fileID: 0}
